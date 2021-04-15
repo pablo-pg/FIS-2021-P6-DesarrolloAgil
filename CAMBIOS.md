@@ -1,10 +1,10 @@
 # Historioal de cambios
 ## Plantilla
 Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>): <br> <br>
-  Autor: [Tu nombre] <br>
-  Fecha: [dd/mm/aaaa - hh:mm] <br>
-  Título: [Titulo] <br>
-  Descripción: [Mucho texto] <br> <br>
+  Autor: [Tu nombre] \<br> <br>
+  Fecha: [dd/mm/aaaa - hh:mm] \<br> <br>
+  Título: [Titulo] \<br> <br>
+  Descripción: [Mucho texto] \<br> \<br> <br> <br>
   
 ## Ejemplo
 
