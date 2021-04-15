@@ -1,5 +1,21 @@
 # FIS-2021-P6-DesarrolloAgil
+## Índice
+- [Información general](informacion-general)
+- [Información general técnica](informacion-general-tecnica)
+- [Participantes](participantes)
 ## Información general
+
+
+## Información general técnica
+Sistema de trabajo: GitHub <br>
+Ramas: main <br>
+Lenguajes del proyecto: C++, Makefile
+Lenguaje: Español
+Organización de archivos:
+* README.md: Información general del proyecto, así como participantes y especificaciones técnicas.
+* CAMBIOS.md: Registro de todos los cambios hechos en el sistema de archivos por los miembros del proyecto.
+* .gitignore: Fichero de configuración de git para que no realice seguimientos de objetos compilados o ejecutables de C++.
+
 
 ## Participantes
 A continuación se listan los participantes del proyecto:
