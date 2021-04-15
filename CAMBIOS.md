@@ -1,6 +1,6 @@
-# Historioal de cambios
+# Historial de cambios
 ## Plantilla
-Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>): <br> <br>
+Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>, en el archivo no se ve, son como los \n en c++): <br> <br>
   Autor: [Tu nombre] \<br> <br>
   Fecha: [dd/mm/aaaa - hh:mm] \<br> <br>
   Título: [Titulo] \<br> <br>
@@ -20,3 +20,4 @@ Autor: Pablo Pérez González <br>
   Fecha: 15/04/2021 - 12:40 <br>
   Título: Creación repositorio, añadidos usuarios y archivos base <br>
   Descripción: Crear el repoositorio y añadir a los miembros del proyecto. Crear el README, el .gitignore y este fichero, además de escribir y rellenarlos. <br> <br>
+
