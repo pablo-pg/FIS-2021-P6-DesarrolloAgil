@@ -1,10 +1,34 @@
 # FIS-2021-P6-DesarrolloAgil
 ## Índice
-- [Información general](#informacion-general).
-- [Información general técnica](#informacion-general-tecnica).
+- [Información general](#información-general).
+- [Información general técnica](#información-general-técnica).
 - [Participantes](#participantes).
 ## Información general
-
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
 
 ## Información general técnica
 Sistema de trabajo: GitHub <br>
@@ -15,6 +39,31 @@ Organización de archivos:
 * README.md: Información general del proyecto, así como participantes y especificaciones técnicas.
 * CAMBIOS.md: Registro de todos los cambios hechos en el sistema de archivos por los miembros del proyecto.
 * .gitignore: Fichero de configuración de git para que no realice seguimientos de objetos compilados o ejecutables de C++.
+
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
+a <br>
 
 
 ## Participantes
