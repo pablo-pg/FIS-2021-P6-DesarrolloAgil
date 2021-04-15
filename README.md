@@ -11,9 +11,9 @@
 
 
 ## Información general técnica
-Sistema de trabajo: GitHub <br>
+Sistema de gestión de versiones y archivos: GitHub <br>
 Ramas: main <br>
-Lenguajes del proyecto: C++, Makefile <br>
+Lenguajes del proyecto: C++, Makefile, Markdown <br>
 Lenguaje: Español <br>
 Organización de archivos:
 * README.md: Información general del proyecto, así como participantes y especificaciones técnicas.
