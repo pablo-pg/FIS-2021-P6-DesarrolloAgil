@@ -13,8 +13,8 @@
 ## Información general técnica
 Sistema de trabajo: GitHub <br>
 Ramas: main <br>
-Lenguajes del proyecto: C++, Makefile
-Lenguaje: Español
+Lenguajes del proyecto: C++, Makefile <br>
+Lenguaje: Español <br>
 Organización de archivos:
 * README.md: Información general del proyecto, así como participantes y especificaciones técnicas.
 * CAMBIOS.md: Registro de todos los cambios hechos en el sistema de archivos por los miembros del proyecto.
