@@ -3,9 +3,9 @@
 
 ## Participantes
 A continuación se listan los participantes del proyecto:
-* Ana Virginia Giambona Díaz (alu...): Role
+* Ana Virginia Giambona Díaz (alu0101322650): Role
 * Alejandro Rodríguez Rojas (alu...): Role
-* Andrés Pérez Castellano (alu...): Role
+* Andrés Pérez Castellano (alu0101313511): Role
 * Dana Choque Zárate (alu...): Role
 * Pablo Pérez González (alu0101318318): Role
 
