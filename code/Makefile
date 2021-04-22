@@ -1,7 +1,7 @@
 #
 # Universidad de La Laguna
 # Escuela Superior de Ingeniería y Tecnología
-# Algoritmia y Estrucuta de Datos Avanzada 2020/21
+# Fundamentos de Ingeniería del Software 2020/21
 #
 # Autor: Equipo M5 FIS
 # Fecha: Abril de 2021
