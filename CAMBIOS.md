@@ -25,3 +25,8 @@ Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>, en el ar
 **Fecha:** 15/04/2021 - 14:00 <br>
 **Título:** Descripción y etiquetas <br>
 **Descripción:** Añadir una descripción al proyecto así como la etiqueta v0.1 <br> <br>
+
+**Autor:** Todo el equipo <br>
+**Fecha:** 22/04/2021 - 19:40 <br>
+**Título:** Reunión 1. <br>
+**Descripción:** Reunión con el cliente y empezadas las cabeceras. <br> <br>
