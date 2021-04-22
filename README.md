@@ -33,4 +33,4 @@ A continuación se listan los participantes del proyecto:
 
 
 ### Extra
-Gestión ficheros: [Gestión](https://www.geeksforgeeks.org/csv-file-management-using-c/.
+Gestión ficheros: [Gestión](https://www.geeksforgeeks.org/csv-file-management-using-c/).
