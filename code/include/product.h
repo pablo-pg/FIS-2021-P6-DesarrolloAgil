@@ -18,14 +18,13 @@
 
 class Product {
  public:
-  int amount_;
-  std::string nameProduct_;
-  float price_;
-  int codeProduct_;
-  
+  Product();
 
  private:
-
-}; 
+  int amount_;
+  std::string name_product_;
+  float price_;
+  int code_product_;
+};
 
 #endif  // PRODUCT_H_
