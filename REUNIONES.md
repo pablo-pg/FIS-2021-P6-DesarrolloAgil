@@ -1,5 +1,6 @@
-# Historial de versiones 
+# Historial de reuniones 
 
+## Reuniones con el cliente
 **Fecha:** 22/04/2021 <br>
 **Motivo:** Primera reunión con el cliente. <br>
 **Descripción:** El cliente relató su proyecto y le ofrecimos el posible resultado. <br>
