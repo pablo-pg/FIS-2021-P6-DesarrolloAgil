@@ -31,3 +31,6 @@ A continuación se listan los participantes del proyecto:
 * Daniele Vitale (alu0101329017): Programador
 * Pablo Pérez González (alu0101318318): **Manager**
 
+
+### Extra
+Gestión ficheros: [Gestión](https://www.geeksforgeeks.org/csv-file-management-using-c/).
