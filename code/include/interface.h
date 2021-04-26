@@ -15,6 +15,8 @@
 
 #include "../include/data_base.h"
 
+enum Mode {client, seller};
+
 void start();
 bool login();
 int menu();
