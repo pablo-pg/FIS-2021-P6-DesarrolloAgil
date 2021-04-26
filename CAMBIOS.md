@@ -30,3 +30,9 @@ Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>, en el ar
 **Fecha:** 22/04/2021 - 19:40 <br>
 **Título:** Reunión 1. <br>
 **Descripción:** Reunión con el cliente y empezadas las cabeceras. <br> <br>
+
+
+**Autor:** Pablo Pérez González <br>
+**Fecha:** 26/04/2021 - 15:00 <br>
+**Título:** Inicio de interfaz <br>
+**Descripción:** La entrada al programa, con los cout y los cin necesarios. Llamadas a las funciones vacías. <br> <br>
