@@ -1,5 +1,5 @@
 /**
- * @file main.cc
+ * @file data_base.cc
  * @author Equipo m5 FIS
  * @brief Base de datos para El Plátano de Oro.
  * @version 0.1
@@ -9,10 +9,7 @@
  * 
  */
 
+#include "../include/data_base.h"
 
-#include "../include/interface.h"
+DataBase::DataBase() {}
 
-
-int main() {
-  start();
-}
