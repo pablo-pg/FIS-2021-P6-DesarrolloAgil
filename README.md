@@ -18,9 +18,10 @@ Lenguaje: Español <br>
 Organización de archivos:
 * README.md: Información general del proyecto, así como participantes y especificaciones técnicas.
 * CAMBIOS.md: Registro de todos los cambios hechos en el sistema de archivos por los miembros del proyecto.
-* .gitignore: Fichero de configuración de git para que no realice seguimientos de objetos compilados o ejecutables de C++.  
-Desarrollo:
-- Una clase para una tabla de Hash que funcione con un tipo de dato que sea la clase producto, de modo que permita almacenar productos. La tabla de hash es cerrada y se usará la función de dispersión pseuroaleatoria y de exploración redispersión con de nuevo la pseudoaleatoria. La base de datos se guardará en un .cvs y los usuarios en otro .csv, ya que requiere que los usuarios estén registrados para poder acceder y modificar la tabla. En el fichero de los usuarios estará el nombre de usuario y la contraseña correspondiente codificada con un hash que será el que servirá para comparar con la pass que introduzca el usuario. <br>
+* .gitignore: Fichero de configuración de git para que no realice seguimientos de objetos compilados o ejecutables de C++. <br>
+
+Desarrollo: <br>
+Una clase para una tabla de Hash que funcione con un tipo de dato que sea la clase producto, de modo que permita almacenar productos. La tabla de hash es cerrada y se usará la función de dispersión pseuroaleatoria y de exploración redispersión con de nuevo la pseudoaleatoria. La base de datos se guardará en un .cvs y los usuarios en otro .csv, ya que requiere que los usuarios estén registrados para poder acceder y modificar la tabla. En el fichero de los usuarios estará el nombre de usuario y la contraseña correspondiente codificada con un hash que será el que servirá para comparar con la pass que introduzca el usuario. <br>
 
 
 ## Participantes
