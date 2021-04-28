@@ -17,5 +17,4 @@ Se comienza con la elaboración del informe asociado al proyecto:
 * Formato y estructura del escrito.
 * Historias de usuario.
 * Requisitos funcionales para el software de la primera entrega. <br>
-
 **Tiempos:** Se abordarán los temas restantes del informe en la siguiente reunión. <br>
