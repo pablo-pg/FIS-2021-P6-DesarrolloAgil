@@ -21,7 +21,7 @@ Organización de archivos:
 * .gitignore: Fichero de configuración de git para que no realice seguimientos de objetos compilados o ejecutables de C++. <br>
 
 Desarrollo: <br>
-Una clase para una tabla de Hash que funcione con un tipo de dato que sea la clase producto, de modo que permita almacenar productos. La tabla de hash es cerrada y se usará la función de dispersión pseuroaleatoria y de exploración redispersión con de nuevo la pseudoaleatoria. La base de datos se guardará en un .cvs y los usuarios en otro .csv, ya que requiere que los usuarios estén registrados para poder acceder y modificar la tabla. En el fichero de los usuarios estará el nombre de usuario y la contraseña correspondiente codificada con un hash que será el que servirá para comparar con la pass que introduzca el usuario. <br>
+Una clase para una tabla de Hash que funcione con un tipo de dato que sea la clase producto, de modo que permita almacenar productos. La tabla de hash es cerrada y se usará la función de dispersión pseuroaleatoria y de exploración redispersión con de nuevo la pseudoaleatoria. La base de datos se guardará en un .csv y los usuarios en otro .csv, ya que requiere que los usuarios estén registrados para poder acceder y modificar la tabla. En el fichero de los usuarios estará el nombre de usuario y la contraseña correspondiente codificada con un hash que será el que servirá para comparar con la pass que introduzca el usuario. <br>
 
 
 ## Participantes
@@ -35,4 +35,6 @@ A continuación se listan los participantes del proyecto:
 
 
 ### Extra
+Informe del proyecto: [Informe](https://docs.google.com/document/d/1Cqu9R5LCX9vuGhutZgn0dbhcXVtn3AkjL7aj4dS00II/edit?ts=6089a4d2). <br>
+Historias de usuario: [Plantilla](https://sites.google.com/site/oficinaproyectosinformatica/home/archivo/Plantilla%20Historias%20Usuario%20-%20Oficina%20de%20Proyectos%20de%20Informatica.xls?attredirects=0&d=1). <br>
 Gestión ficheros: [Gestión](https://www.geeksforgeeks.org/csv-file-management-using-c/).
