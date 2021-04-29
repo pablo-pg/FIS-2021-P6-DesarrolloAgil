@@ -11,11 +11,16 @@ Hemos propuesto dos ficheros, uno para usuarios y otro para los productos y le g
 
 ## Reuniones con el equipo de desarrollo
 **Fecha:** 28/04/2021 <br>
-**Motivo:** Primera reunión con el equipo de desarrollo <br>
+**Motivo:** Primera reunión con el equipo de desarrollo. <br>
 **Descripción:** Se trasladan las preocupaciones del cliente al equipo de desarrollo. <br>
 Se comienza con la elaboración del informe asociado al proyecto:
 * Formato y estructura del escrito.
 * Historias de usuario.
 * Requisitos funcionales para el software de la primera entrega. <br>
 
-**Tiempos:** Se abordarán los temas restantes del informe en la siguiente reunión. <br>
+**Tiempos:** Se abordarán los temas restantes del informe en la siguiente reunión. <br> <br>
+
+**Fecha:** 29/04/2021 <br>
+**Motivo:** Segunda reunión con el equipo de desarrollo. <br>
+**Descripción:** Se tratan los problemas que había con el formato del informe así como se proponen mejoras en el contenido. Se avanza conjuntamente con el informe y se decide utilizar dos scripts para la documentación y cumplimiento de la guía de estilo del código fuente.
+**Tiempos:** Se desarrollará profundamente el código en las próximas reuniones. <br> <br>
