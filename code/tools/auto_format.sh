@@ -24,12 +24,14 @@ if [ "$(which clang-format)" != "" ]; then
   fi
   
   # Perform formatting over desired files under include directory.
-  clang-format -i -style=file ../include/*.h
-  echo "Include: source code is now formatted!!!"
+  if clang-format -i -style=file ../include/*.h; then
+    echo "Include: source code is now formatted!!!"
+  fi
   
   # Perform formatting over desired files under src directory.
-  clang-format -i -style=file ../src/*.cc
-  echo "Include: source code is now formatted!!!"
+  if clang-format -i -style=file ../src/*.cc; then
+    echo "Src: source code is now formatted!!!"
+  fi
 
 else
   echo "Mandatory: sudo apt install clang-format"

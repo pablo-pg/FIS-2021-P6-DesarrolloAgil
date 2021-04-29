@@ -4,13 +4,12 @@
  * @brief Interfaz de la aplicación
  * @version 0.1
  * @date 2021-04-26
- * 
+ *
  * @copyright Copyright (c) 2021
- * 
+ *
  */
 
 #include "../include/interface.h"
-
 
 void start() {
   bool exit = 0;
@@ -22,9 +21,10 @@ void start() {
       bool ok = 0;
       int election;
       do {
-        std::cout << std::endl << "Nombre de usuario o contraseña incorrectos."
-                  << std::endl;
-        std::cout << std::endl << "¿Desea salir o volver a intentarlo?\n"
+        std::cout << std::endl
+                  << "Nombre de usuario o contraseña incorrectos." << std::endl;
+        std::cout << std::endl
+                  << "¿Desea salir o volver a intentarlo?\n"
                   << "Pulse 0 para volver a intentarlo.\nPulse 1 para salir.\n"
                   << "Introduzca su opción: ";
         std::cin >> election;
@@ -40,8 +40,6 @@ void start() {
   } while (exit == 0);
 }
 
-
-
 bool login() {
   std::string user;
   std::string pass;
@@ -51,8 +49,6 @@ bool login() {
   std::cin >> pass;
   return true;
 }
-
-
 
 int menu() {
   system("clear");
