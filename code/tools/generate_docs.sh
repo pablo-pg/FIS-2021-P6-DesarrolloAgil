@@ -1,20 +1,20 @@
 #!/bin/bash
 
-# Genrates documentation for C++ source code files, according
-# to a Doxygen configuration file, located in current folder.
+# Genera la documentación para los ficheros de código fuente C++,
+# según lo establecido en un fichero de configuración Doxygen.
 
-# Default name for a new Doxygen configuration file.
+# Nombre del fichero de configuración.
 FILENAME=".doxygen-config"
 
-# Check whether doxygen tool is already installed.
+# Revisa si Doxygen está instalado en el sistema.
 if [ "$(which doxygen)" != "" ]; then
-  # Look for an existing format style file.
+  # Busca un fichero de configuración
   if [ "$(find . -maxdepth 1 -type f -name $FILENAME)" = "" ]; then
     echo "No Doxygen configuration file was found"
     echo -n "Do you want to create one? (y/n) > "
     read generate
 
-    # Check user input and generate a new format style file if so.
+    # Pregunta al usuario sobre la creación de un fichero básico.
     if [ "$generate" = "y" ] || [ "$generate" = "Y" ]; then
       doxygen -g $FILENAME 1>/dev/null
     else
@@ -23,7 +23,7 @@ if [ "$(which doxygen)" != "" ]; then
     fi
   fi
   
-  # Perform formatting over desired files.
+  # Genera la documentación necesaria.
   if cd ../include; then
     doxygen ../tools/$FILENAME 1>/dev/null
     echo "Documentation for the source code has been generated!!!"

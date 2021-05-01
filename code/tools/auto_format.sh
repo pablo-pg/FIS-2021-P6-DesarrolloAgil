@@ -1,20 +1,20 @@
 #!/bin/bash
 
-# Formats all C++ source code files, according to
-# a .clang-format file, located in current folder.
+# Aplica formato a todos los ficheros de código fuente C++,
+# según lo establecido en un archivo de configuración.
 
-# Default formatting style to be applied for a new .clang-format file.
+# Guía de estilos predeterminada para archivos de configuración,
 STYLE=google
 
-# Check whether clang-format tool is already installed.
+# Revisa si clang-format está instalado en el sistema.
 if [ "$(which clang-format)" != "" ]; then
-  # Look for an existing format style file.
+  # Busca un fichero de configuración.
   if [ "$(find . -maxdepth 1 -type f -name ".clang-format")" = "" ]; then
     echo "No format style file was found"
     echo -n "Do you want to create one (style=${STYLE})? (y/n) > "
     read generate
 
-    # Check user input and generate a new format style file if so.
+    # Pregunta al usuario sobre la creación de un fichero básico.
     if [ "$generate" = "y" ] || [ "$generate" = "Y" ]; then
       clang-format -style=$STYLE -dump-config > .clang-format
     else
@@ -23,12 +23,12 @@ if [ "$(which clang-format)" != "" ]; then
     fi
   fi
   
-  # Perform formatting over desired files under include directory.
+  # Aplica formato sobre los ficheros .h en la carpeta include.
   if clang-format -i -style=file ../include/*.h; then
     echo "Include: source code is now formatted!!!"
   fi
   
-  # Perform formatting over desired files under src directory.
+  # Aplica formato sobre los ficheros .cc en la carpeta src.
   if clang-format -i -style=file ../src/*.cc; then
     echo "Src: source code is now formatted!!!"
   fi
