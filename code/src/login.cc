@@ -51,6 +51,8 @@ std::vector<Users> readUsers() {
       }
       users.push_back(new_user);
     }
+  } else {
+    file.exceptions(std::fstream::failbit);
   }
   return users;
 }
@@ -67,6 +69,11 @@ bool comparePass(const std::string username, const std::string pass) {
       }
     }
     return false;
+  }
+  catch(const std::ios_base::failure& fail) {
+    std::cerr << "Error (" << fail.code() << ") al abrir el archivo: "
+              << fail.what() << std::endl;
+    exit(1);
   }
   catch(...) {
     std::cout << "Ha pasado algo malo" << std::endl;
