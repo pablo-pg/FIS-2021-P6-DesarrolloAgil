@@ -47,7 +47,7 @@ bool login() {
   std::cin >> user;
   std::cout << "Introduzca su contraseña: ";
   std::cin >> pass;
-  return true;
+  return comparePass(user, pass);
 }
 
 int menu() {

@@ -13,6 +13,7 @@
 #define CODE_INCLUDE_INTERFACE_H_
 
 #include "../include/data_base.h"
+#include "../include/login.h"
 
 enum Mode { client, seller };
 
