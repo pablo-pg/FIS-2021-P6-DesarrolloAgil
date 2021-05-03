@@ -23,7 +23,7 @@ EXECUTABLE	:= el_platano_de_oro
 all: $(BIN)/$(EXECUTABLE)
 
 $(BIN)/$(EXECUTABLE): $(SRC)/*.cc
-	$(CXX) $(CXX_FLAGS) -I$(INCLUDE) $^ -o $@ $(LIBRARIES)
+	$(CXX) $(CXX_FLAGS) -I $(INCLUDE) $^ -o $@ $(LIBRARIES)
 
 run: clean all
 	clear
@@ -31,7 +31,5 @@ run: clean all
 
 clean:
 	-rm $(BIN)/$(EXECUTABLE)
-	-rm $(SRC)/main
 	
-
 clear: clean
