@@ -11,7 +11,6 @@
 
 #include "../include/login.h"
 
-
 std::vector<Users> readUsers() {
   std::vector<Users> users;
   users.resize(0);
@@ -38,7 +37,7 @@ std::vector<Users> readUsers() {
       sspass >> pass;
       new_user.password = pass;
       /// Permisos
-      for (std::size_t i {0}; i < row[3].size(); ++i) {
+      for (std::size_t i{0}; i < row[3].size(); ++i) {
         if (row[3].at(i) == 'r') {
           new_user.read = 1;
         }
@@ -57,27 +56,22 @@ std::vector<Users> readUsers() {
   return users;
 }
 
-
-
 bool comparePass(const std::string username, const std::string pass) {
   try {
     std::vector<Users> all_users = readUsers();
-    size_t hashed_pass = std::hash<std::string> {} (pass);
+    size_t hashed_pass = std::hash<std::string>{}(pass);
     for (auto& user : all_users) {
       if ((user.username == username) && (user.password == hashed_pass)) {
         return true;
       }
     }
     return false;
-  }
-  catch(const std::ios_base::failure& fail) {
-    std::cerr << "Error (" << fail.code() << ") al abrir el archivo: "
-              << fail.what() << std::endl;
+  } catch (const std::ios_base::failure& fail) {
+    std::cerr << "Error (" << fail.code()
+              << ") al abrir el archivo: " << fail.what() << std::endl;
     exit(1);
-  }
-  catch(...) {
+  } catch (...) {
     std::cout << "Ha pasado algo malo" << std::endl;
   }
   return false;
 }
-

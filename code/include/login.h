@@ -12,11 +12,11 @@
 #ifndef CODE_INCLUDE_LOGIN_H_
 #define CODE_INCLUDE_LOGIN_H_
 
-#include <iostream>
-#include <ios>
 #include <fstream>
-#include <string>
+#include <ios>
+#include <iostream>
 #include <sstream>
+#include <string>
 #include <vector>
 
 struct Users {
@@ -29,6 +29,5 @@ struct Users {
 
 std::vector<Users> readUsers();
 bool comparePass(const std::string user, const std::string pass);
-
 
 #endif  // CODE_INCLUDE_LOGIN_H_
