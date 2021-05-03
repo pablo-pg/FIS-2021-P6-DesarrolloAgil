@@ -38,7 +38,7 @@ std::vector<Users> readUsers() {
       sspass >> pass;
       new_user.password = pass;
       /// Permisos
-      for (int i {0}; i < row[3].size(); ++i) {
+      for (std::size_t i {0}; i < row[3].size(); ++i) {
         if (row[3].at(i) == 'r') {
           new_user.read = 1;
         }
