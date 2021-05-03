@@ -10,7 +10,7 @@
 #
 
 CXX		  := g++
-CXX_FLAGS := -Wall -Wextra -std=c++17 -ggdb
+CXX_FLAGS := -Wall -Wextra -std=c++17 -ggdb -O0
 
 BIN		:= bin
 SRC		:= src
@@ -23,7 +23,7 @@ EXECUTABLE	:= el_platano_de_oro
 all: $(BIN)/$(EXECUTABLE)
 
 $(BIN)/$(EXECUTABLE): $(SRC)/*.cc
-	$(CXX) $(CXX_FLAGS) -I $(INCLUDE) $^ -o $@ $(LIBRARIES)
+	$(CXX) $(CXX_FLAGS) -I $(INCLUDE)/ $^ -o $@ $(LIBRARIES)
 
 run: clean all
 	clear
