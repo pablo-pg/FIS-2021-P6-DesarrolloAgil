@@ -14,12 +14,14 @@
 void start() {
   bool exit = 0;
   do {
-    if (login()) {
-      menu();
+    std::pair<Users, bool> logged = login();
+    if (logged.second == true) {
+      Users user = logged.first;
+      menu(user);
       exit = 1;
     } else {
       bool ok = 0;
-      int election;
+      char election;
       do {
         std::cout << std::endl
                   << "Nombre de usuario o contraseña incorrectos." << std::endl;
@@ -29,7 +31,7 @@ void start() {
                   << "Introduzca su opción: ";
         std::cin >> election;
         std::cout << std::endl;
-        if ((election == 0) || (election == 1)) {
+        if ((election == '0') || (election == '1')) {
           ok = 1;
         }
       } while (ok == 0);
@@ -40,23 +42,14 @@ void start() {
   } while (exit == 0);
 }
 
-bool login() {
-  std::string user;
-  std::string pass;
-  std::cout << "Introduzca su nombre de usuario: ";
-  std::cin >> user;
-  std::cout << "Introduzca su contraseña: ";
-  std::cin >> pass;
-  return comparePass(user, pass);
-}
 
-int menu() {
+int menu(const Users& user) {
   system("clear");
   DataBase();
   char election;
   bool ok = 0;
   do {
-    std::cout << "Bienvenido a El Plátano de Oro.\n\n"
+    std::cout << user.username << ", Bienvenido a El Plátano de Oro.\n\n"
               << "¿Qué desea hacer?\n"
               << "Pulse 1 para añadir un nuevo producto a la base de datos.\n"
               << "Pulse 2 para modificar los datos de un producto ya existente."

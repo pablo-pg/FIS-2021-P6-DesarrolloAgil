@@ -11,6 +11,17 @@
 
 #include "../include/login.h"
 
+
+std::pair<Users, bool> login() {
+  std::string user;
+  std::string pass;
+  std::cout << "Introduzca su nombre de usuario: ";
+  std::cin >> user;
+  std::cout << "Introduzca su contraseña: ";
+  std::cin >> pass;
+  return comparePass(user, pass);
+}
+
 std::vector<Users> readUsers() {
   std::vector<Users> users;
   users.resize(0);
@@ -56,22 +67,24 @@ std::vector<Users> readUsers() {
   return users;
 }
 
-bool comparePass(const std::string username, const std::string pass) {
+std::pair<Users, bool> comparePass(const std::string username, const std::string pass) {
+  std::vector<Users> all_users;
+  all_users.resize(1);
   try {
     std::vector<Users> all_users = readUsers();
     size_t hashed_pass = std::hash<std::string>{}(pass);
     for (auto& user : all_users) {
       if ((user.username == username) && (user.password == hashed_pass)) {
-        return true;
+        return std::make_pair(user, true);
       }
     }
-    return false;
+    return std::make_pair(all_users.at(0), false);
   } catch (const std::ios_base::failure& fail) {
     std::cerr << "Error (" << fail.code()
               << ") al abrir el archivo: " << fail.what() << std::endl;
     exit(1);
   } catch (...) {
-    std::cout << "Ha pasado algo malo" << std::endl;
+    std::cout << "Error desconocido." << std::endl;
   }
-  return false;
+  return std::make_pair(all_users.at(0), false);
 }

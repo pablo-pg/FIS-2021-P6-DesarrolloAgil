@@ -1,7 +1,7 @@
 /**
  * @file login.h
  * @author Equipo m5 FIS
- * @brief Base de datos para El Plátano de Oro.
+ * @brief Cabecera de código para el login de usuarios.
  * @version 0.1
  * @date 2021-05-2
  *
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <utility>
 #include <vector>
 
 enum Mode { client, seller };
@@ -27,9 +28,18 @@ struct Users {
   bool read = 1;
   bool write = 0;
   bool create = 0;
+  Users& operator=(const Users& rhl) {
+    username = rhl.username;
+    password = rhl.password;
+    read = rhl.read;
+    write = rhl.write;
+    create = rhl.create;
+    return *this;
+  }
 };
 
+std::pair<Users, bool> login();
 std::vector<Users> readUsers();
-bool comparePass(const std::string user, const std::string pass);
+std::pair<Users, bool> comparePass(const std::string user, const std::string pass);
 
 #endif  // LOGIN_H_

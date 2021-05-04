@@ -17,7 +17,6 @@
 
 
 void start();
-bool login();
-int menu();
+int menu(const Users& user);
 
 #endif  // INTERFACE_H_
