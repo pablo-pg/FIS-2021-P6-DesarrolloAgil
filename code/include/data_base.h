@@ -12,19 +12,30 @@
 #ifndef DATA_BASE_H_
 #define DATA_BASE_H_
 
+#include <fstream>
 #include <string>
 
 #include "./hash.h"
 #include "./product.h"
 
-const std::string products = ".products.csv";
+const std::string kProducts = "../data/.products.csv";
 
 class DataBase {
  public:
-  DataBase();
+  DataBase(const std::string& filename = kProducts);
+  ~DataBase();
+
+  void Insert(const Product& product);
+  Product& Search();
+
+  void Read();
+  void Write();
 
  private:
+  /// Estructura de datos interna para almacenar productos.
   HashTable<Product> hash_;
+  /// Fichero de datos a modo de almacén no volátil.
+  std::fstream data_file_;
 };
 
 #endif  // DATA_BASE_H_

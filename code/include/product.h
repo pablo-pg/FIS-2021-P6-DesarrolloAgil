@@ -12,7 +12,6 @@
 #ifndef PRODUCT_H_
 #define PRODUCT_H_
 
-#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -46,6 +45,7 @@ struct Product {
     kExpiration,
     kOrigin
   };
+  
   /**
    * @brief Imprime el producto en formato .csv.
    * @param fs Fichero de salida.

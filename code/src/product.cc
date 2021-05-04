@@ -31,10 +31,13 @@ void Product::FromCsv(std::fstream& fs) {
     throw std::ios_base::failure("El fichero debe estar abierto.");
   }
 
+  /// Vector con los campos ya extraídos.
   std::vector<std::string> split;
   std::string line, field;
+  /// Lee la entrada de producto actual.
   std::getline(fs, line);
 
+  /// Convierte a un flujo de texto, para separar los campos.
   std::stringstream stream_line(line);
   while (std::getline(stream_line, field, kCsvDelimiter)) {
     split.push_back(field);
