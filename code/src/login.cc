@@ -29,7 +29,7 @@ std::vector<Users> readUsers() {
   if (file.is_open()) {
     int count = 0;
     std::vector<std::string> row;
-    std::string line, word, temp;
+    std::string line, word;
     std::getline(file, line);  //< Da igual la primera linea
     while (std::getline(file, line)) {
       row.clear();
