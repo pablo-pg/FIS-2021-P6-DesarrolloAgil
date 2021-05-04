@@ -15,7 +15,6 @@
 #include "../include/data_base.h"
 #include "../include/login.h"
 
-
 void start();
 int menu(const Users& user);
 

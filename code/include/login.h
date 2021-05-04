@@ -40,6 +40,7 @@ struct Users {
 
 std::pair<Users, bool> login();
 std::vector<Users> readUsers();
-std::pair<Users, bool> comparePass(const std::string user, const std::string pass);
+std::pair<Users, bool> comparePass(const std::string user,
+                                   const std::string pass);
 
 #endif  // LOGIN_H_

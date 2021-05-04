@@ -42,7 +42,6 @@ void start() {
   } while (exit == 0);
 }
 
-
 int menu(const Users& user) {
   system("clear");
   DataBase();

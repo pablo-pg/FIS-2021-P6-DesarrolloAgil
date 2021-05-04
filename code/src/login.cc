@@ -11,7 +11,6 @@
 
 #include "../include/login.h"
 
-
 std::pair<Users, bool> login() {
   std::string user;
   std::string pass;
@@ -67,7 +66,8 @@ std::vector<Users> readUsers() {
   return users;
 }
 
-std::pair<Users, bool> comparePass(const std::string username, const std::string pass) {
+std::pair<Users, bool> comparePass(const std::string username,
+                                   const std::string pass) {
   std::vector<Users> all_users;
   all_users.resize(1);
   try {
