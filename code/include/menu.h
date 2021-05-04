@@ -1,5 +1,5 @@
 /**
- * @file interface.h
+ * @file menu.h
  * @author Equipo m5 FIS
  * @brief Interfaz de la aplicación
  * @version 0.1
@@ -9,8 +9,8 @@
  *
  */
 
-#ifndef INTERFACE_H_
-#define INTERFACE_H_
+#ifndef MENU_H_
+#define MENU_H_
 
 #include "../include/data_base.h"
 #include "../include/login.h"
@@ -19,4 +19,4 @@
 void start();
 int menu(const Users& user);
 
-#endif  // INTERFACE_H_
+#endif  // MENU_H_

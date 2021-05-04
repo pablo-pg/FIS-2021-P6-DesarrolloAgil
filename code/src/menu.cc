@@ -1,5 +1,5 @@
 /**
- * @file interface.cc
+ * @file menu.cc
  * @author Equipo m5 FIS
  * @brief Interfaz de la aplicación
  * @version 0.1
@@ -9,7 +9,7 @@
  *
  */
 
-#include "../include/interface.h"
+#include "../include/menu.h"
 
 void start() {
   bool exit = 0;

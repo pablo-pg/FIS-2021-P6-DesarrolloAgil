@@ -9,6 +9,6 @@
  *
  */
 
-#include "../include/interface.h"
+#include "../include/menu.h"
 
 int main() { start(); }
