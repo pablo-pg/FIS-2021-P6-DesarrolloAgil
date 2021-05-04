@@ -18,12 +18,12 @@ Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>, en el ar
 
 **Autor:** Pablo Pérez González <br>
 **Fecha:** 15/04/2021 - 12:40 <br>
-**Título:** Creación repositorio, añadidos usuarios y archivos base <br>
+**Título:** Creación repositorio, añadidos usuarios y archivos base. <br>
 **Descripción:** Crear el repoositorio y añadir a los miembros del proyecto. Crear el README, el .gitignore y este fichero, además de escribir y rellenarlos. <br> <br>
 
 **Autor:** Pablo Pérez González <br>
 **Fecha:** 15/04/2021 - 14:00 <br>
-**Título:** Descripción y etiquetas <br>
+**Título:** Descripción y etiquetas. <br>
 **Descripción:** Añadir una descripción al proyecto así como la etiqueta v0.1 <br> <br>
 
 **Autor:** Todo el equipo <br>
@@ -34,11 +34,17 @@ Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>, en el ar
 
 **Autor:** Pablo Pérez González <br>
 **Fecha:** 26/04/2021 - 15:00 <br>
-**Título:** Inicio de interfaz <br>
+**Título:** Inicio de interfaz. <br>
 **Descripción:** La entrada al programa, con los cout y los cin necesarios. Llamadas a las funciones vacías. <br> <br>
 
 
-**Autor:** Equipo 1 <br>
+**Autor:** Andrés Pérez Castellano <br>
+**Fecha:** 29/04/2021 - 17:30 <br>
+**Título:** Scripts formato y Doxygen. <br>
+**Descripción:** Subidos scripts de autoformato a la guía de estilos usada y para generar toda la documentación según Doxygen. <br> <br>
+
+
+**Autor:** Equipo 1 (Pablo Pérez González y )<br>
 **Fecha:** 02/04/2021 - 23:15 <br>
-**Título:** Login hecho <br>
+**Título:** Login implementado. <br>
 **Descripción:** Implementación total del login, tanto lectura del archivo como comprobación de credenciales. <br> <br>
