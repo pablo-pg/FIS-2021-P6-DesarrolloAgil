@@ -22,7 +22,7 @@
 struct Users {
   std::string username;
   size_t password;
-  bool read = 0;
+  bool read = 1;
   bool write = 0;
   bool create = 0;
 };
