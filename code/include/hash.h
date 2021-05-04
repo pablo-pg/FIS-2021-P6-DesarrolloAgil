@@ -9,10 +9,10 @@
  *
  */
 
-#ifndef CODE_INCLUDE_HASH_H_
-#define CODE_INCLUDE_HASH_H_
+#ifndef HASH_H_
+#define HASH_H_
 
 template <class T>
 class HashTable {};
 
-#endif  // CODE_INCLUDE_HASH_H_
+#endif  // HASH_H_

@@ -9,16 +9,15 @@
  *
  */
 
-#ifndef CODE_INCLUDE_INTERFACE_H_
-#define CODE_INCLUDE_INTERFACE_H_
+#ifndef INTERFACE_H_
+#define INTERFACE_H_
 
 #include "../include/data_base.h"
 #include "../include/login.h"
 
-enum Mode { client, seller };
 
 void start();
 bool login();
 int menu();
 
-#endif  // CODE_INCLUDE_INTERFACE_H_
+#endif  // INTERFACE_H_

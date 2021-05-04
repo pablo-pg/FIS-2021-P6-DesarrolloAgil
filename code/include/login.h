@@ -9,8 +9,8 @@
  *
  */
 
-#ifndef CODE_INCLUDE_LOGIN_H_
-#define CODE_INCLUDE_LOGIN_H_
+#ifndef LOGIN_H_
+#define LOGIN_H_
 
 #include <fstream>
 #include <ios>
@@ -18,6 +18,8 @@
 #include <sstream>
 #include <string>
 #include <vector>
+
+enum Mode { client, seller };
 
 struct Users {
   std::string username;
@@ -30,4 +32,4 @@ struct Users {
 std::vector<Users> readUsers();
 bool comparePass(const std::string user, const std::string pass);
 
-#endif  // CODE_INCLUDE_LOGIN_H_
+#endif  // LOGIN_H_
