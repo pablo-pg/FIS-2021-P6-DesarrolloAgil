@@ -36,3 +36,9 @@ Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>, en el ar
 **Fecha:** 26/04/2021 - 15:00 <br>
 **Título:** Inicio de interfaz <br>
 **Descripción:** La entrada al programa, con los cout y los cin necesarios. Llamadas a las funciones vacías. <br> <br>
+
+
+**Autor:** Equipo 1 <br>
+**Fecha:** [dd/mm/aaaa - hh:mm] <br>
+**Título:** Login hecho <br>
+**Descripción:** Implementación total del login, tanto lectura del archivo como comprobación de credenciales. <br> <br>
