@@ -18,20 +18,20 @@
 #include "./hash.h"
 #include "./product.h"
 
-const std::string kProducts = "../data/.products.csv";
+const std::string kProductsPath = "../data/.products.csv";
 
 class DataBase {
  public:
-  DataBase(const std::string& filename = kProducts);
+  DataBase(void);
   ~DataBase();
 
   void Insert(const Product& product);
-  Product& Search();
-
-  void Read();
-  void Write();
+  Product& Search(const std::string& key);
 
  private:
+  void Read(void);
+  void Write(void);
+
   /// Estructura de datos interna para almacenar productos.
   HashTable<Product> hash_;
   /// Fichero de datos a modo de almacén no volátil.
