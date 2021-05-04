@@ -47,8 +47,10 @@ int menu(const Users& user) {
   DataBase();
   char election;
   bool ok = 0;
+  std::string name = user.username;
+  name[0] = toupper(name[0]);
   do {
-    std::cout << user.username << ", Bienvenido a El Plátano de Oro.\n\n"
+    std::cout << name << ", Bienvenido a El Plátano de Oro.\n\n"
               << "¿Qué desea hacer?\n"
               << "Pulse 1 para añadir un nuevo producto a la base de datos.\n"
               << "Pulse 2 para modificar los datos de un producto ya existente."
@@ -82,7 +84,7 @@ int menu(const Users& user) {
       /* code */
       break;
     case 'q':
-      std::cout << "¡Hasta pronto!" << std::endl;
+      std::cout << "¡Hasta pronto " << name << "!" << std::endl;
       break;
     default:
       std::cout << "Ha habido algún error inesperado." << std::endl;
