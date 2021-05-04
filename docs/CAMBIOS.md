@@ -39,6 +39,6 @@ Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>, en el ar
 
 
 **Autor:** Equipo 1 <br>
-**Fecha:** [dd/mm/aaaa - hh:mm] <br>
+**Fecha:** 02/04/2021 - 23:15 <br>
 **Título:** Login hecho <br>
 **Descripción:** Implementación total del login, tanto lectura del archivo como comprobación de credenciales. <br> <br>
