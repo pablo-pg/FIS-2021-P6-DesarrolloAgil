@@ -34,8 +34,8 @@ Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>, en el ar
 
 **Autor:** Pablo Pérez González <br>
 **Fecha:** 26/04/2021 - 15:00 <br>
-**Título:** Inicio de interfaz. <br>
-**Descripción:** La entrada al programa, con los cout y los cin necesarios. Llamadas a las funciones vacías. <br> <br>
+**Título:** Inicio de interfaz y login. <br>
+**Descripción:** La entrada al programa, con los cout y los cin necesarios. Llamadas a las funciones vacías y declaración de atributos. <br> <br>
 
 
 **Autor:** Andrés Pérez Castellano <br>
@@ -48,3 +48,9 @@ Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>, en el ar
 **Fecha:** 02/04/2021 - 23:15 <br>
 **Título:** Login implementado. <br>
 **Descripción:** Implementación total del login, tanto lectura del archivo como comprobación de credenciales. <br> <br>
+
+
+**Autor:** Equipo 2 (Andrés Pérez Castellano y )<br>
+**Fecha:** 04/05/2021 - 22:50
+**Título:** Inicio de producto y base de datos.
+**Descripción:** Implementación de los atributos, estructura y cabeceras del struct producto y de la base de datos. Desarrollo de la lectura desde fichero CSV y la interpretación de los datos.<br><br>
