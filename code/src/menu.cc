@@ -42,7 +42,7 @@ void start() {
   } while (exit == 0);
 }
 
-int menu(const Users& user) {
+int AdminMenu(const Users& user) {
   system("clear");
   DataBase();
   char election;
