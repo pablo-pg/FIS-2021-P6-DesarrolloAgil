@@ -17,4 +17,4 @@ en base a comentarios Doxygen presentes en él. Luego revise ***docs/api/API.md*
 ## Ejecutar pruebas
 
 Ejecute el script ***run_tests.sh***, para correr todas las pruebas unitarias y de integración,<br>
-recogidas en el directorio ***test/*** y así evaluar la fiabilidad del software<br>
+recogidas en el directorio ***test/*** y así evaluar la fiabilidad del software.<br>
