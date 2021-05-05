@@ -20,7 +20,15 @@ Se comienza con la elaboración del informe asociado al proyecto:
 
 **Tiempos:** Se abordarán los temas restantes del informe en la siguiente reunión. <br> <br>
 
+
 **Fecha:** 29/04/2021 <br>
 **Motivo:** Segunda reunión con el equipo de desarrollo. <br>
-**Descripción:** Se tratan los problemas que había con el formato del informe así como se proponen mejoras en el contenido. Se avanza conjuntamente con el informe y se decide utilizar dos scripts para la documentación y cumplimiento de la guía de estilo del código fuente.
+**Descripción:** Se tratan los problemas que había con el formato del informe así como se proponen mejoras en el contenido. Se avanza conjuntamente con el informe y se decide utilizar dos scripts para la documentación y cumplimiento de la guía de estilo del código fuente.  
+
 **Tiempos:** Se desarrollará profundamente el código en las próximas reuniones. <br> <br>
+
+
+**Fecha:** 29/04/2021 <br>
+**Motivo:** Tercera reunión con el equipo de desarrollo. <br>
+**Descripción:** Se decide reescribir la mayoría de párrafos del informe por motivos estéticos. Se plantea si un usuario puede comprar y vender (lo elige el usuario al entrar al programa) o está definido según el usuario(desde el csv). Para acercarnos al modelo de negocio C2C se decide la primera opción. Se avanza profundamente con el código de backend (base de datos y productos). Se discute la conveniencia de usar structs en vez de clases y se decide usar structs por la mayoría de atributos públicos y la facilidad a la hora de instanciar un objeto. <br>
+**Tiempos:** Se prevé la finalización del login y la interfaz que tendrá el usuario en 1 semana. Mañana habrá otra reunión para seguir con el desarrollo de código. <br> <br>
