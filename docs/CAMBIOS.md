@@ -51,6 +51,6 @@ Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>, en el ar
 
 
 **Autor:** Equipo 2 (Andrés Pérez Castellano y )<br>
-**Fecha:** 04/05/2021 - 22:50
-**Título:** Inicio de producto y base de datos.
+**Fecha:** 04/05/2021 - 22:50<br>
+**Título:** Inicio de producto y base de datos.<br>
 **Descripción:** Implementación de los atributos, estructura y cabeceras del struct producto y de la base de datos. Desarrollo de la lectura desde fichero CSV y la interpretación de los datos.<br><br>
