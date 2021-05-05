@@ -66,12 +66,25 @@ void DataBase::Read() {
   data_file_.close();
 }
 
+bool Insert(const Product& product) {
+  const int kZero = 0;
+  int attempt = kZero;
+  
+  
+
+  return (attempt < vData.size());
+}
+
+Product& DataBase::Search(const SearchKey& key) {
+
+}
+
 void DataBase::Write() {
   data_file_.open(kPath2Products, std::ios::in);
   if (!data_file_.is_open()) {
     throw std::ios_base::failure("El fichero debe estar abierto.");
   }
-  
+
   // Respalda la cabecera ante el borrado del fichero.
   std::string header;
   std::getline(data_file_, header);

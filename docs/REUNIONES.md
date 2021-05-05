@@ -31,3 +31,10 @@ Se comienza con la elaboración del informe asociado al proyecto:
 **Motivo:** Tercera reunión con el equipo de desarrollo. <br>
 **Descripción:** Se decide reescribir la mayoría de párrafos del informe por motivos estéticos. Se plantea si un usuario puede comprar y vender (lo elige el usuario al entrar al programa) o está definido según el usuario(desde el csv). Para acercarnos al modelo de negocio C2C se decide la primera opción. Se avanza profundamente con el código de backend (base de datos y productos). Se discute la conveniencia de usar structs en vez de clases y se decide usar structs por la mayoría de atributos públicos y la facilidad a la hora de instanciar un objeto. <br>
 **Tiempos:** Se prevé la finalización del login y la interfaz que tendrá el usuario en 1 semana. Mañana habrá otra reunión para seguir con el desarrollo de código. <br> <br>
+
+
+**Fecha:** 05/05/2021 <br>
+**Motivo:** Cuarta reunión con el equipo de desarrollo. <br>
+**Descripción:** Se decide que habrá un máximo de productos posibles a almacenar. Si la tabla de datos se llena, no se añadirán más poductos. Se avanza en las clase hash y base de datos. <br>
+**Tiempos:** Se prevé la finalización del login y la interfaz que tendrá el usuario en 1 semana. Mañana habrá otra reunión para seguir con el desarrollo de código. <br> <br>
+

@@ -27,7 +27,7 @@ const std::string kPath2Products = "../data/.products.csv";
 class DataBase {
  public:
   /// Criterio de búsqueda o clave para los productos almacenados.
-  typedef std::string SearchKey;
+  using SearchKey = std::string;
 
   /**
    * @brief Instancia la base de datos y carga la información
@@ -40,7 +40,13 @@ class DataBase {
    */
   ~DataBase();
 
-  void Insert(const Product& product);
+  /**
+   * @brief Insertar un producto en la tabla hash
+   * 
+   * @param product 
+   */
+  bool Insert(const Product& product);
+  
   Product& Search(const SearchKey& key);
 
  private:

@@ -28,6 +28,7 @@ struct Users {
   bool read = 1;
   bool write = 0;
   bool create = 0;
+
   Users& operator=(const Users& rhl) {
     username = rhl.username;
     password = rhl.password;
