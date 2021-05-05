@@ -18,23 +18,40 @@
 #include "./hash.h"
 #include "./product.h"
 
-const std::string kProductsPath = "../data/.products.csv";
+/// Ruta predeterminada del fichero de datos que contiene los productos.
+const std::string kPath2Products = "../data/.products.csv";
 
+/**
+ * @brief Almacena los productos y gestiona el acceso a ellos.
+ */
 class DataBase {
  public:
+  /// Criterio de búsqueda o clave para los productos almacenados.
+  typedef std::string SearchKey;
+
+  /**
+   * @brief Instancia la base de datos y carga la información
+   *        de los productos desde un medio no volátil.
+   */
   DataBase(void);
+  /**
+   * @brief Destruye la base de datos y guarda la información
+   *        de los productos en un medio no volátil.
+   */
   ~DataBase();
 
   void Insert(const Product& product);
-  Product& Search(const std::string& key);
+  Product& Search(const SearchKey& key);
 
  private:
+  // Carga los productos desde el fichero de datos.
   void Read(void);
+  // Guarda los productos en el fichero de datos.
   void Write(void);
 
-  /// Estructura de datos interna para almacenar productos.
+  // Estructura de datos interna para almacenar productos.
   HashTable<Product> hash_;
-  /// Fichero de datos a modo de almacén no volátil.
+  // Fichero de datos a modo de almacén no volátil.
   std::fstream data_file_;
 };
 

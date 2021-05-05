@@ -18,6 +18,10 @@
 #include <vector>
 #include <ctime>
 
+/**
+ * @brief Representa de forma lógica a un producto del negocio y
+ *        ofrece herramientas para su manipulación con ficheros.
+ */
 struct Product {
   /// Identificador único de producto.
   unsigned long id;
@@ -34,11 +38,15 @@ struct Product {
 
   /// Delimitador para una entrada de fichero .csv sobre productos.
   static const char kCsvDelimiter;
-  /// Posición de un campo para una entrada de fichero .csv sobre productos.
+  /**
+   * @brief Posición de un campo para una entrada
+   *        de fichero .csv sobre productos.
+   * @note
+   * El primer campo (valor 0) siempre es un índice
+   * de fila y debe ignorarse al manejar un producto.
+   */
   enum CsvField : std::size_t {
-    /// Should be ignored for a product.
-    kRecord = 0,
-    kId,
+    kId = 1,
     kName,
     kStock,
     kPrice,

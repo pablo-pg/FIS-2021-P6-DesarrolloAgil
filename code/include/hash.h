@@ -12,7 +12,15 @@
 #ifndef HASH_H_
 #define HASH_H_
 
+#include <queue>
+
 template <class T>
-class HashTable {};
+class HashTable {
+ public:
+  void Resize(const unsigned long new_size);
+  std::queue<T> Records(void) const;
+
+
+};
 
 #endif  // HASH_H_
