@@ -10,15 +10,15 @@ FILENAME=".doxygen-config"
 if [ "$(which doxygen)" != "" ]; then
   # Busca un fichero de configuración
   if [ "$(find . -maxdepth 1 -type f -name $FILENAME)" = "" ]; then
-    echo "No Doxygen configuration file was found"
-    echo -n "Do you want to create one? (y/n) > "
+    echo "No se encuentra un fichero de configuracion"
+    echo -n "Desea crear uno? (s/n) > "
     read generate
 
     # Pregunta al usuario sobre la creación de un fichero básico.
-    if [ "$generate" = "y" ] || [ "$generate" = "Y" ]; then
+    if [ "$generate" = "s" ] || [ "$generate" = "S" ]; then
       doxygen -g $FILENAME 1>/dev/null
     else
-      echo "Mandatory: make a Doxygen configuration file to create documentation"
+      echo "Obligatorio: crea un fichero de configuracion"
       exit 1
     fi
   fi
@@ -26,9 +26,9 @@ if [ "$(which doxygen)" != "" ]; then
   # Genera la documentación necesaria.
   if cd ../include; then
     doxygen ../tools/$FILENAME 1>/dev/null
-    echo "Documentation for the source code has been generated!!!"
+    echo "Se ha generado la documentacion para el codigo fuente!!!"
   fi
 else
-  echo "Mandatory: sudo apt install doxygen"
+  echo "Obligatorio: sudo apt install doxygen"
   exit 1
 fi

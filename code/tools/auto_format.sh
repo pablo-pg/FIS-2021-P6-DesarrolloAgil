@@ -10,30 +10,30 @@ STYLE=google
 if [ "$(which clang-format)" != "" ]; then
   # Busca un fichero de configuración.
   if [ "$(find . -maxdepth 1 -type f -name ".clang-format")" = "" ]; then
-    echo "No format style file was found"
-    echo -n "Do you want to create one (style=${STYLE})? (y/n) > "
+    echo "No se encuentra un fichero de configuracion"
+    echo -n "Desea crear uno (estilo=${STYLE})? (s/n) > "
     read generate
 
     # Pregunta al usuario sobre la creación de un fichero básico.
-    if [ "$generate" = "y" ] || [ "$generate" = "Y" ]; then
+    if [ "$generate" = "s" ] || [ "$generate" = "S" ]; then
       clang-format -style=$STYLE -dump-config > .clang-format
     else
-      echo "Mandatory: create a format style file to allow formatting"
+      echo "Obligatorio: crea un fichero de configuracion"
       exit 1
     fi
   fi
   
   # Aplica formato sobre los ficheros .h en la carpeta include.
   if clang-format -i -style=file ../include/*.h; then
-    echo "Include: source code is now formatted!!!"
+    echo "Include: se ha formateado el codigo!!!"
   fi
   
   # Aplica formato sobre los ficheros .cc en la carpeta src.
   if clang-format -i -style=file ../src/*.cc; then
-    echo "Src: source code is now formatted!!!"
+    echo "Src: se ha formateado el codigo!!!"
   fi
 
 else
-  echo "Mandatory: sudo apt install clang-format"
+  echo "Obligatorio: sudo apt install clang-format"
   exit 1
 fi
