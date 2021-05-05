@@ -44,13 +44,30 @@ Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>, en el ar
 **Descripción:** Subidos scripts de autoformato a la guía de estilos usada y para generar toda la documentación según Doxygen. <br> <br>
 
 
-**Autor:** Equipo 1 (Pablo Pérez González y )<br>
+**Autor:** Equipo 1 (Pablo Pérez González y Dana Belén Choque Zárate)<br>
 **Fecha:** 02/04/2021 - 23:15 <br>
 **Título:** Login implementado. <br>
 **Descripción:** Implementación total del login, tanto lectura del archivo como comprobación de credenciales. <br> <br>
 
 
-**Autor:** Equipo 2 (Andrés Pérez Castellano y )<br>
+**Autor:** Equipo 2 (Andrés Pérez Castellano y Alejandro Rodríguez Rojas)<br>
 **Fecha:** 04/05/2021 - 22:50<br>
 **Título:** Inicio de producto y base de datos.<br>
 **Descripción:** Implementación de los atributos, estructura y cabeceras del struct producto y de la base de datos. Desarrollo de la lectura desde fichero CSV y la interpretación de los datos.<br><br>
+
+
+**Autor:** Equipo 1 (Pablo Pérez González y Dana Belén Choque Zárate)<br>
+**Fecha:** 05/05/2021 - 18:50<br>
+**Título:** Implementación de permisos y distinos menús según la elección del rol del usuario.<br>
+**Descripción:** Se implementa una serie de permisos rwc(read-write-create) relacionados con la cuenta de cada usuario y se introduce una interfaz al usuario que le solicita con qué rol acceder (si tiene los permisos para acceder), así como distintos menús según el rol. Los roles son:
+* Comprador (r).
+* Vendededor (rw).
+* Administrador sin escritura (rc).
+* Administrador (rwc). <br><br>
+
+
+**Autor:** Equipo 3 (Daniele Vitae y Ana Virginia Giambona Díaz)<br>
+**Fecha:** 05/05/2021 - 10:00<br>
+**Título:** Inicio de hash y desarrollo de base de datos. Creación de vector.<br>
+**Descripción:** Se empieza la implementación de la tabla de hash. Se avanza considerablemente y se requiere una clase vector propia. Se crea y se adapta la clase base de datos para cumplir con la tabla hash. <br><br>
+

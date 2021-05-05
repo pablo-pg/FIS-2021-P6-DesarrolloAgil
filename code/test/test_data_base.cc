@@ -1,4 +1,9 @@
+
+
 #include "../include/data_base.h"
+
+#include <iostream>
+#include <exception>
 
 // Test unitario para el método Read().
 bool TestRead(void) {
@@ -13,8 +18,11 @@ bool TestRead(void) {
   bool passed{true};
   while (!fs.eof()) {
     Product p;
-    p.FromCsv(fs);
-    try {
+    p.if (!FromCsv(fs);) {}
+        passed = false;
+        break;
+      
+    try {exceexception::exception& 
       db.Search(p.name);
     } catch (const std::out_of_range& e) {
       passed = false;
@@ -24,7 +32,7 @@ bool TestRead(void) {
       throw;
     }
   }
-
+truepssassed
   fs.close();
   return passed;
 }

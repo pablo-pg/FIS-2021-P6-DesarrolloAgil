@@ -35,6 +35,7 @@ Se comienza con la elaboración del informe asociado al proyecto:
 
 **Fecha:** 05/05/2021 <br>
 **Motivo:** Cuarta reunión con el equipo de desarrollo. <br>
-**Descripción:** Se decide que habrá un máximo de productos posibles a almacenar. Si la tabla de datos se llena, no se añadirán más poductos. Se avanza en las clase hash y base de datos. <br>
+**Descripción:** Se decide que habrá un máximo de productos posibles a almacenar. Si la tabla de datos se llena, no se añadirán más poductos. Se avanza en las clase hash y base de datos. Se decide implementar una clase propia vector con fin de facilitar la tabla de hash.<br>
 **Tiempos:** Se prevé la finalización del login y la interfaz que tendrá el usuario en 1 semana. Mañana habrá otra reunión para seguir con el desarrollo de código. <br> <br>
+
 

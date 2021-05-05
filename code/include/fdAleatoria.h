@@ -16,7 +16,7 @@
 #include <iostream>
 #include <stdlib.h>
 
-#include "funcionDispersion.hpp"
+#include "funcionDispersion.h"
 
 template<class Clave>
 class fdAleatoria : public FuncionDispersion<Clave> {
