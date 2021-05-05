@@ -16,6 +16,8 @@
 #include "../include/login.h"
 
 void start();
-int menu(const Users& user);
+int AdminMenu(const Users& user);
+int SellerMenu(const Users& user);
+int BuyerMenu(const Users& user);
 
 #endif  // MENU_H_
