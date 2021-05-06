@@ -12,6 +12,7 @@
 #ifndef LOGIN_H_
 #define LOGIN_H_
 
+#include <ctype.h>
 #include <fstream>
 #include <ios>
 #include <iostream>

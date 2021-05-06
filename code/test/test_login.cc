@@ -1,5 +1,5 @@
 /**
- * @file test_data_base.h
+ * @file test_login.h
  * @author Equipo m5 FIS
  * @brief Base de datos para El Plátano de Oro.
  * @version 0.1
@@ -53,6 +53,7 @@ bool TestLogin() {
   if (comparePass(user, pass) == TestComparePass(user, pass)) {
     login3 = 1;
   }
+  return (login1 & login2 & login3 & login4);
 }
 
 

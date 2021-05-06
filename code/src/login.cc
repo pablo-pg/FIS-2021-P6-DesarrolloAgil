@@ -23,17 +23,18 @@ std::pair<Users, bool> login() {
 
 bool niceFormatFile() {
   std::fstream file;
-  bool num_comma = 0, row_start = 0, row_end = 0;
+  bool num_comma = 0, row_start = 0, row_middle = 0, row_end = 0,
+       permissions = 0, password = 0;
   file.open("./data/.users.csv", std::ios::in);
   if (file.is_open()) {
     std::string line;
     while (std::getline(file, line)) {
-      int comma_count = 0;
-      if (line.front() == ',') {
-        row_start = false;
+      int comma_count = 0, nums_in_pass = 0;
+      if (line.front() != ',') {
+        row_start = true;
       }
-      if (line.back() == ',') {
-        row_end = false;
+      if (line.back() != ',') {
+        row_end = true;
       }
       for (char character : line) {
         if (character == ',') {
@@ -43,9 +44,33 @@ bool niceFormatFile() {
       if (comma_count == 2) {
         num_comma = true;
       }
+      std::size_t first_comma = line.find(',');
+      std::size_t second_comma = line.find(',', first_comma + 1);
+      if (second_comma == std::string::npos) {
+        return false;
+      } else if ((second_comma - first_comma) > 1) {
+        row_middle = true;
+      }
+      for (std::size_t i {first_comma}; i < second_comma; ++i) {
+        if (isdigit(line.at(i)) == 0) {
+          nums_in_pass++;
+        }
+      }
+      if (nums_in_pass == 0) {
+        password = true;
+      }
+      bool different_permission = 0;
+      for (std::size_t i {second_comma}; i < line.size(); ++i) {
+        if ((line.at(i) != 'r') || (line.at(i) != 'w') || (line.at(i) != 'c')) {
+          different_permission = true;
+        }
+      }
+      if (!different_permission) {
+        permissions = true;
+      }
     }
   }
-  return (num_comma & row_end & row_start);
+  return (num_comma & row_end & row_middle & row_start & permissions, & password);
 }
 
 std::vector<Users> readUsers() {
