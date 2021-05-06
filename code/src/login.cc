@@ -14,6 +14,7 @@
 std::pair<Users, bool> login() {
   std::string user;
   std::string pass;
+  system("clear");
   std::cout << "Introduzca su nombre de usuario: ";
   std::cin >> user;
   std::cout << "Introduzca su contraseña: ";
@@ -28,8 +29,9 @@ bool niceFormatFile() {
   file.open("./data/.users.csv", std::ios::in);
   if (file.is_open()) {
     std::string line;
+    std::getline(file, line);
     while (std::getline(file, line)) {
-      int comma_count = 0, nums_in_pass = 0;
+      int comma_count = 0, letter_in_pass = 0;
       if (line.front() != ',') {
         row_start = true;
       }
@@ -46,22 +48,24 @@ bool niceFormatFile() {
       }
       std::size_t first_comma = line.find(',');
       std::size_t second_comma = line.find(',', first_comma + 1);
-      if (second_comma == std::string::npos) {
+      int pass_size = second_comma - first_comma;
+      if ((second_comma == std::string::npos) ||
+          (first_comma == std::string::npos)) {
         return false;
-      } else if ((second_comma - first_comma) > 1) {
+      } else if (pass_size > 1) {
         row_middle = true;
       }
-      for (std::size_t i {first_comma}; i < second_comma; ++i) {
+      for (std::size_t i {first_comma + 1}; i < second_comma; ++i) {
         if (isdigit(line.at(i)) == 0) {
-          nums_in_pass++;
+          letter_in_pass++;
         }
       }
-      if (nums_in_pass == 0) {
+      if (letter_in_pass == 0) {
         password = true;
       }
       bool different_permission = 0;
-      for (std::size_t i {second_comma}; i < line.size(); ++i) {
-        if ((line.at(i) != 'r') || (line.at(i) != 'w') || (line.at(i) != 'c')) {
+      for (std::size_t i {second_comma + 1}; i < line.size(); ++i) {
+        if ((line.at(i) != 'r') && (line.at(i) != 'w') && (line.at(i) != 'c')) {
           different_permission = true;
         }
       }
@@ -99,14 +103,14 @@ std::vector<Users> readUsers() {
       sspass >> pass;
       new_user.password = pass;
       /// Permisos
-      for (std::size_t i{0}; i < row[3].size(); ++i) {
-        if (row[3].at(i) == 'r') {
+      for (std::size_t i{0}; i < row[2].size(); ++i) {
+        if (row[2].at(i) == 'r') {
           new_user.read = 1;
         }
-        if (row[3].at(i) == 'w') {
+        if (row[2].at(i) == 'w') {
           new_user.write = 1;
         }
-        if (row[3].at(i) == 'c') {
+        if (row[2].at(i) == 'c') {
           new_user.admin = 1;
         }
       }

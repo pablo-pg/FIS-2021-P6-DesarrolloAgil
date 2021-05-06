@@ -58,7 +58,6 @@ class HashTable {
    * @param new_product Nuevo producto a insertar.
    */
   void Insert(const Product& new_product);
-
     /**
    * @brief Devuelve todos los productos de la tabla.
    * @param products Estructura FIFO para guardar los registros.

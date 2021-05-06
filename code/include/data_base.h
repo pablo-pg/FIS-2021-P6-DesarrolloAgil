@@ -14,6 +14,7 @@
 
 #include <fstream>
 #include <string>
+#include <queue>
 
 #include "./hash.h"
 #include "./product.h"
@@ -46,13 +47,17 @@ class DataBase {
    * @param new_product Nuevo producto a insertar.
    */
   void Insert(const Product& new_product);
-
   /**
    * @brief Busca un producto por clave.
    * @param key Patrón de búsqueda.
    * @return Referencia de lectura/escritura al producto buscado.
    */
   Product& Search(const SearchKey& key);
+  /**
+   * @brief Devuelve todos los registros de productos en la base de datos.
+   * @param products Estructura FIFO para guardar los productos.
+   */
+  void Records(std::queue<Product>& products) const;
 
  private:
   // Carga los productos desde el fichero de datos.

@@ -35,7 +35,7 @@ void start() {
           ok = 1;
         }
       } while (ok == 0);
-      if (election == 1) {
+      if (election == '1') {
         exit = 1;
       }
     }
@@ -56,6 +56,7 @@ int EntryMode(const Users& user) {
         if ((selection == "1") || (selection == "2")) {
           ok = 1;
         } else {
+          system("clear");
           std::cout << "Opción incorrecta." << std::endl << std::endl;
         }
       } while (ok == 0);
@@ -67,8 +68,8 @@ int EntryMode(const Users& user) {
     } else if (user.write && user.admin) {     //< Admin con write
       bool ok = 0;
       do {
-        std::cout << "Seleccione como qué rol quiere entrar:\n\t1. Vendedor"
-                  << "\n\t2. Comprador\n3. Administrador\nSeleccione el rol: ";
+        std::cout << "Seleccione como qué rol quiere entrar:\n\t1. Comprador\n"
+                  << "\n\t2. Vendedor\n\t3. Administrador\nSeleccione el rol: ";
         std::cin >> selection;
         if ((selection == "1") || (selection == "2") || (selection == "3")) {
           ok = 1;
@@ -113,7 +114,6 @@ int EntryMode(const Users& user) {
 
 int BuyerMenu(const Users& user) {
   system("clear");
-  DataBase();
   char election;
   bool ok = 0;
   std::string name = user.username;
@@ -121,10 +121,10 @@ int BuyerMenu(const Users& user) {
   do {
     std::cout << name << ", Bienvenido a El Plátano de Oro.\n\n"
               << "¿Qué desea hacer?\n"
-              << "Pulse 1 para ver los datos de un producto.\n"
-              << "Pulse 2 para ver todos los productos.\n"
-              << "Pulse 3 para comprar un producto.\n"
-              << "Pulse q para salir.\n\n"
+              << "  Pulse 1 para ver los datos de un producto.\n"
+              << "  Pulse 2 para ver todos los productos.\n"
+              << "  Pulse 3 para comprar un producto.\n"
+              << "  Pulse q para salir.\n\n"
               << "Introduzca la opción: ";
     std::cin >> election;
     if ((election == '1') || (election == '2') || (election == '3') ||
@@ -157,7 +157,6 @@ int BuyerMenu(const Users& user) {
 
 int SellerMenu(const Users& user) {
   system("clear");
-  DataBase();
   char election;
   bool ok = 0;
   std::string name = user.username;
@@ -165,10 +164,10 @@ int SellerMenu(const Users& user) {
   do {
     std::cout << name << ", Bienvenido a El Plátano de Oro.\n\n"
               << "¿Qué desea hacer?\n"
-              << "Pulse 1 para ver los datos de un producto.\n"
-              << "Pulse 2 para ver todos los productos.\n"
+              << "  Pulse 1 para ver los datos de un producto.\n"
+              << "  Pulse 2 para ver todos los productos.\n  "
               << "Pulse 3 para modificar los datos de un producto ya existente."
-              << "Pulse q para salir.\n\n"
+              << "\nPulse q para salir.\n\n"
               << "Introduzca la opción: ";
     std::cin >> election;
     if ((election == '1') || (election == '2') || (election == '3') ||
@@ -201,7 +200,6 @@ int SellerMenu(const Users& user) {
 
 int AdminReadMenu(const Users& user) {
   system("clear");
-  DataBase();
   char election;
   bool ok = 0;
   std::string name = user.username;
@@ -209,11 +207,11 @@ int AdminReadMenu(const Users& user) {
   do {
     std::cout << name << ", Bienvenido a El Plátano de Oro.\n\n"
               << "¿Qué desea hacer?\n"
-              << "Pulse 1 para ver los datos de un producto.\n"
-              << "Pulse 2 para ver todos los productos.\n"
+              << "  Pulse 1 para ver los datos de un producto.\n"
+              << "  Pulse 2 para ver todos los productos.\n  "
               << "Pulse 3 para añadir un nuevo producto a la base de datos.\n"
-              << "Pulse 4 para registrar un nuevo usuario."
-              << "Pulse q para salir.\n\n"
+              << "  Pulse 4 para registrar un nuevo usuario.\n"
+              << "  Pulse q para salir.\n\n"
               << "Introduzca la opción: ";
     std::cin >> election;
     if ((election == '1') || (election == '2') || (election == '3') ||
@@ -250,7 +248,6 @@ int AdminReadMenu(const Users& user) {
 
 int AdminWriteMenu(const Users& user) {
   system("clear");
-  DataBase();
   char election;
   bool ok = 0;
   std::string name = user.username;
@@ -258,13 +255,13 @@ int AdminWriteMenu(const Users& user) {
   do {
     std::cout << name << ", Bienvenido a El Plátano de Oro.\n\n"
               << "¿Qué desea hacer?\n"
-              << "Pulse 1 para ver los datos de un producto.\n"
-              << "Pulse 2 para ver todos los productos.\n"
-              << "Pulse 3 para añadir un nuevo producto a la base de datos.\n"
+              << "  Pulse 1 para ver los datos de un producto.\n"
+              << "  Pulse 2 para ver todos los productos.\n  "
+              << "Pulse 3 para añadir un nuevo producto a la base de datos.\n  "
               << "Pulse 4 para modificar los datos de un producto ya existente."
-              << "\nPulse 5 para eliminar un producto.\n"
-              << "Pulse 6 para registrar un nuevo usuario.\n"
-              << "Pulse q para salir.\n\n"
+              << "\n  Pulse 5 para eliminar un producto.\n"
+              << "  Pulse 6 para registrar un nuevo usuario.\n"
+              << "  Pulse q para salir.\n\n"
               << "Introduzca la opción: ";
     std::cin >> election;
     if ((election == '1') || (election == '2') || (election == '3') ||

@@ -50,6 +50,10 @@ Product& DataBase::Search(const SearchKey& key) {
   return hash_.Search(key);
 }
 
+void DataBase::Records(std::queue<Product>& products) const {
+  hash_.Records(products);
+}
+
 void DataBase::Write() {
   data_file_.open(kPath2Products, std::ios::in);
   if (!data_file_.is_open()) {
