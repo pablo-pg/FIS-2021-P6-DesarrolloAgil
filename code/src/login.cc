@@ -21,6 +21,33 @@ std::pair<Users, bool> login() {
   return comparePass(user, pass);
 }
 
+bool niceFormatFile() {
+  std::fstream file;
+  bool num_comma = 0, row_start = 0, row_end = 0;
+  file.open("./data/.users.csv", std::ios::in);
+  if (file.is_open()) {
+    std::string line;
+    while (std::getline(file, line)) {
+      int comma_count = 0;
+      if (line.front() == ',') {
+        row_start = false;
+      }
+      if (line.back() == ',') {
+        row_end = false;
+      }
+      for (char character : line) {
+        if (character == ',') {
+          comma_count++;
+        }
+      }
+      if (comma_count == 2) {
+        num_comma = true;
+      }
+    }
+  }
+  return (num_comma & row_end & row_start);
+}
+
 std::vector<Users> readUsers() {
   std::vector<Users> users;
   users.resize(0);
@@ -41,7 +68,7 @@ std::vector<Users> readUsers() {
       count++;
       Users new_user;
       new_user.username = row[0];
-      /// Convierto la contraseña de string a size_t (no hay metodo por defecto)
+      /// Convierto la contraseña de string a size_t (no hay cast por defecto)
       std::stringstream sspass(row[1]);
       size_t pass;
       sspass >> pass;
@@ -71,14 +98,16 @@ std::pair<Users, bool> comparePass(const std::string username,
   std::vector<Users> all_users;
   all_users.resize(1);
   try {
-    std::vector<Users> all_users = readUsers();
-    size_t hashed_pass = std::hash<std::string>{}(pass);
-    for (auto& user : all_users) {
-      if ((user.username == username) && (user.password == hashed_pass)) {
-        return std::make_pair(user, true);
+    if (niceFormatFile()) {
+      std::vector<Users> all_users = readUsers();
+      size_t hashed_pass = std::hash<std::string>{}(pass);
+      for (auto& user : all_users) {
+        if ((user.username == username) && (user.password == hashed_pass)) {
+          return std::make_pair(user, true);
+        }
       }
+      return std::make_pair(all_users.at(0), false);
     }
-    return std::make_pair(all_users.at(0), false);
   } catch (const std::ios_base::failure& fail) {
     std::cerr << "Error (" << fail.code()
               << ") al abrir el archivo: " << fail.what() << std::endl;

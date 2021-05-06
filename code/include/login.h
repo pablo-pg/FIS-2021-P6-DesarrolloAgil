@@ -50,6 +50,10 @@ struct Users {
  */
 std::pair<Users, bool> login();
 
+
+bool niceFormatFile();
+
+
 /**
  * @brief Se encarga de leer a los usuarios del fichero .csv
  * 
