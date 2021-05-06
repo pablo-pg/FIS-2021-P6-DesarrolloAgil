@@ -131,7 +131,7 @@ int BuyerMenu(const Users& user) {
         (election == 'q')) {
       ok = 1;
     } else {
-      std::cout << "Opción incorrecta. Pruebe de nuevo";
+      std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
     }
   } while (ok == 0);
   switch (election) {
@@ -175,7 +175,7 @@ int SellerMenu(const Users& user) {
         (election == 'q')) {
       ok = 1;
     } else {
-      std::cout << "Opción incorrecta. Pruebe de nuevo";
+      std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
     }
   } while (ok == 0);
   switch (election) {
@@ -211,15 +211,16 @@ int AdminReadMenu(const Users& user) {
               << "¿Qué desea hacer?\n"
               << "Pulse 1 para ver los datos de un producto.\n"
               << "Pulse 2 para ver todos los productos.\n"
-              << "Pulse 3 para crear un nuevo producto."
+              << "Pulse 3 para añadir un nuevo producto a la base de datos.\n"
+              << "Pulse 4 para registrar un nuevo usuario."
               << "Pulse q para salir.\n\n"
               << "Introduzca la opción: ";
     std::cin >> election;
     if ((election == '1') || (election == '2') || (election == '3') ||
-        (election == 'q')) {
+        (election == '4') || (election == 'q')) {
       ok = 1;
     } else {
-      std::cout << "Opción incorrecta. Pruebe de nuevo";
+      std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
     }
   } while (ok == 0);
   switch (election) {
@@ -230,6 +231,9 @@ int AdminReadMenu(const Users& user) {
       /* code */
       break;
     case '3':
+      /* code */
+      break;
+    case '4':
       /* code */
       break;
     case 'q':
@@ -254,19 +258,21 @@ int AdminWriteMenu(const Users& user) {
   do {
     std::cout << name << ", Bienvenido a El Plátano de Oro.\n\n"
               << "¿Qué desea hacer?\n"
-              << "Pulse 1 para añadir un nuevo producto a la base de datos.\n"
-              << "Pulse 2 para modificar los datos de un producto ya existente."
-              << "\nPulse 3 para eliminar un producto.\n"
-              << "Pulse 4 para ver los datos de un producto.\n"
-              << "Pulse 5 para ver todos los productos.\n"
+              << "Pulse 1 para ver los datos de un producto.\n"
+              << "Pulse 2 para ver todos los productos.\n"
+              << "Pulse 3 para añadir un nuevo producto a la base de datos.\n"
+              << "Pulse 4 para modificar los datos de un producto ya existente."
+              << "\nPulse 5 para eliminar un producto.\n"
+              << "Pulse 6 para registrar un nuevo usuario.\n"
               << "Pulse q para salir.\n\n"
               << "Introduzca la opción: ";
     std::cin >> election;
     if ((election == '1') || (election == '2') || (election == '3') ||
-        (election == '4') || (election == '5') || (election == 'q')) {
+        (election == '4') || (election == '5') || (election == '6') ||
+        (election == 'q')) {
       ok = 1;
     } else {
-      std::cout << "Opción incorrecta. Pruebe de nuevo";
+      std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
     }
   } while (ok == 0);
   switch (election) {
