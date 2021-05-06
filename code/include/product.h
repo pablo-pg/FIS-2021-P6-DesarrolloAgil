@@ -24,7 +24,7 @@
  */
 struct Product {
   /// Identificador único de producto.
-  unsigned long id = 0;
+  unsigned long id;
   /// Nombre del producto.
   std::string name;
   /// Cantidad de producto
@@ -54,12 +54,8 @@ struct Product {
     kOrigin
   };
 
-  /// Indica si el producto es nulo (valor falso en este caso).
-  operator bool() { return id != 0; }
   /// Devuelve un valor de clave para la búsqueda por nombre.
   operator std::string() { return name; }
-  /// Operador de comparación para la igualdad de productos, por su nombre.
-  bool operator==(const Product& other) const { return name == other.name; }
 
   /**
    * @brief Imprime el producto en formato .csv.

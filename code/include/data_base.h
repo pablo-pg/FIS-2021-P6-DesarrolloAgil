@@ -22,7 +22,8 @@
 const std::string kPath2Products = "../data/.products.csv";
 
 /**
- * @brief Almacena los productos y gestiona el acceso a ellos.
+ * @brief Almacena los productos en un soporte volátil y eficiente.
+          Además, gestiona el acceso a ellos.
  */
 class DataBase {
  public:
@@ -41,12 +42,16 @@ class DataBase {
   ~DataBase();
 
   /**
-   * @brief Insertar un producto en la tabla hash
-   * 
-   * @param product 
+   * @brief Insertar un producto en la base de datos.
+   * @param new_product Nuevo producto a insertar.
    */
-  bool Insert(const Product& product);
+  void Insert(const Product& new_product);
 
+  /**
+   * @brief Busca un producto por clave.
+   * @param key Patrón de búsqueda.
+   * @return Referencia de lectura/escritura al producto buscado.
+   */
   Product& Search(const SearchKey& key);
 
  private:
@@ -56,7 +61,7 @@ class DataBase {
   void Write(void);
 
   // Estructura de datos interna para almacenar productos.
-  HashTable<Product> hash_;
+  HashTable<SearchKey> hash_;
   // Fichero de datos a modo de almacén no volátil.
   std::fstream data_file_;
 };

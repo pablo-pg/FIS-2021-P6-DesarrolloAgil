@@ -12,12 +12,26 @@
 CXX		  := g++
 CXX_FLAGS := -Wall -Wextra -std=c++17 -ggdb -O0
 
-OBJECTS = test_login test_user_file test_data_base
+DEPS = ../data_base.h ../hash.h ../login.h ../menu.h ../product.h
+LIBS =
+OBJ = test_login test_user_file test_data_base
 
-INCLUDE	:= ../include
+all: test_login
 
-LIBRARIES	:=
-EXECUTABLE	:=
+%.o: %.cc $(DEPS)
+	$(CXX) -c -o $@ $< $(CXX_FLAGS)
+
+
+test_login: test_login.o
+	$(CXX) $(CXX_FLAGS) -o $@ $^ $(LIBS)
+
+
+# test_user_file: test_user_file.o
+# 	$(CXX) $(CXX_FLAGS) -o $@ $^ $(LIBS)
+
+
+# test_data_base: test_data_base.o
+# 	$(CXX) $(CXX_FLAGS) -o $@ $^ $(LIBS)
 
 
 
@@ -44,12 +58,14 @@ EXECUTABLE	:=
 # # $(objects): %.o: %.cc:
 # # 	$(CXX) $(CXX_FLAGS) -I$(INCLUDE)/ $^ -o $@ $(LIBRARIES)
 
+clean:
+	rm -f *.o test_login
+
+
 run: clean all
 	clear
 	./$(BIN)/$(EXECUTABLE)
 
-clean:
-	-rm $(OBJECTS)
 
 	
 clear: clean

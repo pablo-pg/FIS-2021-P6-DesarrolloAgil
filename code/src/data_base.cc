@@ -13,11 +13,13 @@
 
 DataBase::DataBase() : hash_(), data_file_() {
   Read();
-  /* Code */
+  // Si se añade código, hacerlo a partir de aquí.
+  // ...
 }
 
 DataBase::~DataBase() {
-  /* Code */
+  // Si se añade código, hacerlo a partir de aquí.
+  // ...
   Write();
 }
 
@@ -27,32 +29,6 @@ void DataBase::Read() {
     throw std::ios_base::failure("El fichero debe estar abierto.");
   }
 
-  // Desplazarse hasta el final del fichero (antes de EOF).
-  data_file_.seekg(-1, std::ios_base::end);
-  // Desplazarse hasta el principio de la última línea,
-  // importante la presencia de una cabecera.
-  while (!data_file_.fail() && data_file_.get() != '\n') {
-    data_file_.seekg(-1, std::ios_base::cur);
-  }
-
-  // Lee el último índice (primer campo de la última fila).
-  std::string last_index;
-  std::getline(data_file_, last_index, Product::kCsvDelimiter);
-  // Revisa si el fichero no contiene productos.
-  for (const char& c : last_index) {
-    if (!std::isdigit(c)) {
-      // El fichero sólo contiene una línea de cabecera.
-      last_index = "0";
-      break;
-    }
-  }
-
-  // Ajusta el tamaño de la tabla hash en consecuencia.
-  const unsigned long kTableSize{std::stoul(last_index)};
-  hash_.Resize(kTableSize);
-
-  // Vuelve al principio del fichero.
-  data_file_.seekg(0, std::ios_base::beg);
   // Ignora la cabecera.
   std::string header;
   std::getline(data_file_, header);
@@ -66,17 +42,12 @@ void DataBase::Read() {
   data_file_.close();
 }
 
-bool Insert(const Product& product) {
-  const int kZero = 0;
-  int attempt = kZero;
-
-
-
-  return (attempt < vData.size());
+void  DataBase::Insert(const Product& new_product) {
+  hash_.Insert(new_product);
 }
 
 Product& DataBase::Search(const SearchKey& key) {
-
+  return hash_.Search(key);
 }
 
 void DataBase::Write() {
@@ -99,7 +70,8 @@ void DataBase::Write() {
   // Recupera la cabecera.
   data_file_ << header << '\n';
   // Extrae todos los productos de la tabla hash como una cola FIFO.
-  std::queue<Product> products(hash_.Records());
+  std::queue<Product> products;
+  hash_.Records(products);
   while (!products.empty()) {
     products.front().ToCsv(data_file_);
     products.pop();
