@@ -50,9 +50,13 @@ struct Users {
  */
 std::pair<Users, bool> login();
 
-
+/**
+ * @brief Comprueba el formato del fichero CSV de usuarios.
+ * 
+ * @return true en el caso de que el formato esté bien.
+ * @return false en el casod e que el formato está mal.
+ */
 bool niceFormatFile();
-
 
 /**
  * @brief Se encarga de leer a los usuarios del fichero .csv

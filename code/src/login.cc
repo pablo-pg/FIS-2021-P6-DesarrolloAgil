@@ -107,6 +107,10 @@ std::pair<Users, bool> comparePass(const std::string username,
         }
       }
       return std::make_pair(all_users.at(0), false);
+    } else {
+      std::cout << "El formato del fichero de los usuarios no es correcto\n\n"
+                << "Póngase en contacto con la empresa desarrolladora"
+                << std::endl;
     }
   } catch (const std::ios_base::failure& fail) {
     std::cerr << "Error (" << fail.code()
