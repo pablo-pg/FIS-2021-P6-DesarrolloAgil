@@ -49,7 +49,9 @@ bool TestRead(void) {
 
 int main() {
 
-  TestRead();
+  if (!TestRead()) {
+    return 1;
+  }
 
   return 0;
 }

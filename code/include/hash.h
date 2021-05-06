@@ -32,7 +32,7 @@ class HashTable {
   * @brief Instancia una tabla hash sin productos.
   * @param size Tamaño máximo para la tabla.
   */
-  explicit HashTable(const unsigned int size = TablekMaxSize);
+  explicit HashTable(const unsigned int size = kTableMaxSize);
 
   /**
   * @brief Destrutor por defecto
@@ -76,5 +76,7 @@ class HashTable {
   // Estructura de datos para implementar la dispersión.
   std::vector<std::list<Product>> data_;
 };
+
+#include "../src/hash.inl"
 
 #endif  // HASH_H_

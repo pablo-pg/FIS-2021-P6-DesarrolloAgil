@@ -22,10 +22,10 @@ std::pair<Users, bool> login() {
 }
 
 bool niceFormatFile() {
-  std::fstream file;
   bool num_comma = 0, row_start = 0, row_middle = 0, row_end = 0,
        permissions = 0, password = 0;
-  file.open("../data/.users.csv", std::ios::in);
+  std::fstream file;
+  file.open("./data/.users.csv", std::ios::in);
   if (file.is_open()) {
     std::string line;
     while (std::getline(file, line)) {

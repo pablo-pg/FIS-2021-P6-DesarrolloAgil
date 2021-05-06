@@ -18,7 +18,7 @@ HashTable<Key>::HashTable(const unsigned int size)
 template <class Key>
 Product& HashTable<Key>::Search(const Key& key) {
   for (Product& p : data_.at(HashFunction(key))) {
-    if (p == key) {
+    if ((std::string)p == key) {
       return p;
     }
   }
@@ -28,7 +28,10 @@ Product& HashTable<Key>::Search(const Key& key) {
 
 template <class Key>
 unsigned int HashTable<Key>::HashFunction(const Key& key) const {
-  srand(key);
+  std::stringstream sspass(key);
+  unsigned int uint_key;
+  sspass >> uint_key;
+  srand(uint_key);
   return (rand() % size_);
 }
 
@@ -42,7 +45,7 @@ void HashTable<Key>::Insert(const Product& new_product) {
     Search(new_product);
     throw std::runtime_error("El producto ya existe.");
   } catch (const std::out_of_range& e) {
-    data.at(HashFunction(Key)).push_back(new_product);
+    data_.at(HashFunction(new_product)).push_back(new_product);
     records_++;
   } catch (...) {
     throw;
@@ -51,12 +54,12 @@ void HashTable<Key>::Insert(const Product& new_product) {
 
 template <class Key>
 void HashTable<Key>::Records(std::queue<Product>& products) const {
-  while (!products.empty) {
+  while (!products.empty()) {
     products.pop();
   }
 
-  for (std::list<Product>& row : data_) {
-    for (Product& p : row) {
+  for (const std::list<Product>& row : data_) {
+    for (const Product& p : row) {
       products.push(p);
     }
   }

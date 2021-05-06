@@ -80,7 +80,7 @@ std::pair<Users, bool> CopyComparePass(const std::string username,
   all_users.resize(1);
   try {
     // if (niceFormatFile()) {
-      std::vector<Users> all_users = readUsers();
+      std::vector<Users> all_users = CopyreadUsersfor();
       size_t hashed_pass = std::hash<std::string>{}(pass);
       for (auto& user : all_users) {
         if ((user.username == username) && (user.password == hashed_pass)) {

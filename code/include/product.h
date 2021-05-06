@@ -55,7 +55,7 @@ struct Product {
   };
 
   /// Devuelve un valor de clave para la búsqueda por nombre.
-  operator std::string() { return name; }
+  operator std::string() const { return name; }
 
   /**
    * @brief Imprime el producto en formato .csv.
