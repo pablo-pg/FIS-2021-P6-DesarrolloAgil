@@ -45,9 +45,9 @@ void start() {
 int EntryMode(const Users& user) {
   if (user.read) {
     std::string selection;
-    if ((user.create | user.write) == 0) {      //< Comprador
+    if ((user.admin | user.write) == 0) {      //< Comprador
         return BuyerMenu(user);
-    } else if (user.write && !user.create) {    //< Vendedor
+    } else if (user.write && !user.admin) {    //< Vendedor
       bool ok = 0;
       do {
         std::cout << "Seleccione como qué rol quiere entrar:\n\t1. Vendedor"
@@ -64,7 +64,7 @@ int EntryMode(const Users& user) {
       } else if (selection == "2") {
         return BuyerMenu(user);
       }
-    } else if (user.write && user.create) {     //< Admin con write
+    } else if (user.write && user.admin) {     //< Admin con write
       bool ok = 0;
       do {
         std::cout << "Seleccione como qué rol quiere entrar:\n\t1. Vendedor"
@@ -83,7 +83,7 @@ int EntryMode(const Users& user) {
       } else if (selection == "3") {
         return AdminWriteMenu(user);
       }
-    } else if (!user.write && user.create) {  //< Admin sin write
+    } else if (!user.write && user.admin) {  //< Admin sin write
       bool ok = 0;
       do {
         std::cout << "Seleccione como qué rol quiere entrar:\n\t1. Comprador"

@@ -55,7 +55,7 @@ std::vector<Users> readUsers() {
           new_user.write = 1;
         }
         if (row[3].at(i) == 'c') {
-          new_user.create = 1;
+          new_user.admin = 1;
         }
       }
       users.push_back(new_user);
