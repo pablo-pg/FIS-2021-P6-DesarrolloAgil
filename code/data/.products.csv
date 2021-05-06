@@ -1,5 +1,5 @@
 record,id,name,stock,price,expiration,origin
-1,1212,pimiento,50,7.0,24,Cadiz
+1,1212,pimiento,50,7,24,Cadiz
 2,3434,tomate,12,3.99,24,Cadiz
 3,5656,naranja,34,6.3,24,Valencia
 4,7878,platano,80,5.12,24,Canarias

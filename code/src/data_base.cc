@@ -76,7 +76,10 @@ void DataBase::Write() {
   // Extrae todos los productos de la tabla hash como una cola FIFO.
   std::queue<Product> products;
   hash_.Records(products);
+  std::size_t counter{1};
   while (!products.empty()) {
+    data_file_ << counter << Product::kCsvDelimiter;
+    counter++;
     products.front().ToCsv(data_file_);
     products.pop();
   }

@@ -10,6 +10,8 @@
  */
 
 #include "../include/data_base.h"
+#include "../src/product.cc"
+#include "../src/data_base.cc"
 
 #include <iostream>
 #include <fstream>
@@ -20,7 +22,7 @@
 bool TestRead(void) {
   // Instancia una base de datos y carga los productos.
   DataBase db;
-  std::fstream fs(kPath2Products, std::ios::in);
+  std::fstream fs("../data/.products.csv", std::ios::in);
   if (!fs.is_open()) {
     throw std::ios_base::failure("TestRead: El fichero debe estar abierto.");
   }

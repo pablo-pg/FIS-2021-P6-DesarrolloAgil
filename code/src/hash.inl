@@ -9,7 +9,7 @@
  *
  */
 
-#include "./hash.h"
+#include "../include/hash.h"
 
 template <class Key>
 HashTable<Key>::HashTable(const unsigned int size)

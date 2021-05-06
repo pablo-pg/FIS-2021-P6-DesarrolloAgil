@@ -16,7 +16,7 @@ DEPS = ../data_base.h ../hash.h ../login.h ../menu.h ../product.h
 LIBS =
 OBJ = test_login test_user_file test_data_base
 
-all: test_login
+all: test_login test_data_base
 
 %.o: %.cc $(DEPS)
 	$(CXX) -c -o $@ $< $(CXX_FLAGS)
@@ -25,13 +25,13 @@ all: test_login
 test_login: test_login.o
 	$(CXX) $(CXX_FLAGS) -o $@ $^ $(LIBS)
 
+test_data_base: test_data_base.o
+	$(CXX) $(CXX_FLAGS) -o $@ $^ $(LIBS)
 
 # test_user_file: test_user_file.o
 # 	$(CXX) $(CXX_FLAGS) -o $@ $^ $(LIBS)
 
 
-# test_data_base: test_data_base.o
-# 	$(CXX) $(CXX_FLAGS) -o $@ $^ $(LIBS)
 
 
 
@@ -59,7 +59,7 @@ test_login: test_login.o
 # # 	$(CXX) $(CXX_FLAGS) -I$(INCLUDE)/ $^ -o $@ $(LIBRARIES)
 
 clean:
-	rm -f *.o test_login
+	rm -f *.o $(OBJ)
 
 
 run: clean all

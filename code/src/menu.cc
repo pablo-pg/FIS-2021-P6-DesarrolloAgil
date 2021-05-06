@@ -68,7 +68,7 @@ int EntryMode(const Users& user) {
     } else if (user.write && user.admin) {     //< Admin con write
       bool ok = 0;
       do {
-        std::cout << "Seleccione como qué rol quiere entrar:\n\t1. Comprador\n"
+        std::cout << "Seleccione como qué rol quiere entrar:\n\t1. Comprador"
                   << "\n\t2. Vendedor\n\t3. Administrador\nSeleccione el rol: ";
         std::cin >> selection;
         if ((selection == "1") || (selection == "2") || (selection == "3")) {
@@ -78,9 +78,9 @@ int EntryMode(const Users& user) {
         }
       } while (ok == 0);
       if (selection == "1") {
-        return SellerMenu(user);
-      } else if (selection == "2") {
         return BuyerMenu(user);
+      } else if (selection == "2") {
+        return SellerMenu(user);
       } else if (selection == "3") {
         return AdminWriteMenu(user);
       }
@@ -118,6 +118,7 @@ int BuyerMenu(const Users& user) {
   bool ok = 0;
   std::string name = user.username;
   name[0] = toupper(name[0]);
+  DataBase data_base;
   do {
     std::cout << name << ", Bienvenido a El Plátano de Oro.\n\n"
               << "¿Qué desea hacer?\n"
@@ -139,7 +140,8 @@ int BuyerMenu(const Users& user) {
       /* code */
       break;
     case '2':
-      /* code */
+      // ShowAllProducts(data_base);
+      ShowAllProducts();
       break;
     case '3':
       /* code */  //< Esto es modificar stock -1

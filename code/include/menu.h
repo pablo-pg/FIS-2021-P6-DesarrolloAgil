@@ -13,7 +13,7 @@
 #define MENU_H_
 
 #include "../include/login.h"
-#include "../include/data_base.h"
+#include "../include/user_functions.h"
 
 /**
  * @brief Método que inicializa el programa.

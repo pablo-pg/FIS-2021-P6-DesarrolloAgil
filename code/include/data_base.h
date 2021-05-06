@@ -20,7 +20,7 @@
 #include "./product.h"
 
 /// Ruta predeterminada del fichero de datos que contiene los productos.
-const std::string kPath2Products = "../data/.products.csv";
+const std::string kPath2Products = "./data/.products.csv";
 
 /**
  * @brief Almacena los productos en un soporte volátil y eficiente.
