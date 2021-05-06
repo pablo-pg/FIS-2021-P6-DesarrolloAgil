@@ -70,7 +70,7 @@ bool niceFormatFile() {
       }
     }
   }
-  return (num_comma & row_end & row_middle & row_start & permissions, & password);
+  return (num_comma & row_end & row_middle & row_start & permissions & password);
 }
 
 std::vector<Users> readUsers() {

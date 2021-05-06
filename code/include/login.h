@@ -32,13 +32,27 @@ struct Users {
   bool write = 0;           //< Bit de permiso de escritura.
   bool admin = 0;           //< Bit de permiso de creación/eliminación.
 
-  Users& operator=(const Users& rhl) {
-    username = rhl.username;
-    password = rhl.password;
-    read = rhl.read;
-    write = rhl.write;
-    admin = rhl.admin;
-    return *this;
+  // Users& operator=(const Users& rhs) {
+  //   username = rhs.username;
+  //   password = rhs.password;
+  //   read = rhs.read;
+  //   write = rhs.write;
+  //   admin = rhs.admin;
+  //   return *this;
+  // }
+  bool operator==(const Users& rhs) const {
+    if (username == rhs.username) {
+      if (password == rhs.password) {
+        if (read == rhs.read) {
+          if (write == rhs.write) {
+            if (admin == rhs.admin) {
+              return true;
+            }
+          }
+        }
+      }
+    }
+    return false;
   }
 };
 

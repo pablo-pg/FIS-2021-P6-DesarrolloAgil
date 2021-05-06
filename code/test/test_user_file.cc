@@ -1,5 +1,5 @@
 /**
- * @file test_user_format_file.cc
+ * @file test_user_file.cc
  * @author Equipo m5 FIS
  * @brief Base de datos para El Plátano de Oro.
  * @version 0.1
@@ -60,7 +60,7 @@ bool NiceFormatFileCopy(const std::string& line) {
   if (!different_permission) {
     permissions = true;
   }
-  return (num_comma & row_end & row_middle & row_start & permissions, & password);
+  return (num_comma & row_end & row_middle & row_start & permissions & password);
 }
 
 bool TestNiceFormatFile() {
@@ -72,93 +72,93 @@ bool TestNiceFormatFile() {
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = ",";
+  test_line = ",";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = ",,";
+  test_line = ",,";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = ",,,";
+  test_line = ",,,";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = "us,";
+  test_line = "us,";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = "user,13854";
+  test_line = "user,13854";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = "user,a13854,rwc";
+  test_line = "user,a13854,rwc";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = "user,13854a,rwc";
+  test_line = "user,13854a,rwc";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = "user,138a54,rwc";
+  test_line = "user,138a54,rwc";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = "user,138 54,rwc";
+  test_line = "user,138 54,rwc";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = "user,13854,a";
+  test_line = "user,13854,a";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = "user,13854,ra";
+  test_line = "user,13854,ra";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = "user,13854,rrwc";
+  test_line = "user,13854,rrwc";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = "user,13854,rwcc";
+  test_line = "user,13854,rwcc";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = "user,13854,1";
+  test_line = "user,13854,1";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = "user,13854,rw2c";
+  test_line = "user,13854,rw2c";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
-  std::string test_line = "user,13854,rwc0";
+  test_line = "user,13854,rwc0";
   test = NiceFormatFileCopy(test_line);
   if (test == 0) {
     correct_test++;
   }
   // Debe salir 1
-  std::string test_line = "user,13854,crw";
+  test_line = "user,13854,crw";
   test = NiceFormatFileCopy(test_line);
   if (test == 1) {
     correct_test++;
   }
-  std::string test_line = "user,13854,rwc";
+  test_line = "user,13854,rwc";
   test = NiceFormatFileCopy(test_line);
   if (test == 1) {
     correct_test++;
