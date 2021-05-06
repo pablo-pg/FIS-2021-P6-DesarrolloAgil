@@ -69,8 +69,8 @@ void DataBase::Read() {
 bool Insert(const Product& product) {
   const int kZero = 0;
   int attempt = kZero;
-  
-  
+
+
 
   return (attempt < vData.size());
 }

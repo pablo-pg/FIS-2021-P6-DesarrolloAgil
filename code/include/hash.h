@@ -12,8 +12,15 @@
 #ifndef HASH_H_
 #define HASH_H_
 
-#include <queue>
 #include <vector>
+#include <list>
+#include <queue>
+#include <utility>
+
+#include "./product.h"
+
+/// Tamaño máximo predefinido para una tabla hash.
+const unsigned int kMaxSize = 500;
 
 /**
  * @brief Plantillas de la tabla hash
@@ -23,48 +30,18 @@
 template <class Key>
 class HashTable {
  public:
-  HashTable() {}
-  HashTable(std::vector<std::vector<Key> >, FuncionDispersion<Key>*, FuncionExploracion<Key>*);
   ~HashTable() {}
+  explicit HashTable(const unsigned int size = kMaxSize);
 
-  void Resize(const unsigned long new_size);
-  std::queue<Key> Records(void) const;
-  bool Search(const Key&) const;
-  bool Insert(const Key&);
-  void SetSizeData(int size) {
-    assert(size >= 0);  //?????
-    size_ = size;
-  }
-  void SetVecData(std::vector<Producto> data) {
-    data_ = data; 
-  }
-  void SetFunDisp(FuncionDispersion<Key>* fd) {
-    fd_ = fd;
-  }
-  void SetFunExp(FuncionExploracion<Key>* fe) {
-    fe_ = fe;
-  }
-  std::vector<Producto> GetVecData() {
-    return data_;
-  }
-  FuncionDispersion<Key>* GetFunDisp() {
-    return fd_;
-  }
-  FuncionExploracion<Key>* GetFunExp() {
-    return fe_;
-  }
-
-  unsigned operator()(const Key& k) const;
-  
-  bool SearchR(const Key &key) const;
-
-  bool isFull();
+  std::pair<Product&, bool> Search(const Key& key) const;
+  bool Insert(const Product& new_product);
+  std::queue<Product> Records(void) const;
 
  private:
-  const int size_ = 500;
-  std::vector<std::vector<Key>> data_;
-  FuncionDispersion<Key>* fd_;
-  FuncionExploracion<Key>* fe_;
+  unsigned int HashFunction(const Key& key) const;
+
+  unsigned int size_;
+  std::vector<std::list<Product>> data_;
 };
 
 #endif  // HASH_H_

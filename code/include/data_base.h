@@ -46,7 +46,7 @@ class DataBase {
    * @param product 
    */
   bool Insert(const Product& product);
-  
+
   Product& Search(const SearchKey& key);
 
  private:

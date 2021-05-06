@@ -13,33 +13,15 @@
 using namespace std;
 
 template <class Key>
-HashTable<Key>::HashTable(std::vector<std::vector<Key> > data, FuncionDispersion<Key>* fd, FuncionEkeyploracion<Key>* fe) {
-  SetVecData(data);
-  SetFunDisp(fd);
-  SetFunEkeyp(fe);
-}
+HashTable<Key>::HashTable(const unsigned int size) : size_(size), data_(size) {}
 
 template <class Key>
-void HashTable<Key>::Resize(const unsigned long new_size) {}
-
-template <class Key>
-std::queue<Key> HashTable<Key>::Records(void) const {}
-
-template <class Key>
-bool HashTable<Key>::Search(const Key& key) const {
-  const int kONE = 1;
-  bool result;
-  int attempt;
+std::pair<Product&, bool> HashTable<Key>::Search(const Key& key) const {
   
-  if (data_.at(fd_->operator()(key)).SearchR(key)) {
-    return true;
-  } else if (!data_.at(fd_->operator()(key)).SearchR(key)){
-    do {
-      result = data_.at((fd_->operator()(key) + fe_->operator()(key, attempt)) % size_).SearchR(key);
-      attempt++;
-    } while ((!result) && (i == size_ - kONE));
-  } 
-  return result;
+  std::list<Product>& row{data.at(HashFunction(key))};
+  std::find_if(row.begin(), row.end(), Product::operator==);
+  
+  return data_;
 }
 
 template <class Key>
@@ -49,25 +31,8 @@ unsigned HashTable<Key>::operator()(const Key& key) const {
 }
 
 template <class Key>
-bool HashTable<Key>::Insert(const Key& key) {
-  bool result;
-  int attempt;
-  
-  if (Search(key) && IsFull(attempt)){
-    return false;
-  } else if ((!data_.at(fd_->operator()(key)).estaLleno()) && (data_.at(fd_->operator()(key)).insertarL(key))) {
-    return true;
-  } else if ((data_.at(fd_->operator()(key)).estaLleno()) && (!data_.at(fd_->operator()(key)).insertarL(key))){
-    do {
-      result = data_.at((fd_->operator()(key) + fe_->operator()(key, attempt)) % size_).insertarL(key);
-      attempt++;
-    } while ((!result) && (attempt == size_ - 1));
-  } 
-  return resultado;
-}
-
-template <class Key>
-bool HashTable<Key>::isFull(const Key& key) {
-  return (key > size_)
+bool HashTable<Key>::Insert(const Product& new_product) {
+  data.push_back(new_product);
+  return true;
 }
 
