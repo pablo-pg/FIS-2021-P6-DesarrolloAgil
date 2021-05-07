@@ -71,7 +71,9 @@ $(function() {
 
 <p>Base de datos para El Plátano de Oro.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<div class="textblock"><code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;queue&gt;</code><br />
 <code>#include &quot;<a class="el" href="hash_8h_source.html">./hash.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="product_8h_source.html">./product.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -90,13 +92,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataBase.html">DataBase</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Almacena los productos en un soporte volátil y eficiente. Además, gestiona el acceso a ellos.  <a href="classDataBase.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a20f3ecf586bef1f57b4c7a9bb1c9368f"><td class="memItemLeft" align="right" valign="top"><a id="a20f3ecf586bef1f57b4c7a9bb1c9368f"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>products</b> = &quot;.products.csv&quot;</td></tr>
-<tr class="separator:a20f3ecf586bef1f57b4c7a9bb1c9368f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba9808592719e4a684ab0be30ffb0ba1"><td class="memItemLeft" align="right" valign="top"><a id="aba9808592719e4a684ab0be30ffb0ba1"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__base_8h.html#aba9808592719e4a684ab0be30ffb0ba1">kPath2Products</a> = &quot;./data/.products.csv&quot;</td></tr>
+<tr class="memdesc:aba9808592719e4a684ab0be30ffb0ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ruta predeterminada del fichero de datos que contiene los productos. <br /></td></tr>
+<tr class="separator:aba9808592719e4a684ab0be30ffb0ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base de datos para El Plátano de Oro. </p>

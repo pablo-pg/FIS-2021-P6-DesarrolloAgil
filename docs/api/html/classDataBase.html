@@ -62,11 +62,132 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classDataBase-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">DataBase Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Almacena los productos en un soporte volátil y eficiente. Además, gestiona el acceso a ellos.  
+ <a href="classDataBase.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="data__base_8h_source.html">data_base.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a37814cde6095ac3a0f8a0b1530b19729"><td class="memItemLeft" align="right" valign="top"><a id="a37814cde6095ac3a0f8a0b1530b19729"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataBase.html#a37814cde6095ac3a0f8a0b1530b19729">SearchKey</a> = std::string</td></tr>
+<tr class="memdesc:a37814cde6095ac3a0f8a0b1530b19729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Criterio de búsqueda o clave para los productos almacenados. <br /></td></tr>
+<tr class="separator:a37814cde6095ac3a0f8a0b1530b19729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a0b3291241e49d9b9634b3de61678a477"><td class="memItemLeft" align="right" valign="top"><a id="a0b3291241e49d9b9634b3de61678a477"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataBase.html#a0b3291241e49d9b9634b3de61678a477">DataBase</a> (void)</td></tr>
+<tr class="memdesc:a0b3291241e49d9b9634b3de61678a477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instancia la base de datos y carga la información de los productos desde un medio no volátil. <br /></td></tr>
+<tr class="separator:a0b3291241e49d9b9634b3de61678a477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d4629e705ccaa4897e9650222a2a648"><td class="memItemLeft" align="right" valign="top"><a id="a9d4629e705ccaa4897e9650222a2a648"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataBase.html#a9d4629e705ccaa4897e9650222a2a648">~DataBase</a> ()</td></tr>
+<tr class="memdesc:a9d4629e705ccaa4897e9650222a2a648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruye la base de datos y guarda la información de los productos en un medio no volátil. <br /></td></tr>
+<tr class="separator:a9d4629e705ccaa4897e9650222a2a648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a838a15c7bd7e6488c283f9582e45e382"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataBase.html#a838a15c7bd7e6488c283f9582e45e382">Insert</a> (const <a class="el" href="structProduct.html">Product</a> &amp;new_product)</td></tr>
+<tr class="memdesc:a838a15c7bd7e6488c283f9582e45e382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insertar un producto en la base de datos.  <a href="classDataBase.html#a838a15c7bd7e6488c283f9582e45e382">More...</a><br /></td></tr>
+<tr class="separator:a838a15c7bd7e6488c283f9582e45e382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a360462b579112ee6dc987eade5f63759"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structProduct.html">Product</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataBase.html#a360462b579112ee6dc987eade5f63759">Search</a> (const <a class="el" href="classDataBase.html#a37814cde6095ac3a0f8a0b1530b19729">SearchKey</a> &amp;key)</td></tr>
+<tr class="memdesc:a360462b579112ee6dc987eade5f63759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un producto por clave.  <a href="classDataBase.html#a360462b579112ee6dc987eade5f63759">More...</a><br /></td></tr>
+<tr class="separator:a360462b579112ee6dc987eade5f63759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ac3110175c774999aa27bdf3de19d48"><td class="memItemLeft" align="right" valign="top"><a id="a3ac3110175c774999aa27bdf3de19d48"></a>
+const <a class="el" href="structProduct.html">Product</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataBase.html#a3ac3110175c774999aa27bdf3de19d48">Search</a> (const <a class="el" href="classDataBase.html#a37814cde6095ac3a0f8a0b1530b19729">SearchKey</a> &amp;key) const</td></tr>
+<tr class="memdesc:a3ac3110175c774999aa27bdf3de19d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Búsqueda pero constante. <br /></td></tr>
+<tr class="separator:a3ac3110175c774999aa27bdf3de19d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a140379979c4468f7a0606a617aec54f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataBase.html#a140379979c4468f7a0606a617aec54f4">Records</a> (std::queue&lt; <a class="el" href="structProduct.html">Product</a> &gt; &amp;products) const</td></tr>
+<tr class="memdesc:a140379979c4468f7a0606a617aec54f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve todos los registros de productos en la base de datos.  <a href="classDataBase.html#a140379979c4468f7a0606a617aec54f4">More...</a><br /></td></tr>
+<tr class="separator:a140379979c4468f7a0606a617aec54f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Almacena los productos en un soporte volátil y eficiente. Además, gestiona el acceso a ellos. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a838a15c7bd7e6488c283f9582e45e382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a838a15c7bd7e6488c283f9582e45e382">&#9670;&nbsp;</a></span>Insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataBase::Insert </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structProduct.html">Product</a> &amp;&#160;</td>
+          <td class="paramname"><em>new_product</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insertar un producto en la base de datos. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_product</td><td>Nuevo producto a insertar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a140379979c4468f7a0606a617aec54f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a140379979c4468f7a0606a617aec54f4">&#9670;&nbsp;</a></span>Records()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataBase::Records </td>
+          <td>(</td>
+          <td class="paramtype">std::queue&lt; <a class="el" href="structProduct.html">Product</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>products</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve todos los registros de productos en la base de datos. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">products</td><td>Estructura FIFO para guardar los productos. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a360462b579112ee6dc987eade5f63759"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a360462b579112ee6dc987eade5f63759">&#9670;&nbsp;</a></span>Search()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structProduct.html">Product</a>&amp; DataBase::Search </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classDataBase.html#a37814cde6095ac3a0f8a0b1530b19729">SearchKey</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Busca un producto por clave. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Patrón de búsqueda. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Referencia de lectura/escritura al producto buscado. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="data__base_8h_source.html">data_base.h</a></li>
 </ul>
