@@ -12,9 +12,9 @@
 #ifndef HASH_H_
 #define HASH_H_
 
-#include <vector>
 #include <list>
 #include <queue>
+#include <vector>
 
 #include "./product.h"
 
@@ -28,15 +28,15 @@ const unsigned int kTableMaxSize = 500;
 template <class Key>
 class HashTable {
  public:
- /**
-  * @brief Instancia una tabla hash sin productos.
-  * @param size Tamaño máximo para la tabla.
-  */
+  /**
+   * @brief Instancia una tabla hash sin productos.
+   * @param size Tamaño máximo para la tabla.
+   */
   explicit HashTable(const unsigned int size = kTableMaxSize);
 
   /**
-  * @brief Destrutor por defecto
-  */
+   * @brief Destrutor por defecto
+   */
   ~HashTable() {}
 
   /**
@@ -60,7 +60,7 @@ class HashTable {
    * @param new_product Nuevo producto a insertar.
    */
   void Insert(const Product& new_product);
-    /**
+  /**
    * @brief Devuelve todos los productos de la tabla.
    * @param products Estructura FIFO para guardar los registros.
    */

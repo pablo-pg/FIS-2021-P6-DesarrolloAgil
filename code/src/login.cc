@@ -55,7 +55,7 @@ bool niceFormatFile() {
       } else if (pass_size > 1) {
         row_middle = true;
       }
-      for (std::size_t i {first_comma + 1}; i < second_comma; ++i) {
+      for (std::size_t i{first_comma + 1}; i < second_comma; ++i) {
         if (isdigit(line.at(i)) == 0) {
           letter_in_pass++;
         }
@@ -64,7 +64,7 @@ bool niceFormatFile() {
         password = true;
       }
       bool different_permission = 0;
-      for (std::size_t i {second_comma + 1}; i < line.size(); ++i) {
+      for (std::size_t i{second_comma + 1}; i < line.size(); ++i) {
         if ((line.at(i) != 'r') && (line.at(i) != 'w') && (line.at(i) != 'c')) {
           different_permission = true;
         }
@@ -74,7 +74,8 @@ bool niceFormatFile() {
       }
     }
   }
-  return (num_comma & row_end & row_middle & row_start & permissions & password);
+  return (num_comma & row_end & row_middle & row_start & permissions &
+          password);
 }
 
 std::vector<Users> readUsers() {

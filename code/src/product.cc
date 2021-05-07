@@ -18,12 +18,8 @@ void Product::ToCsv(std::fstream& fs) const {
     throw std::ios_base::failure("El fichero debe estar abierto.");
   }
 
-  fs << id << kCsvDelimiter
-     << name << kCsvDelimiter
-     << stock << kCsvDelimiter
-     << price << kCsvDelimiter
-     << expiration << kCsvDelimiter
-     << origin;
+  fs << id << kCsvDelimiter << name << kCsvDelimiter << stock << kCsvDelimiter
+     << price << kCsvDelimiter << expiration << kCsvDelimiter << origin;
 }
 
 void Product::FromCsv(std::fstream& fs) {

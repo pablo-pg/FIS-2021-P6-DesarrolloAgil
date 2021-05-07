@@ -13,6 +13,7 @@
 #define LOGIN_H_
 
 #include <ctype.h>
+
 #include <fstream>
 #include <ios>
 #include <iostream>
@@ -23,14 +24,14 @@
 
 /**
  * @brief Estructura que define los campos que tiene un usuario.
- * 
+ *
  */
 struct Users {
-  std::string username;     //< Nombre de usuario.
-  size_t password;          //< Contraseña cifrada.
-  bool read = 1;            //< Bit de permiso de lectura.
-  bool write = 0;           //< Bit de permiso de escritura.
-  bool admin = 0;           //< Bit de permiso de creación/eliminación.
+  std::string username;  //< Nombre de usuario.
+  size_t password;       //< Contraseña cifrada.
+  bool read = 1;         //< Bit de permiso de lectura.
+  bool write = 0;        //< Bit de permiso de escritura.
+  bool admin = 0;        //< Bit de permiso de creación/eliminación.
 
   // Users& operator=(const Users& rhs) {
   //   username = rhs.username;
@@ -59,7 +60,7 @@ struct Users {
 /**
  * @brief Método encargado de introducir credenciales y gestiona la aprobación
  * o no del usuario.
- * 
+ *
  * @return std::pair<Users, bool>. User es el usuario (si no se encuentra es
  * el primer usuario registrado) y bool determina si se encontró o no.
  */
@@ -67,7 +68,7 @@ std::pair<Users, bool> login();
 
 /**
  * @brief Comprueba el formato del fichero CSV de usuarios.
- * 
+ *
  * @return true en el caso de que el formato esté bien.
  * @return false en el casod e que el formato está mal.
  */
@@ -75,18 +76,18 @@ bool niceFormatFile();
 
 /**
  * @brief Se encarga de leer a los usuarios del fichero .csv
- * 
+ *
  * @return std::vector<Users> . Es un vector con todos los usuarios del fichero.
  */
 std::vector<Users> readUsers();
 
 /**
  * @brief Comprueba si el usuario o contraseña coincide con alguno registrado.
- * 
+ *
  * @param user Es el nombre de usuario a comprobar.
  * @param pass Es la contraseña sin cifrar del usuario a comprobar.
  * @return std::pair<Users, bool>. User es el usuario (si no se encuentra es
- * el primer usuario registrado) y bool determina si se encontró o no. 
+ * el primer usuario registrado) y bool determina si se encontró o no.
  */
 std::pair<Users, bool> comparePass(const std::string user,
                                    const std::string pass);

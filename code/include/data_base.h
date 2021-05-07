@@ -13,8 +13,8 @@
 #define DATA_BASE_H_
 
 #include <fstream>
-#include <string>
 #include <queue>
+#include <string>
 
 #include "./hash.h"
 #include "./product.h"

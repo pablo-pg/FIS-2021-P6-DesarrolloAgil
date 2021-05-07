@@ -45,9 +45,9 @@ void start() {
 int EntryMode(const Users& user) {
   if (user.read) {
     std::string selection;
-    if ((user.admin | user.write) == 0) {      //< Comprador
-        return BuyerMenu(user);
-    } else if (user.write && !user.admin) {    //< Vendedor
+    if ((user.admin | user.write) == 0) {  //< Comprador
+      return BuyerMenu(user);
+    } else if (user.write && !user.admin) {  //< Vendedor
       bool ok = 0;
       do {
         std::cout << "Seleccione como qué rol quiere entrar:\n\t1. Vendedor"
@@ -65,7 +65,7 @@ int EntryMode(const Users& user) {
       } else if (selection == "2") {
         return BuyerMenu(user);
       }
-    } else if (user.write && user.admin) {     //< Admin con write
+    } else if (user.write && user.admin) {  //< Admin con write
       bool ok = 0;
       do {
         std::cout << "Seleccione como qué rol quiere entrar:\n\t1. Comprador"
@@ -148,7 +148,8 @@ int BuyerMenu(const Users& user) {
         std::queue<Product> data;
         data_base.Records(data);
         Print(data);
-        break; }
+        break;
+      }
       case '3':
         system("clear");
         Buy(data_base);
@@ -165,7 +166,6 @@ int BuyerMenu(const Users& user) {
   return 0;
 }
 
-
 int SellerMenu(const Users& user) {
   char election;
   bool ok = 0;
@@ -177,12 +177,13 @@ int SellerMenu(const Users& user) {
   std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
     do {
-      std::cout << "¿Qué desea hacer?\n"
-                << "  Pulse 1 para ver los datos de un producto.\n"
-                << "  Pulse 2 para ver todos los productos.\n  "
-                << "Pulse 3 para modificar los datos de un producto ya existente."
-                << "\n  Pulse q para salir.\n\n"
-                << "Introduzca la opción: ";
+      std::cout
+          << "¿Qué desea hacer?\n"
+          << "  Pulse 1 para ver los datos de un producto.\n"
+          << "  Pulse 2 para ver todos los productos.\n  "
+          << "Pulse 3 para modificar los datos de un producto ya existente."
+          << "\n  Pulse q para salir.\n\n"
+          << "Introduzca la opción: ";
       std::cin >> election;
       if ((election == '1') || (election == '2') || (election == '3') ||
           (election == 'q')) {
@@ -201,7 +202,8 @@ int SellerMenu(const Users& user) {
         std::queue<Product> data;
         data_base.Records(data);
         Print(data);
-        break; }
+        break;
+      }
       case '3':
         system("clear");
         Edit(data_base);
@@ -218,7 +220,6 @@ int SellerMenu(const Users& user) {
   } while (exit == 0);
   return 0;
 }
-
 
 int AdminReadMenu(const Users& user) {
   char election;
@@ -256,7 +257,8 @@ int AdminReadMenu(const Users& user) {
         std::queue<Product> data;
         data_base.Records(data);
         Print(data);
-        break; }
+        break;
+      }
       case '3':
         system("clear");
         Insert(data_base);
@@ -278,8 +280,6 @@ int AdminReadMenu(const Users& user) {
   return 0;
 }
 
-
-
 int AdminWriteMenu(const Users& user) {
   char election;
   bool ok = 0;
@@ -291,15 +291,16 @@ int AdminWriteMenu(const Users& user) {
   std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
     do {
-      std::cout << "\n¿Qué desea hacer?\n"
-                << "  Pulse 1 para ver los datos de un producto.\n"
-                << "  Pulse 2 para ver todos los productos.\n  "
-              << "Pulse 3 para modificar los datos de un producto ya existente."
-              << "\n  Pulse 4 para añadir un nuevo producto a la base de datos."
-                << "\n  Pulse 5 para eliminar un producto.\n"
-                << "  Pulse 6 para registrar un nuevo usuario.\n"
-                << "  Pulse q para salir.\n\n"
-                << "Introduzca la opción: ";
+      std::cout
+          << "\n¿Qué desea hacer?\n"
+          << "  Pulse 1 para ver los datos de un producto.\n"
+          << "  Pulse 2 para ver todos los productos.\n  "
+          << "Pulse 3 para modificar los datos de un producto ya existente."
+          << "\n  Pulse 4 para añadir un nuevo producto a la base de datos."
+          << "\n  Pulse 5 para eliminar un producto.\n"
+          << "  Pulse 6 para registrar un nuevo usuario.\n"
+          << "  Pulse q para salir.\n\n"
+          << "Introduzca la opción: ";
       std::cin >> election;
       if ((election == '1') || (election == '2') || (election == '3') ||
           (election == '4') || (election == '5') || (election == '6') ||
@@ -319,7 +320,8 @@ int AdminWriteMenu(const Users& user) {
         std::queue<Product> data;
         data_base.Records(data);
         Print(data);
-        break; }
+        break;
+      }
       case '3':
         system("clear");
         Edit(data_base);

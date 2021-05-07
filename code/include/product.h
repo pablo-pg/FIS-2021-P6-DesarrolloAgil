@@ -12,11 +12,11 @@
 #ifndef PRODUCT_H_
 #define PRODUCT_H_
 
+#include <ctime>
 #include <fstream>
 #include <sstream>
 #include <string>
 #include <vector>
-#include <ctime>
 
 /**
  * @brief Representa de forma lógica a un producto del negocio y

@@ -4,16 +4,15 @@
  * @brief Base de datos para El Plátano de Oro.
  * @version 0.1
  * @date 2021-05-06
- * 
+ *
  * @copyright Copyright (c) 2021
- * 
+ *
  */
 
 #include "../include/user_functions.h"
 
-
 void Search(const DataBase& data_base) {
-// void Search() {
+  // void Search() {
   bool exit = 0;
   do {
     system("clear");
@@ -21,7 +20,7 @@ void Search(const DataBase& data_base) {
     std::cout << "Introduzca el nombre del producto: ";
     std::cin >> name;
     try {
-    const Product p = data_base.Search(name);
+      const Product p = data_base.Search(name);
       std::queue<Product> data;
       data.push(p);
       Print(data);
@@ -48,14 +47,13 @@ void Search(const DataBase& data_base) {
   } while (exit == 0);
 }
 
-
 void Edit(DataBase& data_base) {
-// void Edit() {
+  // void Edit() {
   bool exit = 0;
-    system("clear");
-    std::string name;
-    std::cout << "Introduzca el nombre del producto: ";
-    std::cin >> name;
+  system("clear");
+  std::string name;
+  std::cout << "Introduzca el nombre del producto: ";
+  std::cin >> name;
   do {
     system("clear");
     try {
@@ -71,9 +69,9 @@ void Edit(DataBase& data_base) {
                   << "  4. Fecha de caducidad\n  5. Origen.\n  6. Salir.\n"
                   << "Introduzca la opción: ";
         std::cin >> option;
-        if ((option == "1") || (option == "2") || (option == "3")
-         || (option == "4") || (option == "5") || (option == "6")) {
-           ok = 1;
+        if ((option == "1") || (option == "2") || (option == "3") ||
+            (option == "4") || (option == "5") || (option == "6")) {
+          ok = 1;
         } else {
           system("clear");
           std::cout << "Opción no válida.\n" << std::endl;
@@ -91,7 +89,8 @@ void Edit(DataBase& data_base) {
             std::cout << "No se puede cambiar a un nombre vacío. No se harán"
                       << " cambios." << std::endl;
           }
-          break; }
+          break;
+        }
         case '2': {
           std::string new_stock;
           std::cout << "Introduzca el stock que quiere poner: ";
@@ -102,7 +101,8 @@ void Edit(DataBase& data_base) {
             std::cout << "No se puede cambiar a un número vacío. No se harán"
                       << " cambios." << std::endl;
           }
-          break; }
+          break;
+        }
         case '3': {
           std::string new_price;
           std::cout << "Introduzca el precio que quiere poner: ";
@@ -113,7 +113,8 @@ void Edit(DataBase& data_base) {
             std::cout << "No se puede cambiar a un costo de 0.0. No se harán"
                       << " cambios." << std::endl;
           }
-          break; }
+          break;
+        }
         case '4': {
           std::string day, month, year;
           std::cout << "Introduzca el día que quiere poner (2 números): ";
@@ -139,7 +140,8 @@ void Edit(DataBase& data_base) {
           } else {
             std::cout << "El formato de la fecha no es correcto." << std::endl;
           }
-          break; }
+          break;
+        }
         case '5': {
           std::string new_origin;
           std::cout << "Introduzca el lugar de origen que quiere poner "
@@ -151,12 +153,14 @@ void Edit(DataBase& data_base) {
             std::cout << "No se puede cambiar a un numero vacío. No se harán"
                       << " cambios." << std::endl;
           }
-          break; }
+          break;
+        }
         case '6':
           exit = 1;
           break;
-      default: std::cout << "Error de opción." << std::endl;
-        break;
+        default:
+          std::cout << "Error de opción." << std::endl;
+          break;
       }
       std::cout << "¿Desea seguir editando?\n  1. Sí.\n  2. No" << std::endl;
       std::cout << "Introduzca la opción: ";
@@ -189,16 +193,14 @@ void Edit(DataBase& data_base) {
   } while (exit == 0);
 }
 
-
 void Edit(DataBase& data_base, Product& p) {
   try {
     Product original = data_base.Search(p.name);
     original = p;
-  } catch(std::runtime_error& e) {
+  } catch (std::runtime_error& e) {
     std::cout << "Error: " << e.what();
   }
 }
-
 
 void Buy(DataBase& data_base) {
   system("clear");
@@ -218,7 +220,7 @@ void Buy(DataBase& data_base) {
                 << "Introduzca la opción: ";
       std::cin >> option;
       if ((option == "1") || (option == "2")) {
-          ok = 1;
+        ok = 1;
       } else {
         system("clear");
         std::cout << "Opción no válida.\n" << std::endl;
@@ -257,8 +259,6 @@ void Buy(DataBase& data_base) {
     } while (ok == 0);
   }
 }
-
-
 
 void Insert(DataBase& data_base) {
   system("clear");
@@ -301,8 +301,8 @@ void Insert(DataBase& data_base) {
   } while (ok == 0);
   ok = 0;
   do {  // NAME
-  std::cout << "Introduzca el nombre: ";
-  std::cin >> name;
+    std::cout << "Introduzca el nombre: ";
+    std::cin >> name;
     if (!name.empty()) {
       ok = 1;
     } else {
@@ -440,19 +440,18 @@ void Insert(DataBase& data_base) {
   data_base.Insert(new_prod);
 }
 
-
 void Print(std::queue<Product> p_data) {
   std::queue<table_t> data = ProductToTable(p_data);
-  table_t headers{ { "ID", "NAME", "STOCK", "PRICE", "DATE", "PLACE" } };
-  constexpr int id_wid  = 7;
+  table_t headers{{"ID", "NAME", "STOCK", "PRICE", "DATE", "PLACE"}};
+  constexpr int id_wid = 7;
   constexpr int name_wid = 20;
   constexpr int stock_id = 7;
   constexpr int price_id = 10;
   constexpr int date_wid = 15;
-  constexpr int place_wid  = 25;
-  auto print_line = [](table_t const &tbl) {
+  constexpr int place_wid = 25;
+  auto print_line = [](table_t const& tbl) {
     /// NO CAMBIAR. SON ARGUMENTOS QUE DECLARADOS EN EJEC, NO EN COMPILACIÓN.
-    auto const &[ID, NAME, STOCK, PRICE, DATE, PLACE] = tbl;  //< NO SON FALLOS
+    auto const& [ID, NAME, STOCK, PRICE, DATE, PLACE] = tbl;  //< NO SON FALLOS
     std::cout.width(id_wid);
     std::cout << ("| " + ID) << '|';
     std::cout.width(name_wid);
@@ -491,7 +490,7 @@ std::queue<table_t> ProductToTable(std::queue<Product> data) {
   std::queue<table_t> result;
   while (!data.empty()) {
     Product p = data.front();
-    std::tm * timeinfo = std::localtime(&p.expiration);
+    std::tm* timeinfo = std::localtime(&p.expiration);
     char buffer[32];
     strftime(buffer, 80, "%d/%m/%Y", timeinfo);
     std::string p_time(buffer);
@@ -499,8 +498,12 @@ std::queue<table_t> ProductToTable(std::queue<Product> data) {
     std::stringstream stream;
     stream << std::fixed << std::setprecision(2) << p.price;
     std::string str_price = stream.str();
-    table_t element {std::to_string(p.id), p.name, std::to_string(p.stock),
-                    str_price, p_time, p.origin};
+    table_t element{std::to_string(p.id),
+                    p.name,
+                    std::to_string(p.stock),
+                    str_price,
+                    p_time,
+                    p.origin};
     data.pop();
     result.push(element);
   }
