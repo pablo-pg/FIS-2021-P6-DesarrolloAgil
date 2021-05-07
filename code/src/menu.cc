@@ -120,6 +120,7 @@ int BuyerMenu(const Users& user) {
   std::string name = user.username;
   name[0] = toupper(name[0]);
   DataBase data_base;
+  system("clear");
   std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
     do {
@@ -153,7 +154,6 @@ int BuyerMenu(const Users& user) {
         Buy(data_base);
         break;
       case 'q':
-        system("clear");
         std::cout << "¡Hasta pronto " << name << "!" << std::endl;
         exit = 1;
         break;
@@ -172,6 +172,8 @@ int SellerMenu(const Users& user) {
   bool exit = 0;
   std::string name = user.username;
   name[0] = toupper(name[0]);
+  DataBase data_base;
+  system("clear");
   std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
     do {
@@ -179,7 +181,7 @@ int SellerMenu(const Users& user) {
                 << "  Pulse 1 para ver los datos de un producto.\n"
                 << "  Pulse 2 para ver todos los productos.\n  "
                 << "Pulse 3 para modificar los datos de un producto ya existente."
-                << "\nPulse q para salir.\n\n"
+                << "\n  Pulse q para salir.\n\n"
                 << "Introduzca la opción: ";
       std::cin >> election;
       if ((election == '1') || (election == '2') || (election == '3') ||
@@ -189,7 +191,6 @@ int SellerMenu(const Users& user) {
         std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
       }
     } while (ok == 0);
-    DataBase data_base;
     switch (election) {
       case '1':
         system("clear");
@@ -207,7 +208,6 @@ int SellerMenu(const Users& user) {
         system("clear");
         break;
       case 'q':
-        system("clear");
         std::cout << "¡Hasta pronto " << name << "!" << std::endl;
         exit = 1;
         break;
@@ -226,6 +226,8 @@ int AdminReadMenu(const Users& user) {
   bool exit = 0;
   std::string name = user.username;
   name[0] = toupper(name[0]);
+  DataBase data_base;
+  system("clear");
   std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
     do {
@@ -244,7 +246,6 @@ int AdminReadMenu(const Users& user) {
         std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
       }
     } while (ok == 0);
-    DataBase data_base;
     switch (election) {
       case '1':
         system("clear");
@@ -266,7 +267,6 @@ int AdminReadMenu(const Users& user) {
         std::cout << "Implementado en la siguiente entrega." << std::endl;
         break;
       case 'q':
-        system("clear");
         std::cout << "¡Hasta pronto " << name << "!" << std::endl;
         exit = 1;
         break;
@@ -285,16 +285,18 @@ int AdminWriteMenu(const Users& user) {
   bool ok = 0;
   std::string name = user.username;
   name[0] = toupper(name[0]);
+  DataBase data_base;
   bool exit = 0;
+  system("clear");
   std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
     do {
-      std::cout << "¿Qué desea hacer?\n"
+      std::cout << "\n¿Qué desea hacer?\n"
                 << "  Pulse 1 para ver los datos de un producto.\n"
                 << "  Pulse 2 para ver todos los productos.\n  "
-                << "Pulse 3 para modificar los datos de un producto ya existente."
-                << "\n  Pulse 4 para añadir un nuevo producto a la base de datos.\n"
-                << "  Pulse 5 para eliminar un producto.\n"
+              << "Pulse 3 para modificar los datos de un producto ya existente."
+              << "\n  Pulse 4 para añadir un nuevo producto a la base de datos."
+                << "\n  Pulse 5 para eliminar un producto.\n"
                 << "  Pulse 6 para registrar un nuevo usuario.\n"
                 << "  Pulse q para salir.\n\n"
                 << "Introduzca la opción: ";
@@ -307,7 +309,6 @@ int AdminWriteMenu(const Users& user) {
         std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
       }
     } while (ok == 0);
-    DataBase data_base;
     switch (election) {
       case '1':
         system("clear");
@@ -331,11 +332,11 @@ int AdminWriteMenu(const Users& user) {
         break;
       case '5':
         system("clear");
-        std::cout << "Implementado en la siguiente entrega." << std::endl;
+        std::cout << "Implementado en la siguiente entrega.\n" << std::endl;
         break;
       case '6':
         system("clear");
-        std::cout << "Implementado en la siguiente entrega." << std::endl;
+        std::cout << "Implementado en la siguiente entrega.\n" << std::endl;
         break;
       case 'q':
         std::cout << "¡Hasta pronto " << name << "!" << std::endl;

@@ -68,7 +68,7 @@ void Edit(DataBase& data_base) {
       do {
         std::cout << "Producto encontrado. Decida qué campo quiere cambiar:\n"
                   << "  1. Nombre\n  2. Stock\n  3. Precio\n"
-                  << "  4. Fecha de caducidad\n  5. Origen.\n  6. Cancelar.\n"
+                  << "  4. Fecha de caducidad\n  5. Origen.\n  6. Salir.\n"
                   << "Introduzca la opción: ";
         std::cin >> option;
         if ((option == "1") || (option == "2") || (option == "3")
@@ -94,12 +94,12 @@ void Edit(DataBase& data_base) {
           break; }
         case '2': {
           std::string new_stock;
-          std::cout << "Introduzca el nombre que quiere poner: ";
+          std::cout << "Introduzca el stock que quiere poner: ";
           std::cin >> new_stock;
           if (!new_stock.empty()) {
             p.stock = std::stoi(new_stock);
           } else {
-            std::cout << "No se puede cambiar a un numero vacío. No se harán"
+            std::cout << "No se puede cambiar a un número vacío. No se harán"
                       << " cambios." << std::endl;
           }
           break; }
@@ -110,33 +110,40 @@ void Edit(DataBase& data_base) {
           if (!new_price.empty()) {
             p.price = std::stof(new_price);
           } else {
-            std::cout << "No se puede cambiar a un numero vacío. No se harán"
+            std::cout << "No se puede cambiar a un costo de 0.0. No se harán"
                       << " cambios." << std::endl;
           }
           break; }
         case '4': {
           std::string day, month, year;
-          std::cout << "Introduzca el día que quiere poner (número): ";
+          std::cout << "Introduzca el día que quiere poner (2 números): ";
           std::cin >> day;
-          std::cout << "Introduzca el mes que quiere poner (número): ";
+          std::cout << "Introduzca el mes que quiere poner (2 números): ";
           std::cin >> month;
-          std::cout << "Introduzca el año que quiere poner (número): ";
+          std::cout << "Introduzca el año que quiere poner (4 dígitos): ";
           std::cin >> year;
-          if ((!day.empty()) && (!day.empty()) && (!day.empty())) {
-            struct tm tm;
-            std::stringstream ss;
-            ss << day << '/' << month << '/' << year;
-            strptime(ss.str().data(), "%d/%m/%y", &tm);
-            time_t new_time = mktime(&tm);
-            p.expiration = new_time;
+          if ((!day.empty()) && (!month.empty()) && (!year.empty()) &&
+              (year.size() == 4) && (day.size() <= 2) && (month.size() <= 2) &&
+              (day.size() > 0) && (month.size() > 0)) {
+            time_t raw_time;
+            struct tm* tm;
+            time(&raw_time);
+            tm = localtime(&raw_time);
+            tm->tm_year = std::stoi(year) - 1900;
+            tm->tm_mon = std::stoi(month) - 1;
+            tm->tm_mday = std::stoi(day);
+
+            time_t time = mktime(tm);
+
+            p.expiration = time;
           } else {
-            std::cout << "No se puede cambiar a un numero vacío. No se harán"
-                      << " cambios." << std::endl;
+            std::cout << "El formato de la fecha no es correcto." << std::endl;
           }
           break; }
         case '5': {
           std::string new_origin;
-          std::cout << "Introduzca el lugar de origen que quiere poner: ";
+          std::cout << "Introduzca el lugar de origen que quiere poner "
+                    << "(una palabra): ";
           std::cin >> new_origin;
           if (!new_origin.empty()) {
             p.origin = new_origin;
@@ -407,7 +414,7 @@ void Insert(DataBase& data_base) {
     }
   } while (ok == 0);
   ok = 0;
-  do {
+  do {  // ORIGIN
     std::string election;
     std::cout << "¿Desea introducir el lugar de origen?\n  1. Sí.\n  2. No.\n"
               << "Introduzca su opción: ";
@@ -415,7 +422,7 @@ void Insert(DataBase& data_base) {
     if (election == "2") {
       ok = 1;
     } else if (election == "1") {
-      std::cout << "\nIntroduzca el lugar de origen: ";
+      std::cout << "\nIntroduzca el lugar de origen (una palabra): ";
       std::cin >> origin;
       if (origin.empty()) {
         std::cout << "No se pueden introducir lugares vacíos. Se pondrá uno por"
