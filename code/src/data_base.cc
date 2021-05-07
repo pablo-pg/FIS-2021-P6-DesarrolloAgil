@@ -23,6 +23,22 @@ DataBase::~DataBase() {
   Write();
 }
 
+void  DataBase::Insert(const Product& new_product) {
+  hash_.Insert(new_product);
+}
+
+Product& DataBase::Search(const SearchKey& key) {
+  return hash_.Search(key);
+}
+
+const Product& DataBase::Search(const SearchKey& key) const {
+  return hash_.Search(key);
+}
+
+void DataBase::Records(std::queue<Product>& products) const {
+  hash_.Records(products);
+}
+
 void DataBase::Read() {
   data_file_.open(kPath2Products, std::ios::in);
   if (!data_file_.is_open()) {
@@ -40,18 +56,6 @@ void DataBase::Read() {
   }
 
   data_file_.close();
-}
-
-void  DataBase::Insert(const Product& new_product) {
-  hash_.Insert(new_product);
-}
-
-Product& DataBase::Search(const SearchKey& key) {
-  return hash_.Search(key);
-}
-
-void DataBase::Records(std::queue<Product>& products) const {
-  hash_.Records(products);
 }
 
 void DataBase::Write() {
@@ -72,13 +76,13 @@ void DataBase::Write() {
   }
 
   // Recupera la cabecera.
-  data_file_ << header << '\n';
+  data_file_ << header;
   // Extrae todos los productos de la tabla hash como una cola FIFO.
   std::queue<Product> products;
   hash_.Records(products);
   std::size_t counter{1};
   while (!products.empty()) {
-    data_file_ << counter << Product::kCsvDelimiter;
+    data_file_ << '\n' << counter << Product::kCsvDelimiter;
     counter++;
     products.front().ToCsv(data_file_);
     products.pop();

@@ -27,6 +27,17 @@ Product& HashTable<Key>::Search(const Key& key) {
 }
 
 template <class Key>
+const Product& HashTable<Key>::Search(const Key& key) const {
+  for (const Product& p : data_.at(HashFunction(key))) {
+    if ((std::string)p == key) {
+      return p;
+    }
+  }
+
+  throw std::out_of_range("No existe tal producto.");
+}
+
+template <class Key>
 unsigned int HashTable<Key>::HashFunction(const Key& key) const {
   std::stringstream sspass(key);
   unsigned int uint_key;

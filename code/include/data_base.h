@@ -54,6 +54,10 @@ class DataBase {
    */
   Product& Search(const SearchKey& key);
   /**
+   *
+   */
+  const Product& Search(const SearchKey& key) const;
+  /**
    * @brief Devuelve todos los registros de productos en la base de datos.
    * @param products Estructura FIFO para guardar los productos.
    */

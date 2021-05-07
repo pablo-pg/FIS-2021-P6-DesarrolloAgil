@@ -23,7 +23,7 @@ void Product::ToCsv(std::fstream& fs) const {
      << stock << kCsvDelimiter
      << price << kCsvDelimiter
      << expiration << kCsvDelimiter
-     << origin << '\n';
+     << origin;
 }
 
 void Product::FromCsv(std::fstream& fs) {
@@ -43,10 +43,10 @@ void Product::FromCsv(std::fstream& fs) {
     split.push_back(field);
   }
 
-  id = std::stoul(split[CsvField::kId]);
-  name = split[CsvField::kName];
-  stock = std::stoul(split[CsvField::kStock]);
-  price = std::stof(split[CsvField::kPrice]);
-  expiration = std::stol(split[CsvField::kExpiration]);
-  origin = split[CsvField::kOrigin];
+  id = std::stoul(split.at(CsvField::kId));
+  name = split.at(CsvField::kName);
+  stock = std::stoul(split.at(CsvField::kStock));
+  price = std::stof(split.at(CsvField::kPrice));
+  expiration = std::stol(split.at(CsvField::kExpiration));
+  origin = split.at(CsvField::kOrigin);
 }

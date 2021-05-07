@@ -44,16 +44,18 @@ class HashTable {
    * @return Valor booleano, verdadero si se han insertado demasiados productos.
    */
   bool Full(void) const { return records_ >= size_; }
-
-    /**
+  /**
    * @brief Busca un producto por clave.
    * @param key Patrón de búsqueda para el producto.
    * @return Referencia de lectura/escritura al producto buscado.
              Lanza una excepción si dicho producto no existe.
    */
   Product& Search(const Key& key);
-
-    /**
+  /**
+   *
+   */
+  const Product& Search(const Key& key) const;
+  /**
    * @brief Insertar un producto en la tabla hash, siempre que no esté llena.
    * @param new_product Nuevo producto a insertar.
    */

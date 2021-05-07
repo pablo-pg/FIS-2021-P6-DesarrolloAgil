@@ -12,8 +12,8 @@
 #include "../include/user_functions.h"
 
 
-// void Search(const DataBase& data_base) {
-void Search() {
+void Search(const DataBase& data_base) {
+// void Search() {
   bool exit = 0;
   do {
     system("clear");
@@ -21,9 +21,9 @@ void Search() {
     std::cout << "Introduzca el nombre del producto: ";
     std::cin >> name;
     try {
-    // const Product p = data_base.Search(name);
+    const Product p = data_base.Search(name);
       std::queue<Product> data;
-      // data.push(p);
+      data.push(p);
       Print(data);
       exit = 1;
     } catch (std::out_of_range& e) {
@@ -49,18 +49,19 @@ void Search() {
 }
 
 
-void Edit(const DataBase& data_base) {
+void Edit(DataBase& data_base) {
 // void Edit() {
   bool exit = 0;
-  do {
     system("clear");
     std::string name;
     std::cout << "Introduzca el nombre del producto: ";
     std::cin >> name;
+  do {
+    system("clear");
     try {
-      Product p = data_base.Search(name);
+      Product& p = data_base.Search(name);
       std::queue<Product> data;
-      // data.push(p);
+      data.push(p);  //  Hasta que funcione el search
       Print(data);
       std::string option;
       bool ok = 0;
@@ -150,6 +151,15 @@ void Edit(const DataBase& data_base) {
       default: std::cout << "Error de opción." << std::endl;
         break;
       }
+      std::cout << "¿Desea seguir editando?\n  1. Sí.\n  2. No" << std::endl;
+      std::cout << "Introduzca la opción: ";
+      std::string exit_op;
+      std::cin >> exit_op;
+      if (exit_op == "2") {
+        exit = 1;
+      } else if (exit_op != "1") {
+        std::cout << "Opción no válida. Volverá a ls edición";
+      }
     } catch (std::out_of_range& e) {
       bool ok = 0;
       std::cout << "\nNo existe el producto introducido.\n\n";
@@ -173,16 +183,25 @@ void Edit(const DataBase& data_base) {
 }
 
 
+void Edit(DataBase& data_base, Product& p) {
+  try {
+    Product original = data_base.Search(p.name);
+    original = p;
+  } catch(std::runtime_error& e) {
+    std::cout << "Error: " << e.what();
+  }
+}
 
-void Buy(const DataBase& data_base) {
+
+void Buy(DataBase& data_base) {
   system("clear");
   std::string name;
   std::cout << "Introduzca el nombre del producto: ";
   std::cin >> name;
   try {
-    Product p = data_base.Search(name);
+    Product& p = data_base.Search(name);
     std::queue<Product> data;
-    // data.push(p);
+    data.push(p);
     Print(data);
     std::string option;
     bool ok = 0;
@@ -234,22 +253,171 @@ void Buy(const DataBase& data_base) {
 
 
 
-// void Insert(const DataBase& data_base) {
-void Insert() {
+void Insert(DataBase& data_base) {
+// void Insert() {
   system("clear");
-  // std::cout << 
+  Product new_prod;
+  bool ok = 0;
+  std::string name;
+  int id;
+  float price;
+  int stock;
+  time_t new_time;
+  do {  // ID
+    std::cout << "Introduzca el ID: ";
+    std::string str_id;
+    std::cin >> str_id;
+    id = std::stoi(str_id);
+    if (id < 0) {
+      id = -id;
+      std::cout << "Introdució una id negativa, cambiando el signo."
+                << std::endl;
+    } else if (id == 0) {
+      bool ok2 = 0;
+      do {
+        std::string opt;
+        std::cout << "No puede introducir 0 como id\n"
+                  << "  Pulse 1 para volver a introducir"
+                  << "  Pulse 2 para cancelar.\n\n"
+                  << "Introduzca su opción: ";
+        std::cin >> opt;
+        if ((opt == "1") || (opt == "2")) {
+          ok2 = 1;
+        }
+        if (opt == "2") {
+          std::cout << "Inserción cancelada." << std::endl;
+          return;
+        }
+      } while (ok2 == 0);
+    } else {
+      ok = 1;
+    }
+  } while (ok == 0);
+  ok = 0;
+  do {  // NAME
+  std::cout << "Introduzca el nombre: ";
+  std::cin >> name;
+    if (!name.empty()) {
+      ok = 1;
+    } else {
+      bool ok2 = 0;
+      do {
+        std::string opt;
+        std::cout << "No puede introducir una cadena vacía como nombre.\n"
+                  << "  Pulse 1 para volver a introducir"
+                  << "  Pulse 2 para cancelar.\n\n"
+                  << "Introduzca su opción: ";
+        std::cin >> opt;
+        if ((opt == "1") || (opt == "2")) {
+          ok2 = 1;
+        }
+        if (opt == "2") {
+          std::cout << "Inserción cancelada." << std::endl;
+          return;
+        }
+      } while (ok2 == 0);
+    }
+  } while (ok == 0);
+  ok = 0;
+  do {  // PRICE
+    std::cout << "Introduzca el precio: ";
+    std::string str_price;
+    std::cin >> str_price;
+    price = std::stof(str_price);
+    if (price == 0) {
+      bool ok2 = 0;
+      do {
+        std::string opt;
+        std::cout << "No puede introducir un precio de 0€.\n"
+                  << "  Pulse 1 para volver a introducir"
+                  << "  Pulse 2 para cancelar.\n\n"
+                  << "Introduzca su opción: ";
+        std::cin >> opt;
+        if ((opt == "1") || (opt == "2")) {
+          ok2 = 1;
+        }
+        if (opt == "2") {
+          std::cout << "Inserción cancelada." << std::endl;
+          return;
+        }
+      } while (ok2 == 0);
+    } else if (price < 0.0) {
+      price = -price;
+      std::cout << "Introdujo un precio negativo. Cambiando el signo."
+                << std::endl;
+    } else {
+      ok = 1;
+    }
+  } while (ok == 0);
+  do {  // STOCK
+    std::cout << "Introduzca el stock: ";
+    std::string str_stock;
+    std::cin >> str_stock;
+    stock = std::stoi(str_stock);
+    if (stock == 0) {
+      bool ok2 = 0;
+      do {
+        std::string opt;
+        std::cout << "No puede introducir una cadena vacía como nombre.\n"
+                  << "  Pulse 1 para volver a introducir"
+                  << "  Pulse 2 para cancelar.\n\n"
+                  << "Introduzca su opción: ";
+        std::cin >> opt;
+        if ((opt == "1") || (opt == "2")) {
+          ok2 = 1;
+        }
+        if (opt == "2") {
+          std::cout << "Inserción cancelada." << std::endl;
+          return;
+        }
+      } while (ok2 == 0);
+    } else if (price < 0.0) {
+      price = -price;
+      std::cout << "Introdujo un precio negativo. Cambiando el signo."
+                << std::endl;
+    } else {
+      ok = 1;
+    }
+  } while (ok == 0);
+  ok = 0;
+  do {  // EXPIRATION
+    std::string day, month, year;
+    std::cout << "Introduzca el día que quiere poner (número): ";
+    std::cin >> day;
+    std::cout << "Introduzca el mes que quiere poner (número): ";
+    std::cin >> month;
+    std::cout << "Introduzca el año que quiere poner (número): ";
+    std::cin >> year;
+    if ((!day.empty()) && (!day.empty()) && (!day.empty())) {
+      struct tm tm;
+      std::stringstream ss;
+      ss << day << '/' << month << '/' << year;
+      strptime(ss.str().data(), "%d/%m/%y", &tm);
+      new_time = mktime(&tm);
+      new_prod.expiration = new_time;
+      ok = 1;
+    } else {
+      std::cout << "No se puede cambiar a un numero vacío. No se harán"
+                << " cambios." << std::endl;
+    }
+  } while (ok == 0);
+  new_prod.id = id;
+  new_prod.name = name;
+  new_prod.stock = stock;
+  new_prod.price = price;
+  new_prod.origin = "Juanita";
+  data_base.Insert(new_prod);
 }
-
 
 
 
 /// Método test
-void TestPrint() {
-  Product p { 1234, "manzana", 23, 2.3, std::time(nullptr), "Lamatana"};
-  std::queue<Product> test;
-  test.push(p);
-  Print(test);
-}
+// void TestPrint() {
+//   Product p { 1234, "manzana", 23, 2.3, std::time(nullptr), "Lamatana"};
+//   std::queue<Product> test;
+//   test.push(p);
+//   Print(test);
+// }
 
 void Print(std::queue<Product> p_data) {
   std::queue<table_t> data = ProductToTable(p_data);
@@ -257,9 +425,9 @@ void Print(std::queue<Product> p_data) {
   constexpr int id_wid  = 7;
   constexpr int name_wid = 20;
   constexpr int stock_id = 7;
-  constexpr int price_id = 15;
-  constexpr int date_wid = 30;
-  constexpr int place_wid  = 18;
+  constexpr int price_id = 10;
+  constexpr int date_wid = 15;
+  constexpr int place_wid  = 25;
   auto print_line = [](table_t const &tbl) {
     /// NO CAMBIAR. SON ARGUMENTOS QUE DECLARADOS EN EJEC, NO EN COMPILACIÓN.
     auto const &[ID, NAME, STOCK, PRICE, DATE, PLACE] = tbl;  //< NO SON FALLOS
@@ -295,7 +463,6 @@ void Print(std::queue<Product> p_data) {
     print_line(element);
     print_break();
   }
-
 }
 
 std::queue<table_t> ProductToTable(std::queue<Product> data) {

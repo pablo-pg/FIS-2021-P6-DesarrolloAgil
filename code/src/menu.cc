@@ -114,51 +114,53 @@ int EntryMode(const Users& user) {
 //////////////////////////////////////////////////////////////////////////////
 
 int BuyerMenu(const Users& user) {
-  system("clear");
   char election;
   bool ok = 0;
+  bool exit = 0;
   std::string name = user.username;
   name[0] = toupper(name[0]);
-  // DataBase data_base;
+  DataBase data_base;
+  system("clear");
+  std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
-    std::cout << name << ", Bienvenido a El Plátano de Oro.\n\n"
-              << "¿Qué desea hacer?\n"
-              << "  Pulse 1 para ver los datos de un producto.\n"
-              << "  Pulse 2 para ver todos los productos.\n"
-              << "  Pulse 3 para comprar un producto.\n"
-              << "  Pulse q para salir.\n\n"
-              << "Introduzca la opción: ";
-    std::cin >> election;
-    if ((election == '1') || (election == '2') || (election == '3') ||
-        (election == 'q')) {
-      ok = 1;
-    } else {
-      std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
+    do {
+      std::cout << "¿Qué desea hacer?\n"
+                << "  Pulse 1 para ver los datos de un producto.\n"
+                << "  Pulse 2 para ver todos los productos.\n"
+                << "  Pulse 3 para comprar un producto.\n"
+                << "  Pulse q para salir.\n\n"
+                << "Introduzca la opción: ";
+      std::cin >> election;
+      if ((election == '1') || (election == '2') || (election == '3') ||
+          (election == 'q')) {
+        ok = 1;
+      } else {
+        std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
+      }
+    } while (ok == 0);
+    switch (election) {
+      case '1':
+        Search(data_base);
+        break;
+      case '2': {
+        system("clear");
+        std::queue<Product> data;
+        data_base.Records(data);
+        Print(data);
+        break; }
+      case '3':
+        system("clear");
+        Buy(data_base);
+        break;
+      case 'q':
+        std::cout << "¡Hasta pronto " << name << "!" << std::endl;
+        exit = 1;
+        break;
+      default:
+        std::cout << "Ha habido algún error inesperado." << std::endl;
+        break;
     }
-  } while (ok == 0);
-  // DataBase data_base;
-  switch (election) {
-    case '1':
-      Search();
-      break;
-    case '2':
-      system("clear");
-      // std::queue<Product> data;
-      // data_base.Records(data);
-      // Print(data);
-      TestPrint();
-      break;
-    case '3':
-      system("clear");
-      /* code */  //< Esto es modificar stock -1
-      break;
-    case 'q':
-      std::cout << "¡Hasta pronto " << name << "!" << std::endl;
-      break;
-    default:
-      std::cout << "Ha habido algún error inesperado." << std::endl;
-      break;
-  }
+  } while (exit == 0);
   return 0;
 }
 
@@ -167,47 +169,50 @@ int SellerMenu(const Users& user) {
   system("clear");
   char election;
   bool ok = 0;
+  bool exit = 0;
   std::string name = user.username;
   name[0] = toupper(name[0]);
+  std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
-    std::cout << name << ", Bienvenido a El Plátano de Oro.\n\n"
-              << "¿Qué desea hacer?\n"
-              << "  Pulse 1 para ver los datos de un producto.\n"
-              << "  Pulse 2 para ver todos los productos.\n  "
-              << "Pulse 3 para modificar los datos de un producto ya existente."
-              << "\nPulse q para salir.\n\n"
-              << "Introduzca la opción: ";
-    std::cin >> election;
-    if ((election == '1') || (election == '2') || (election == '3') ||
-        (election == 'q')) {
-      ok = 1;
-    } else {
-      std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
+    do {
+      std::cout << "¿Qué desea hacer?\n"
+                << "  Pulse 1 para ver los datos de un producto.\n"
+                << "  Pulse 2 para ver todos los productos.\n  "
+                << "Pulse 3 para modificar los datos de un producto ya existente."
+                << "\nPulse q para salir.\n\n"
+                << "Introduzca la opción: ";
+      std::cin >> election;
+      if ((election == '1') || (election == '2') || (election == '3') ||
+          (election == 'q')) {
+        ok = 1;
+      } else {
+        std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
+      }
+    } while (ok == 0);
+    DataBase data_base;
+    switch (election) {
+      case '1':
+        Search(data_base);
+        break;
+      case '2': {
+        system("clear");
+        std::queue<Product> data;
+        data_base.Records(data);
+        Print(data);
+        break; }
+      case '3':
+        system("clear");
+        Edit(data_base);
+        break;
+      case 'q':
+        std::cout << "¡Hasta pronto " << name << "!" << std::endl;
+        exit = 1;
+        break;
+      default:
+        std::cout << "Ha habido algún error inesperado." << std::endl;
+        break;
     }
-  } while (ok == 0);
-  // DataBase data_base;
-  switch (election) {
-    case '1':
-      Search();
-      break;
-    case '2':
-      system("clear");
-      // std::queue<Product> data;
-      // data_base.Records(data);
-      // Print(data);
-      TestPrint();
-      break;
-    case '3':
-      system("clear");
-      /* code */
-      break;
-    case 'q':
-      std::cout << "¡Hasta pronto " << name << "!" << std::endl;
-      break;
-    default:
-      std::cout << "Ha habido algún error inesperado." << std::endl;
-      break;
-  }
+  } while (exit == 0);
   return 0;
 }
 
@@ -216,109 +221,118 @@ int AdminReadMenu(const Users& user) {
   system("clear");
   char election;
   bool ok = 0;
+  bool exit = 0;
   std::string name = user.username;
   name[0] = toupper(name[0]);
+  std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
-    std::cout << name << ", Bienvenido a El Plátano de Oro.\n\n"
-              << "¿Qué desea hacer?\n"
-              << "  Pulse 1 para ver los datos de un producto.\n"
-              << "  Pulse 2 para ver todos los productos.\n  "
-              << "Pulse 3 para añadir un nuevo producto a la base de datos.\n"
-              << "  Pulse 4 para registrar un nuevo usuario.\n"
-              << "  Pulse q para salir.\n\n"
-              << "Introduzca la opción: ";
-    std::cin >> election;
-    if ((election == '1') || (election == '2') || (election == '3') ||
-        (election == '4') || (election == 'q')) {
-      ok = 1;
-    } else {
-      std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
+    do {
+      std::cout << "¿Qué desea hacer?\n"
+                << "  Pulse 1 para ver los datos de un producto.\n"
+                << "  Pulse 2 para ver todos los productos.\n  "
+                << "Pulse 3 para añadir un nuevo producto a la base de datos.\n"
+                << "  Pulse 4 para registrar un nuevo usuario.\n"
+                << "  Pulse q para salir.\n\n"
+                << "Introduzca la opción: ";
+      std::cin >> election;
+      if ((election == '1') || (election == '2') || (election == '3') ||
+          (election == '4') || (election == 'q')) {
+        ok = 1;
+      } else {
+        std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
+      }
+    } while (ok == 0);
+    DataBase data_base;
+    switch (election) {
+      case '1':
+        Search(data_base);
+        break;
+      case '2': {
+        system("clear");
+        std::queue<Product> data;
+        data_base.Records(data);
+        Print(data);
+        break; }
+      case '3':
+        Insert(data_base);
+        break;
+      case '4':
+        std::cout << "Implementado en la siguiente entrega." << std::endl;
+        break;
+      case 'q':
+        std::cout << "¡Hasta pronto " << name << "!" << std::endl;
+        exit = 1;
+        break;
+      default:
+        std::cout << "Ha habido algún error inesperado." << std::endl;
+        break;
     }
-  } while (ok == 0);
-  // DataBase data_base;
-  switch (election) {
-    case '1':
-      Search();
-      break;
-    case '2':
-      system("clear");
-      // std::queue<Product> data;
-      // data_base.Records(data);
-      // Print(data);
-      TestPrint();
-      break;
-    case '3':
-      /* code */
-      break;
-    case '4':
-      /* code */
-      break;
-    case 'q':
-      std::cout << "¡Hasta pronto " << name << "!" << std::endl;
-      break;
-    default:
-      std::cout << "Ha habido algún error inesperado." << std::endl;
-      break;
-  }
+  } while (exit == 0);
   return 0;
 }
 
 
 
 int AdminWriteMenu(const Users& user) {
-  system("clear");
   char election;
   bool ok = 0;
   std::string name = user.username;
   name[0] = toupper(name[0]);
+  bool exit = 0;
+  system("clear");
+  std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
-    std::cout << name << ", Bienvenido a El Plátano de Oro.\n\n"
-              << "¿Qué desea hacer?\n"
-              << "  Pulse 1 para ver los datos de un producto.\n"
-              << "  Pulse 2 para ver todos los productos.\n  "
-              << "Pulse 3 para modificar los datos de un producto ya existente."
-              << "Pulse 4 para añadir un nuevo producto a la base de datos.\n  "
-              << "\n  Pulse 5 para eliminar un producto.\n"
-              << "  Pulse 6 para registrar un nuevo usuario.\n"
-              << "  Pulse q para salir.\n\n"
-              << "Introduzca la opción: ";
-    std::cin >> election;
-    if ((election == '1') || (election == '2') || (election == '3') ||
-        (election == '4') || (election == '5') || (election == '6') ||
-        (election == 'q')) {
-      ok = 1;
-    } else {
-      std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
+    do {
+      std::cout << "¿Qué desea hacer?\n"
+                << "  Pulse 1 para ver los datos de un producto.\n"
+                << "  Pulse 2 para ver todos los productos.\n  "
+                << "Pulse 3 para modificar los datos de un producto ya existente."
+                << "\n  Pulse 4 para añadir un nuevo producto a la base de datos.\n"
+                << "  Pulse 5 para eliminar un producto.\n"
+                << "  Pulse 6 para registrar un nuevo usuario.\n"
+                << "  Pulse q para salir.\n\n"
+                << "Introduzca la opción: ";
+      std::cin >> election;
+      if ((election == '1') || (election == '2') || (election == '3') ||
+          (election == '4') || (election == '5') || (election == '6') ||
+          (election == 'q')) {
+        ok = 1;
+      } else {
+        std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
+      }
+    } while (ok == 0);
+    DataBase data_base;
+    switch (election) {
+      case '1':
+        Search(data_base);
+        break;
+      case '2': {
+        system("clear");
+        std::queue<Product> data;
+        data_base.Records(data);
+        Print(data);
+        break; }
+      case '3':
+        system("clear");
+        Edit(data_base);
+        break;
+      case '4':
+        Insert(data_base);
+        break;
+      case '5':
+        std::cout << "Implementado en la siguiente entrega." << std::endl;
+        break;
+      case '6':
+        std::cout << "Implementado en la siguiente entrega." << std::endl;
+        break;
+      case 'q':
+        std::cout << "¡Hasta pronto " << name << "!" << std::endl;
+        exit = 1;
+        break;
+      default:
+        std::cout << "Ha habido algún error inesperado." << std::endl;
+        break;
     }
-  } while (ok == 0);
-  // DataBase data_base;
-  switch (election) {
-    case '1':
-      Search();
-      break;
-    case '2':
-      system("clear");
-      // std::queue<Product> data;
-      // data_base.Records(data);
-      // Print(data);
-      TestPrint();
-      break;
-    case '3':
-      system("clear");
-      /* code */
-      break;
-    case '4':
-      /* code */
-      break;
-    case '5':
-      /* code */
-      break;
-    case 'q':
-      std::cout << "¡Hasta pronto " << name << "!" << std::endl;
-      break;
-    default:
-      std::cout << "Ha habido algún error inesperado." << std::endl;
-      break;
-  }
+  } while (exit == 0);
   return 0;
 }
