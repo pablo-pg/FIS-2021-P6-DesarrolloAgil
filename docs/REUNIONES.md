@@ -6,7 +6,7 @@
 **Descripción:** El cliente relató su proyecto y le ofrecimos el posible resultado. <br>
 La idea es crear una base de datos basasda en una tabla de hash para una frutería, coon sus respectivos campos y que se deba iniciar sesión para modificar los datos. Solo el dueño podrá añadir nuevos productos, mientras que los demás registrados podrán modificar sus campos. <br>
 Hemos propuesto dos ficheros, uno para usuarios y otro para los productos y le gustó la idea.<br> 
-**Tiempos:** 2 semanas para: login, base de datos, aplicación cliente. <br>
+**Tiempos:** 2 semanas para: login, base de datos sin límites, aplicación cliente. <br>
 
 
 ## Reuniones con el equipo de desarrollo
@@ -36,6 +36,12 @@ Se comienza con la elaboración del informe asociado al proyecto:
 **Fecha:** 05/05/2021 <br>
 **Motivo:** Cuarta reunión con el equipo de desarrollo. <br>
 **Descripción:** Se decide que habrá un máximo de productos posibles a almacenar. Si la tabla de datos se llena, no se añadirán más poductos. Se avanza en las clase hash y base de datos. Se decide implementar una clase propia vector con fin de facilitar la tabla de hash.<br>
-**Tiempos:** Se prevé la finalización del login y la interfaz que tendrá el usuario en 1 semana. Mañana habrá otra reunión para seguir con el desarrollo de código. <br> <br>
+**Tiempos:** Se prevé la finalización del login y la interfaz que tendrá el usuario en 1 día. Mañana habrá otra reunión para seguir con el desarrollo de código. <br> <br>
+
+
+**Fecha:** 06/05/2021 <br>
+**Motivo:** Quinta reunión con el equipo de desarrollo. <br>
+**Descripción:** Sesión exclusiva de desarrollo. Se decide no implementar la clase vector. Se termina el backend y se genera el primer ejecutable listo para llevar a producción. Falta por relacionar frontend con backend.<br>
+**Tiempos:** Se prevé la finalización del primer pedido en fecha. Habrá una nueva reunión con el cliente la próxima semana.<br> <br>
 
 
