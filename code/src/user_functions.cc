@@ -75,7 +75,7 @@ void Edit(const DataBase& data_base) {
            ok = 1;
         } else {
           system("clear");
-          std::cout << "Opcioón no válida.\n" << std::endl;
+          std::cout << "Opción no válida.\n" << std::endl;
         }
       } while (ok == 0);
       system("clear");
@@ -171,6 +171,67 @@ void Edit(const DataBase& data_base) {
     }
   } while (exit == 0);
 }
+
+
+
+void Buy(const DataBase& data_base) {
+  system("clear");
+  std::string name;
+  std::cout << "Introduzca el nombre del producto: ";
+  std::cin >> name;
+  try {
+    Product p = data_base.Search(name);
+    std::queue<Product> data;
+    // data.push(p);
+    Print(data);
+    std::string option;
+    bool ok = 0;
+    do {
+      std::cout << "Producto encontrado. ¿Desea comprarlo?\n"
+                << "  1. Sí\n  2. No.\n"
+                << "Introduzca la opción: ";
+      std::cin >> option;
+      if ((option == "1") || (option == "2")) {
+          ok = 1;
+      } else {
+        system("clear");
+        std::cout << "Opción no válida.\n" << std::endl;
+      }
+    } while (ok == 0);
+    if (option == "1") {
+      std::string str_cuantity;
+      std::cout << "Introduzca cuántos quiere: ";
+      std::cin >> str_cuantity;
+      unsigned long cuantity = std::stoul(str_cuantity);
+      if (cuantity <= p.stock) {
+        p.stock -= cuantity;
+      } else {
+        std::cout << "No hay suficientes productos. Se cancela la compra."
+                  << std::endl;
+      }
+    } else {
+      std::cout << "Compra cancelada." << std::endl;
+    }
+  } catch (std::out_of_range& e) {
+    bool ok = 0;
+    std::cout << "\nNo existe el producto introducido.\n\n";
+    do {
+      std::cout << "  Pulse 1 para volver a intentarlo.\n"
+                << "  Pulse 2 para salir.\n Introduzca la opción: ";
+      std::string option;
+      std::cin >> option;
+      if ((option == "1") || (option == "2")) {
+        ok = 1;
+      } else {
+        system("clear");
+        std::cout << "Valor no válido.\n" << std::endl;
+      }
+      if (option == "2") {
+      }
+    } while (ok == 0);
+  }
+}
+
 
 
 // void Insert(const DataBase& data_base) {

@@ -24,9 +24,9 @@ constexpr int column_size = 6;
 using table_t = std::array<std::string, column_size>;
 
 void Search(const DataBase& data_base);
-void Insert(const DataBase& data_base);
-void Insert(const DataBase& data_base, const Product& p);
 void Edit(const DataBase& data_base);
+void Buy(const DataBase& data_base);
+void Insert(const DataBase& data_base);
 void TestPrint();         //< test
 void Search();            //< test;
 void Edit();              //< test;
