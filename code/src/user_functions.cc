@@ -22,7 +22,9 @@ void Search() {
     std::cin >> name;
     try {
     // const Product p = data_base.Search(name);
-      throw std::out_of_range("TEST");
+      std::queue<Product> data;
+      // data.push(p);
+      Print(data);
       exit = 1;
     } catch (std::out_of_range& e) {
       bool ok = 0;
@@ -47,8 +49,8 @@ void Search() {
 }
 
 
-// void Edit(const DataBase& data_base) {
-void Edit() {
+void Edit(const DataBase& data_base) {
+// void Edit() {
   bool exit = 0;
   do {
     system("clear");
@@ -56,7 +58,10 @@ void Edit() {
     std::cout << "Introduzca el nombre del producto: ";
     std::cin >> name;
     try {
-    // const Product p = data_base.Search(name);
+      Product p = data_base.Search(name);
+      std::queue<Product> data;
+      // data.push(p);
+      Print(data);
       std::string option;
       bool ok = 0;
       do {
@@ -66,9 +71,85 @@ void Edit() {
                   << "Introduzca la opción: ";
         std::cin >> option;
         if ((option == "1") || (option == "2") || (option == "3")
-         || (option == "4") || (option == "5") || (option == "6"))
+         || (option == "4") || (option == "5") || (option == "6")) {
+           ok = 1;
+        } else {
+          system("clear");
+          std::cout << "Opcioón no válida.\n" << std::endl;
+        }
       } while (ok == 0);
-        exit = 1;
+      system("clear");
+      switch (option.at(0)) {
+        case '1': {
+          std::string new_name;
+          std::cout << "Introduzca el nombre que quiere poner: ";
+          std::cin >> new_name;
+          if (!new_name.empty()) {
+            p.name = new_name;
+          } else {
+            std::cout << "No se puede cambiar a un nombre vacío. No se harán"
+                      << " cambios." << std::endl;
+          }
+          break; }
+        case '2': {
+          std::string new_stock;
+          std::cout << "Introduzca el nombre que quiere poner: ";
+          std::cin >> new_stock;
+          if (!new_stock.empty()) {
+            p.stock = std::stoi(new_stock);
+          } else {
+            std::cout << "No se puede cambiar a un numero vacío. No se harán"
+                      << " cambios." << std::endl;
+          }
+          break; }
+        case '3': {
+          std::string new_price;
+          std::cout << "Introduzca el precio que quiere poner: ";
+          std::cin >> new_price;
+          if (!new_price.empty()) {
+            p.price = std::stof(new_price);
+          } else {
+            std::cout << "No se puede cambiar a un numero vacío. No se harán"
+                      << " cambios." << std::endl;
+          }
+          break; }
+        case '4': {
+          std::string day, month, year;
+          std::cout << "Introduzca el día que quiere poner (número): ";
+          std::cin >> day;
+          std::cout << "Introduzca el mes que quiere poner (número): ";
+          std::cin >> month;
+          std::cout << "Introduzca el año que quiere poner (número): ";
+          std::cin >> year;
+          if ((!day.empty()) && (!day.empty()) && (!day.empty())) {
+            struct tm tm;
+            std::stringstream ss;
+            ss << day << '/' << month << '/' << year;
+            strptime(ss.str().data(), "%d/%m/%y", &tm);
+            time_t new_time = mktime(&tm);
+            p.expiration = new_time;
+          } else {
+            std::cout << "No se puede cambiar a un numero vacío. No se harán"
+                      << " cambios." << std::endl;
+          }
+          break; }
+        case '5': {
+          std::string new_origin;
+          std::cout << "Introduzca el lugar de origen que quiere poner: ";
+          std::cin >> new_origin;
+          if (!new_origin.empty()) {
+            p.origin = new_origin;
+          } else {
+            std::cout << "No se puede cambiar a un numero vacío. No se harán"
+                      << " cambios." << std::endl;
+          }
+          break; }
+        case '6':
+          exit = 1;
+          break;
+      default: std::cout << "Error de opción." << std::endl;
+        break;
+      }
     } catch (std::out_of_range& e) {
       bool ok = 0;
       std::cout << "\nNo existe el producto introducido.\n\n";
