@@ -15,12 +15,25 @@
 #include <queue>
 #include <iostream>
 #include <iomanip>
+#include <string>
+#include <sstream>
 #include "./data_base.h"
 
-void ShowAllProducts(const DataBase& data_base);
-void ShowAllProducts();
+constexpr int column_size = 6;
 
+using table_t = std::array<std::string, column_size>;
 
+void Search(const DataBase& data_base);
+void Insert(const DataBase& data_base);
+void Insert(const DataBase& data_base, const Product& p);
+void Edit(const DataBase& data_base);
+void TestPrint();         //< test
+void Search();            //< test;
+void Edit();              //< test;
+void Insert();            //< test;
+
+void Print(std::queue<Product> data);
+std::queue<table_t> ProductToTable(std::queue<Product> data);
 
 
 #endif  // USER_FUNCTIONS_H_

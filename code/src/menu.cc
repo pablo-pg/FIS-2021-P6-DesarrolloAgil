@@ -106,6 +106,7 @@ int EntryMode(const Users& user) {
     std::cout << "No tiene permisos para ver nada. No puede acceder."
               << std::endl;
   }
+  return 1;
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -118,7 +119,7 @@ int BuyerMenu(const Users& user) {
   bool ok = 0;
   std::string name = user.username;
   name[0] = toupper(name[0]);
-  DataBase data_base;
+  // DataBase data_base;
   do {
     std::cout << name << ", Bienvenido a El Plátano de Oro.\n\n"
               << "¿Qué desea hacer?\n"
@@ -135,15 +136,20 @@ int BuyerMenu(const Users& user) {
       std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
     }
   } while (ok == 0);
+  // DataBase data_base;
   switch (election) {
     case '1':
-      /* code */
+      Search();
       break;
     case '2':
-      // ShowAllProducts(data_base);
-      ShowAllProducts();
+      system("clear");
+      // std::queue<Product> data;
+      // data_base.Records(data);
+      // Print(data);
+      TestPrint();
       break;
     case '3':
+      system("clear");
       /* code */  //< Esto es modificar stock -1
       break;
     case 'q':
@@ -179,14 +185,20 @@ int SellerMenu(const Users& user) {
       std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
     }
   } while (ok == 0);
+  // DataBase data_base;
   switch (election) {
     case '1':
-      /* code */
+      Search();
       break;
     case '2':
-      /* code */
+      system("clear");
+      // std::queue<Product> data;
+      // data_base.Records(data);
+      // Print(data);
+      TestPrint();
       break;
     case '3':
+      system("clear");
       /* code */
       break;
     case 'q':
@@ -223,12 +235,17 @@ int AdminReadMenu(const Users& user) {
       std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
     }
   } while (ok == 0);
+  // DataBase data_base;
   switch (election) {
     case '1':
-      /* code */
+      Search();
       break;
     case '2':
-      /* code */
+      system("clear");
+      // std::queue<Product> data;
+      // data_base.Records(data);
+      // Print(data);
+      TestPrint();
       break;
     case '3':
       /* code */
@@ -259,8 +276,8 @@ int AdminWriteMenu(const Users& user) {
               << "¿Qué desea hacer?\n"
               << "  Pulse 1 para ver los datos de un producto.\n"
               << "  Pulse 2 para ver todos los productos.\n  "
-              << "Pulse 3 para añadir un nuevo producto a la base de datos.\n  "
-              << "Pulse 4 para modificar los datos de un producto ya existente."
+              << "Pulse 3 para modificar los datos de un producto ya existente."
+              << "Pulse 4 para añadir un nuevo producto a la base de datos.\n  "
               << "\n  Pulse 5 para eliminar un producto.\n"
               << "  Pulse 6 para registrar un nuevo usuario.\n"
               << "  Pulse q para salir.\n\n"
@@ -274,14 +291,20 @@ int AdminWriteMenu(const Users& user) {
       std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
     }
   } while (ok == 0);
+  // DataBase data_base;
   switch (election) {
     case '1':
-      /* code */
+      Search();
       break;
     case '2':
-      /* code */
+      system("clear");
+      // std::queue<Product> data;
+      // data_base.Records(data);
+      // Print(data);
+      TestPrint();
       break;
     case '3':
+      system("clear");
       /* code */
       break;
     case '4':
