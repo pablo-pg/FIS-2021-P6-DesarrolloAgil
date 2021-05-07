@@ -52,7 +52,7 @@ class HashTable {
    */
   Product& Search(const Key& key);
   /**
-   *
+   * @ Búsqueda pero constante.
    */
   const Product& Search(const Key& key) const;
   /**

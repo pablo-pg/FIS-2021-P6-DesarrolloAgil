@@ -54,7 +54,7 @@ class DataBase {
    */
   Product& Search(const SearchKey& key);
   /**
-   *
+   * @brief Búsqueda pero constante.
    */
   const Product& Search(const SearchKey& key) const;
   /**
