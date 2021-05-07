@@ -17,6 +17,12 @@
 #include <iomanip>
 #include <string>
 #include <sstream>
+#include <ctime>
+#include <ctype.h>
+#include <iomanip>
+
+#include <chrono>
+#include <thread>
 #include "./data_base.h"
 
 constexpr int column_size = 6;

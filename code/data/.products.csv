@@ -3,8 +3,4 @@ record,id,name,stock,price,expiration,origin
 2,3434,tomate,12,3.99,3733653224,Canarias
 3,5656,naranja,29,6.3,24,Valencia
 4,7878,platano,80,5.12,24,Canarias
-5,9999,coliflor,12,150.36,94710435258128,Juanita
-6,9364,kiwi,148,7.25,93925593006032,Juanita
-7,17,papa,12,12.59,94357591396432,Juanita
-8,6845,batata,11,17.52,94357591379584,Juanita
-9,5555,habichuela,250,3.25,782041196,Juanita
+5,2378,aguacate,7,13.5,1637352104,Fuerteventura

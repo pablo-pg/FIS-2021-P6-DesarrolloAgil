@@ -254,15 +254,14 @@ void Buy(DataBase& data_base) {
 
 
 void Insert(DataBase& data_base) {
-// void Insert() {
   system("clear");
   Product new_prod;
   bool ok = 0;
   std::string name;
+  std::string origin;
   int id;
-  float price;
   int stock;
-  time_t new_time;
+  float price;
   do {  // ID
     std::cout << "Introduzca el ID: ";
     std::string str_id;
@@ -382,42 +381,58 @@ void Insert(DataBase& data_base) {
   ok = 0;
   do {  // EXPIRATION
     std::string day, month, year;
-    std::cout << "Introduzca el día que quiere poner (número): ";
+    std::cout << "Introduzca el día que quiere poner (2 números): ";
     std::cin >> day;
-    std::cout << "Introduzca el mes que quiere poner (número): ";
+    std::cout << "Introduzca el mes que quiere poner (2 números): ";
     std::cin >> month;
-    std::cout << "Introduzca el año que quiere poner (número): ";
+    std::cout << "Introduzca el año que quiere poner (4 dígitos): ";
     std::cin >> year;
-    if ((!day.empty()) && (!day.empty()) && (!day.empty())) {
-      struct tm tm;
-      std::stringstream ss;
-      ss << day << '/' << month << '/' << year;
-      strptime(ss.str().data(), "%d/%m/%y", &tm);
-      new_time = mktime(&tm);
-      new_prod.expiration = new_time;
+    if ((!day.empty()) && (!month.empty()) && (!year.empty()) &&
+        (year.size() == 4) && (day.size() <= 2) && (month.size() <= 2) &&
+        (day.size() > 0) && (month.size() > 0)) {
+      time_t raw_time;
+      struct tm* tm;
+      time(&raw_time);
+      tm = localtime(&raw_time);
+      tm->tm_year = std::stoi(year) - 1900;
+      tm->tm_mon = std::stoi(month) - 1;
+      tm->tm_mday = std::stoi(day);
+
+      time_t time = mktime(tm);
+
+      new_prod.expiration = time;
       ok = 1;
     } else {
-      std::cout << "No se puede cambiar a un numero vacío. No se harán"
-                << " cambios." << std::endl;
+      std::cout << "La hora es incorrecta. Vuelva a intentarlo" << std::endl;
     }
+  } while (ok == 0);
+  ok = 0;
+  do {
+    std::string election;
+    std::cout << "¿Desea introducir el lugar de origen?\n  1. Sí.\n  2. No.\n"
+              << "Introduzca su opción: ";
+    std::cin >> election;
+    if (election == "2") {
+      ok = 1;
+    } else if (election == "1") {
+      std::cout << "\nIntroduzca el lugar de origen: ";
+      std::cin >> origin;
+      if (origin.empty()) {
+        std::cout << "No se pueden introducir lugares vacíos. Se pondrá uno por"
+                  << " defecto." << std::endl;
+        origin = "Ninguno";
+      }
+    }
+    ok = 1;
   } while (ok == 0);
   new_prod.id = id;
   new_prod.name = name;
   new_prod.stock = stock;
   new_prod.price = price;
-  new_prod.origin = "Juanita";
+  new_prod.origin = origin;
   data_base.Insert(new_prod);
 }
 
-
-
-/// Método test
-// void TestPrint() {
-//   Product p { 1234, "manzana", 23, 2.3, std::time(nullptr), "Lamatana"};
-//   std::queue<Product> test;
-//   test.push(p);
-//   Print(test);
-// }
 
 void Print(std::queue<Product> p_data) {
   std::queue<table_t> data = ProductToTable(p_data);
@@ -471,7 +486,7 @@ std::queue<table_t> ProductToTable(std::queue<Product> data) {
     Product p = data.front();
     std::tm * timeinfo = std::localtime(&p.expiration);
     char buffer[32];
-    strftime(buffer, 80, "%d/%m/%y", timeinfo);
+    strftime(buffer, 80, "%d/%m/%Y", timeinfo);
     std::string p_time(buffer);
 
     std::stringstream stream;

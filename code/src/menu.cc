@@ -120,11 +120,10 @@ int BuyerMenu(const Users& user) {
   std::string name = user.username;
   name[0] = toupper(name[0]);
   DataBase data_base;
-  system("clear");
   std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
     do {
-      std::cout << "¿Qué desea hacer?\n"
+      std::cout << "\n¿Qué desea hacer?\n"
                 << "  Pulse 1 para ver los datos de un producto.\n"
                 << "  Pulse 2 para ver todos los productos.\n"
                 << "  Pulse 3 para comprar un producto.\n"
@@ -140,6 +139,7 @@ int BuyerMenu(const Users& user) {
     } while (ok == 0);
     switch (election) {
       case '1':
+        system("clear");
         Search(data_base);
         break;
       case '2': {
@@ -153,6 +153,7 @@ int BuyerMenu(const Users& user) {
         Buy(data_base);
         break;
       case 'q':
+        system("clear");
         std::cout << "¡Hasta pronto " << name << "!" << std::endl;
         exit = 1;
         break;
@@ -166,7 +167,6 @@ int BuyerMenu(const Users& user) {
 
 
 int SellerMenu(const Users& user) {
-  system("clear");
   char election;
   bool ok = 0;
   bool exit = 0;
@@ -192,6 +192,7 @@ int SellerMenu(const Users& user) {
     DataBase data_base;
     switch (election) {
       case '1':
+        system("clear");
         Search(data_base);
         break;
       case '2': {
@@ -203,8 +204,10 @@ int SellerMenu(const Users& user) {
       case '3':
         system("clear");
         Edit(data_base);
+        system("clear");
         break;
       case 'q':
+        system("clear");
         std::cout << "¡Hasta pronto " << name << "!" << std::endl;
         exit = 1;
         break;
@@ -218,7 +221,6 @@ int SellerMenu(const Users& user) {
 
 
 int AdminReadMenu(const Users& user) {
-  system("clear");
   char election;
   bool ok = 0;
   bool exit = 0;
@@ -245,6 +247,7 @@ int AdminReadMenu(const Users& user) {
     DataBase data_base;
     switch (election) {
       case '1':
+        system("clear");
         Search(data_base);
         break;
       case '2': {
@@ -254,12 +257,16 @@ int AdminReadMenu(const Users& user) {
         Print(data);
         break; }
       case '3':
+        system("clear");
         Insert(data_base);
+        system("clear");
         break;
       case '4':
+        system("clear");
         std::cout << "Implementado en la siguiente entrega." << std::endl;
         break;
       case 'q':
+        system("clear");
         std::cout << "¡Hasta pronto " << name << "!" << std::endl;
         exit = 1;
         break;
@@ -279,7 +286,6 @@ int AdminWriteMenu(const Users& user) {
   std::string name = user.username;
   name[0] = toupper(name[0]);
   bool exit = 0;
-  system("clear");
   std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
     do {
@@ -304,6 +310,7 @@ int AdminWriteMenu(const Users& user) {
     DataBase data_base;
     switch (election) {
       case '1':
+        system("clear");
         Search(data_base);
         break;
       case '2': {
@@ -315,14 +322,19 @@ int AdminWriteMenu(const Users& user) {
       case '3':
         system("clear");
         Edit(data_base);
+        system("clear");
         break;
       case '4':
+        system("clear");
         Insert(data_base);
+        system("clear");
         break;
       case '5':
+        system("clear");
         std::cout << "Implementado en la siguiente entrega." << std::endl;
         break;
       case '6':
+        system("clear");
         std::cout << "Implementado en la siguiente entrega." << std::endl;
         break;
       case 'q':
