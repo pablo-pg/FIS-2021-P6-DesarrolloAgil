@@ -63,4 +63,5 @@ A continuación se listan los participantes del proyecto:
 ### Extra
 Informe del proyecto: [Informe](https://drive.google.com/file/d/15LlaNJQqJQ2t6KRNXmTwj_VW6syiE3BN/view?usp=sharing). <br>
 Historias de usuario: [Hoja de cálculo](https://drive.google.com/file/d/1vppcvpkeVs_fGl6_LTKjAks1Kk0ejM55/view?usp=sharing). <br>
-Gestión ficheros: [Gestión](https://www.geeksforgeeks.org/csv-file-management-using-c/).
+Gestión ficheros: [Gestión](https://www.geeksforgeeks.org/csv-file-management-using-c/). <br>
+Git Hooks: [Git hooks](https://blog.devgenius.io/automate-unit-tests-before-each-commit-by-git-hook-f331f0499786). <br>
