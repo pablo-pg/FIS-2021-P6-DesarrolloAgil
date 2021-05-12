@@ -1,4 +1,4 @@
-/**
+/**o
  * @file login.cc
  * @author Equipo m5 FIS
  * @brief Base de datos para El Plátano de Oro.
