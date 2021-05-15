@@ -19,7 +19,7 @@
 #include "./product.h"
 
 /// Tamaño máximo predefinido para una tabla hash.
-const unsigned int kTableMaxSize = 500;
+const unsigned int kDefaultTableSize = 500;
 
 /**
  * @brief Plantillas de la tabla hash
@@ -32,8 +32,7 @@ class HashTable {
    * @brief Instancia una tabla hash sin productos.
    * @param size Tamaño máximo para la tabla.
    */
-  explicit HashTable(const unsigned int size = kTableMaxSize);
-
+  explicit HashTable(const unsigned int size = kDefaultTableSize);
   /**
    * @brief Destrutor por defecto
    */
@@ -43,16 +42,16 @@ class HashTable {
    * @brief Comprueba si la tabla está llena.
    * @return Valor booleano, verdadero si se han insertado demasiados productos.
    */
-  bool Full(void) const { return records_ >= size_; }
+  bool Full(void) const { return nrecords_ >= size_; }
   /**
    * @brief Busca un producto por clave.
    * @param key Patrón de búsqueda para el producto.
    * @return Referencia de lectura/escritura al producto buscado.
-             Lanza una excepción si dicho producto no existe.
+   * Lanza una excepción si dicho producto no existe.
    */
   Product& Search(const Key& key);
   /**
-   * @ Búsqueda pero constante.
+   * @brief Búsqueda pero constante.
    */
   const Product& Search(const Key& key) const;
   /**
@@ -73,7 +72,7 @@ class HashTable {
   // Tamaño de la tabla, en base al número de entradas.
   unsigned int size_;
   // Número de productos que contiene la tabla actualmente.
-  unsigned int records_;
+  unsigned int nrecords_;
   // Estructura de datos para implementar la dispersión.
   std::vector<std::list<Product>> data_;
 };

@@ -56,7 +56,8 @@ struct Product {
 
   /// Devuelve un valor de clave para la búsqueda por nombre.
   operator std::string() const { return name; }
-
+  /// Intentifica a un producto nulo, cuyo identificador es 0.
+  operator bool() const { return id != 0; }
   /**
    * @brief Imprime el producto en formato .csv.
    * @param fs Fichero de salida.

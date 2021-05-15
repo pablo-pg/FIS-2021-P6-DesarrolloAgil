@@ -13,7 +13,7 @@
 
 template <class Key>
 HashTable<Key>::HashTable(const unsigned int size)
-    : size_(size), records_(0), data_(size) {}
+    : size_(size), nrecords_(0), data_(size) {}
 
 template <class Key>
 Product& HashTable<Key>::Search(const Key& key) {
@@ -57,7 +57,7 @@ void HashTable<Key>::Insert(const Product& new_product) {
     throw std::runtime_error("El producto ya existe.");
   } catch (const std::out_of_range& e) {
     data_.at(HashFunction(new_product)).push_back(new_product);
-    records_++;
+    nrecords_++;
   } catch (...) {
     throw;
   }
