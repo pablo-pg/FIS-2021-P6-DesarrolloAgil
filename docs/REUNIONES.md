@@ -57,5 +57,6 @@ Se comienza con la elaboración del informe asociado al proyecto:
 * Equipo 1: Front-end de la eliminación de productos, registro y eliminación de usuarios. <br>
 * Equipo 2: Eliminación de productos desde la base de datos. <br>
 * Equipo 3: Reorganización de la tabla de hash tras eliminación, redimensionar tabla de hash.<br>
+
 **Tiempos:** 1 semana y media para las tareas de los 3 equipos. <br><br>
 
