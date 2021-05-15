@@ -51,4 +51,11 @@ Se comienza con la elaboración del informe asociado al proyecto:
 **Descripción:** Sesión exclusiva de desarrollo. Se decide no implementar la clase vector. Se termina el backend y se genera el primer ejecutable listo para llevar a producción. Falta por relacionar frontend con backend.<br>
 **Tiempos:** Se prevé la finalización del primer pedido en fecha. Habrá una nueva reunión con el cliente la próxima semana.<br> <br>
 
+**Fecha:** 15/05/2021 <br>
+**Motivo:** Primera reunión con el equipo de desarrollo tras la primera entrega. <br>
+**Descripción:** Reorganización de tareas, así como planteamientos de los desarrollos de los nuevos requerimientos del usuario (eliminar usuarios y perfiles). Distribución de tareas: <br>
+* Equipo 1: Front-end de la eliminación de productos, registro y eliminación de usuarios. <br>
+* Equipo 2: Eliminación de productos desde la base de datos. <br>
+* Equipo 3: Reorganización de la tabla de hash tras eliminación, redimensionar tabla de hash.<br>
+**Tiempos:** 1 semana y media para las tareas de los 3 equipos. <br><br>
 
