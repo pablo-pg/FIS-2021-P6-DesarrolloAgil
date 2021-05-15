@@ -24,7 +24,7 @@ const std::string kPath2Products = "./data/.products.csv";
 
 /**
  * @brief Almacena los productos en un soporte volátil y eficiente.
- * Además, gestiona el acceso a ellos.
+ *        Además, gestiona el acceso a ellos.
  */
 class DataBase {
  public:

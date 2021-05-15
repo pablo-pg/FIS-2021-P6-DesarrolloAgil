@@ -45,9 +45,9 @@ class HashTable {
   bool Full(void) const { return nrecords_ >= size_; }
   /**
    * @brief Busca un producto por clave.
+   *        Lanza una excepción si dicho producto no existe.
    * @param key Patrón de búsqueda para el producto.
    * @return Referencia de lectura/escritura al producto buscado.
-   * Lanza una excepción si dicho producto no existe.
    */
   Product& Search(const Key& key);
   /**

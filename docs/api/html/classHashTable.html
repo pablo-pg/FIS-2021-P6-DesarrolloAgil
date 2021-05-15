@@ -76,9 +76,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5af5d7c6f0677f1beafe8a3731cf2c5f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHashTable.html#a5af5d7c6f0677f1beafe8a3731cf2c5f">HashTable</a> (const unsigned int size=<a class="el" href="hash_8h.html#a2b7b03701237571312a6d15858aae1c5">kTableMaxSize</a>)</td></tr>
-<tr class="memdesc:a5af5d7c6f0677f1beafe8a3731cf2c5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instancia una tabla hash sin productos.  <a href="classHashTable.html#a5af5d7c6f0677f1beafe8a3731cf2c5f">More...</a><br /></td></tr>
-<tr class="separator:a5af5d7c6f0677f1beafe8a3731cf2c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf098f0fc85a8d1281d0252f6bc4f140"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHashTable.html#abf098f0fc85a8d1281d0252f6bc4f140">HashTable</a> (const unsigned int size=<a class="el" href="hash_8h.html#a5c4185eee7238bd2c60f2942b309bd23">kDefaultTableSize</a>)</td></tr>
+<tr class="memdesc:abf098f0fc85a8d1281d0252f6bc4f140"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instancia una tabla hash sin productos.  <a href="classHashTable.html#abf098f0fc85a8d1281d0252f6bc4f140">More...</a><br /></td></tr>
+<tr class="separator:abf098f0fc85a8d1281d0252f6bc4f140"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0228cb361952557c1cbcd4c51da8646"><td class="memItemLeft" align="right" valign="top"><a id="ae0228cb361952557c1cbcd4c51da8646"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHashTable.html#ae0228cb361952557c1cbcd4c51da8646">~HashTable</a> ()</td></tr>
 <tr class="memdesc:ae0228cb361952557c1cbcd4c51da8646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor por defecto. <br /></td></tr>
@@ -87,9 +87,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a71c0a284ceece600cbced0365bca01b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba si la tabla está llena.  <a href="classHashTable.html#a71c0a284ceece600cbced0365bca01b7">More...</a><br /></td></tr>
 <tr class="separator:a71c0a284ceece600cbced0365bca01b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad87dedf8214f9ee7e8ccedc732ae46df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structProduct.html">Product</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHashTable.html#ad87dedf8214f9ee7e8ccedc732ae46df">Search</a> (const Key &amp;key)</td></tr>
-<tr class="memdesc:ad87dedf8214f9ee7e8ccedc732ae46df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un producto por clave.  <a href="classHashTable.html#ad87dedf8214f9ee7e8ccedc732ae46df">More...</a><br /></td></tr>
+<tr class="memdesc:ad87dedf8214f9ee7e8ccedc732ae46df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un producto por clave. Lanza una excepción si dicho producto no existe.  <a href="classHashTable.html#ad87dedf8214f9ee7e8ccedc732ae46df">More...</a><br /></td></tr>
 <tr class="separator:ad87dedf8214f9ee7e8ccedc732ae46df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd7591b7060f7fdee293424b4cfa075d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structProduct.html">Product</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHashTable.html#acd7591b7060f7fdee293424b4cfa075d">Search</a> (const Key &amp;key) const</td></tr>
+<tr class="memitem:acd7591b7060f7fdee293424b4cfa075d"><td class="memItemLeft" align="right" valign="top"><a id="acd7591b7060f7fdee293424b4cfa075d"></a>
+const <a class="el" href="structProduct.html">Product</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHashTable.html#acd7591b7060f7fdee293424b4cfa075d">Search</a> (const Key &amp;key) const</td></tr>
+<tr class="memdesc:acd7591b7060f7fdee293424b4cfa075d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Búsqueda pero constante. <br /></td></tr>
 <tr class="separator:acd7591b7060f7fdee293424b4cfa075d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59163e7ba92bc862922e17235bd436ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHashTable.html#a59163e7ba92bc862922e17235bd436ce">Insert</a> (const <a class="el" href="structProduct.html">Product</a> &amp;new_product)</td></tr>
 <tr class="memdesc:a59163e7ba92bc862922e17235bd436ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insertar un producto en la tabla hash, siempre que no esté llena.  <a href="classHashTable.html#a59163e7ba92bc862922e17235bd436ce">More...</a><br /></td></tr>
@@ -110,8 +112,8 @@ class HashTable&lt; Key &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a5af5d7c6f0677f1beafe8a3731cf2c5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5af5d7c6f0677f1beafe8a3731cf2c5f">&#9670;&nbsp;</a></span>HashTable()</h2>
+<a id="abf098f0fc85a8d1281d0252f6bc4f140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf098f0fc85a8d1281d0252f6bc4f140">&#9670;&nbsp;</a></span>HashTable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,7 +127,7 @@ template&lt;class Key &gt; </div>
           <td class="memname"><a class="el" href="classHashTable.html">HashTable</a>&lt; Key &gt;::<a class="el" href="classHashTable.html">HashTable</a> </td>
           <td>(</td>
           <td class="paramtype">const unsigned int&#160;</td>
-          <td class="paramname"><em>size</em> = <code><a class="el" href="hash_8h.html#a2b7b03701237571312a6d15858aae1c5">kTableMaxSize</a></code></td><td>)</td>
+          <td class="paramname"><em>size</em> = <code><a class="el" href="hash_8h.html#a5c4185eee7238bd2c60f2942b309bd23">kDefaultTableSize</a></code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -235,7 +237,7 @@ template&lt;class Key &gt; </div>
 </div>
 </div>
 <a id="ad87dedf8214f9ee7e8ccedc732ae46df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad87dedf8214f9ee7e8ccedc732ae46df">&#9670;&nbsp;</a></span>Search() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad87dedf8214f9ee7e8ccedc732ae46df">&#9670;&nbsp;</a></span>Search()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -252,35 +254,14 @@ template&lt;class Key &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Busca un producto por clave. </p>
+<p>Busca un producto por clave. Lanza una excepción si dicho producto no existe. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td>Patrón de búsqueda para el producto. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Referencia de lectura/escritura al producto buscado. Lanza una excepción si dicho producto no existe. </dd></dl>
-
-</div>
-</div>
-<a id="acd7591b7060f7fdee293424b4cfa075d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd7591b7060f7fdee293424b4cfa075d">&#9670;&nbsp;</a></span>Search() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Key &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structProduct.html">Product</a>&amp; <a class="el" href="classHashTable.html">HashTable</a>&lt; Key &gt;::Search </td>
-          <td>(</td>
-          <td class="paramtype">const Key &amp;&#160;</td>
-          <td class="paramname"><em>key</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>@ Búsqueda pero constante. </p>
+<dl class="section return"><dt>Returns</dt><dd>Referencia de lectura/escritura al producto buscado. </dd></dl>
 
 </div>
 </div>

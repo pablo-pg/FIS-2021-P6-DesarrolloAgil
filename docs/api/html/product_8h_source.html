@@ -69,11 +69,11 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef PRODUCT_H_</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define PRODUCT_H_</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structProduct.html">   25</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structProduct.html">Product</a> {</div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structProduct.html#a885eacc9db4246b3ea397ca8d4a5ce98">   27</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="structProduct.html#a885eacc9db4246b3ea397ca8d4a5ce98">id</a>;</div>
@@ -94,12 +94,12 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  };</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structProduct.html#a68e66aaa71ea131d8fad052ad49448d9">   58</a></span>&#160;  <span class="keyword">operator</span> std::string()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="structProduct.html#a6f88e6ff8cb26b1cce49a41e72e4fcb8">name</a>; }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="structProduct.html#add6211f1a25e3183b76f0b7ea4816dec">ToCsv</a>(std::fstream&amp; fs) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="structProduct.html#afe35256b744a82995b05d9fae6b4a1bb">FromCsv</a>(std::fstream&amp; fs);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif  // PRODUCT_H_</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structProduct.html#a7914cfd4e84e06555314163a6fc8caa2">   60</a></span>&#160;  <span class="keyword">operator</span> bool()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keywordtype">id</span> != 0; }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="structProduct.html#add6211f1a25e3183b76f0b7ea4816dec">ToCsv</a>(std::fstream&amp; fs) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="structProduct.html#afe35256b744a82995b05d9fae6b4a1bb">FromCsv</a>(std::fstream&amp; fs);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif  // PRODUCT_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructProduct_html_ad1fd6ee6c8653bf81898668b1d01b05d"><div class="ttname"><a href="structProduct.html#ad1fd6ee6c8653bf81898668b1d01b05d">Product::price</a></div><div class="ttdeci">float price</div><div class="ttdoc">Precio del producto.</div><div class="ttdef"><b>Definition:</b> product.h:33</div></div>
 <div class="ttc" id="astructProduct_html"><div class="ttname"><a href="structProduct.html">Product</a></div><div class="ttdoc">Representa de forma lógica a un producto del negocio y ofrece herramientas para su manipulación con f...</div><div class="ttdef"><b>Definition:</b> product.h:25</div></div>
