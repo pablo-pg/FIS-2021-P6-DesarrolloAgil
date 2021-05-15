@@ -9,6 +9,13 @@ Hemos propuesto dos ficheros, uno para usuarios y otro para los productos y le g
 **Tiempos:** 2 semanas para: login, base de datos sin límites, aplicación cliente. <br>
 
 
+**Fecha:** 12/05/2021 <br>
+**Motivo:** Segunda reunión con el cliente. <br>
+**Descripción:** Entrega del primer prototipo del software. Al cliente le ha satisfecho. Para el segundo prototipo nos pide implementar el registro de nuevos usuarios  y poder borrarlos, así como un perfil de los mismos. <br>
+De cara a la base de datos, también nos pide poder borrar un producto y modificar las limitaciones de tamaño actuales. <br> 
+**Tiempos:** 1 semana para implementar perfiles, registro de usuarios y eliminación de usuarios y productos. <br>
+
+
 ## Reuniones con el equipo de desarrollo
 **Fecha:** 28/04/2021 <br>
 **Motivo:** Primera reunión con el equipo de desarrollo. <br>
