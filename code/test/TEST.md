@@ -12,5 +12,8 @@ en el proyecto.<br><br>
 
 Por ejemplo: para probar la clase ***MiClase***, puede crear el archivo<br>
 ***test_miclase.cc***. Puede ejecutarlo manualmente, o acudir al script<br>
-***tools/run_tests.sh*** para que lo haga por usted, además del resto<br>
-de pruebas en este directorio.<br>
+***code/tools/run_tests.sh*** para que lo haga por usted, además del resto<br>
+de pruebas en este directorio.<br><br>
+
+Cualquier commit es abortado si el código no pasa las pruebas.<br>
+Para evitarlo de forma puntual, use la opción --no-verify.<br>

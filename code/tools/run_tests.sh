@@ -16,4 +16,7 @@ if cd ../test; then
   done
   # Imprime el recuento de pruebas superadas con éxito.
   echo -e "\nPruebas superadas correctamente: ${passed}/${total}"
+  if [ "$passed" -lt "$total" ]; then
+    exit 1
+  fi
 fi
