@@ -15,6 +15,7 @@ template <class Key>
 HashTable<Key>::HashTable(const unsigned int size)
     : size_(size), nrecords_(0), data_(size) {}
 
+
 template <class Key>
 Product& HashTable<Key>::Search(const Key& key) {
   for (Product& p : data_.at(HashFunction(key))) {
@@ -49,7 +50,8 @@ unsigned int HashTable<Key>::HashFunction(const Key& key) const {
 template <class Key>
 void HashTable<Key>::Insert(const Product& new_product) {
   if (Full()) {
-    throw std::runtime_error("La tabla está llena.");
+    // throw std::runtime_error("La tabla está llena.");
+    data_.resize(size_ + 1);
   }
 
   try {
@@ -75,3 +77,8 @@ void HashTable<Key>::Records(std::queue<Product>& products) const {
     }
   }
 }
+
+template <class Key>
+void HashTable<Key>::Delete(const Product& product) {
+  
+} 
