@@ -78,6 +78,7 @@ void HashTable<Key>::Records(std::queue<Product>& products) const {
   }
 }
 
+
 template <class Key>
 void HashTable<Key>::Delete(Product& key) {
   // get the hash index of key
