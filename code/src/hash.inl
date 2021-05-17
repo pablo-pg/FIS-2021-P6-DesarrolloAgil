@@ -34,8 +34,8 @@ const Product& HashTable<Key>::Search(const Key& key) const {
       return p;
     }
   }
-
   throw std::out_of_range("No existe tal producto.");
+
 }
 
 template <class Key>
@@ -79,6 +79,12 @@ void HashTable<Key>::Records(std::queue<Product>& products) const {
 }
 
 template <class Key>
-void HashTable<Key>::Delete(const Product& product) {
+void HashTable<Key>::Delete(Product& key) {
+  // get the hash index of key
+  int index = HashFunction(key);
   
-} 
+  // find the key in (inex)th list
+  if (Search(key) == key) {
+    data_[index].erase(i);
+  }
+}

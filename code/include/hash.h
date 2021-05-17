@@ -15,6 +15,7 @@
 #include <list>
 #include <queue>
 #include <vector>
+#include<bits/stdc++.h>
 
 #include "./product.h"
 
@@ -44,10 +45,7 @@ class HashTable {
    */
   bool Full(void) const { return nrecords_ >= size_; }
   /**
-   * @brief 
-   * 
-   */
-   *        Lanza una excepción si dicho producto no existe.
+   * @brief Lanza una excepción si dicho producto no existe.
    * @param key Patrón de búsqueda para el producto.
    * @return Referencia de lectura/escritura al producto buscado.
    */
@@ -63,12 +61,14 @@ class HashTable {
   void Insert(const Product& new_product);
   
   // 
-  void Delete(const Product& product);
+  void Delete(Product& product);
   /**
    * @brief Devuelve todos los productos de la tabla.
    * @param products Estructura FIFO para guardar los registros.
    */
   void Records(std::queue<Product>& products) const;
+
+  int Search1(const Key& key);
 
  private:
   // Función de hash pseudo-aleatoria.
@@ -80,6 +80,7 @@ class HashTable {
   unsigned int nrecords_;
   // Estructura de datos para implementar la dispersión.
   std::vector<std::list<Product>> data_;
+
 };
 
 #include "../src/hash.inl"
