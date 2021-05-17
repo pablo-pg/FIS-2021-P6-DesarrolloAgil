@@ -60,3 +60,7 @@ Se comienza con la elaboración del informe asociado al proyecto:
 
 **Tiempos:** 1 semana y media para las tareas de los 3 equipos. <br><br>
 
+**Fecha:** 17/05/2021 <br>
+**Motivo:** Reunión del grupo de trabajo 3. <br>
+**Descripción:** Implementar mecanismo para redimensionar de la tabla y del back-end de la eliminación de productos. <br>
+**Tiempos:** 4 horas. <br><br>
