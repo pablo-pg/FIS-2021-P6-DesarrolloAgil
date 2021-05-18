@@ -71,3 +71,9 @@ Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>, en el ar
 **Título:** Inicio de hash y desarrollo de base de datos. Creación de vector.<br>
 **Descripción:** Se empieza la implementación de la tabla de hash. Se avanza considerablemente y se requiere una clase vector propia. Se crea y se adapta la clase base de datos para cumplir con la tabla hash. <br><br>
 
+
+
+**Autor:** Equipo 3 (Daniele Vitae y Ana Virginia Giambona Díaz) <br>
+**Fecha:** 17/05/2021  - 17:00 <br>
+**Título:** Terminado redimensión de la tabla y la eliminación de productos.  <br>
+**Descripción:** Inicio y finalización del back-end para la redimensión de la tabla de hash y la eliminación de productos. <br> <br> 
