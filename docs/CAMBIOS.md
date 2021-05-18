@@ -77,7 +77,8 @@ Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>, en el ar
 **Título:** Mejora de clase producto y Git Hooks<br>
 **Descripción:** La clase producto soporta la dispersión cerrada mediante marcas 
 en los registros. Terminada la configuración de Git Hooks, al realizar commit 
-se ejecutan todos las pruebas unitarias, auto-formato y Doxygen. Consultar TEST.md.<br><br>
+se ejecutan todas las pruebas unitarias, auto-formato y Doxygen. Documentación 
+actualizada al respecto, consultar TEST.md y TOOLS.md para más información<br><br>
 
 
 **Autor:** Equipo 3 (Daniele Vitale y Ana Virginia Giambona Díaz) <br>

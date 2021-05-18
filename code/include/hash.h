@@ -12,10 +12,11 @@
 #ifndef HASH_H_
 #define HASH_H_
 
+#include <bits/stdc++.h>
+
 #include <list>
 #include <queue>
 #include <vector>
-#include<bits/stdc++.h>
 
 #include "./product.h"
 
@@ -59,8 +60,8 @@ class HashTable {
    * @param new_product Nuevo producto a insertar.
    */
   void Insert(const Product& new_product);
-  
-  // 
+
+  //
   void Delete(Product& product);
   /**
    * @brief Devuelve todos los productos de la tabla.
@@ -80,7 +81,6 @@ class HashTable {
   unsigned int nrecords_;
   // Estructura de datos para implementar la dispersión.
   std::vector<std::list<Product>> data_;
-
 };
 
 #include "../src/hash.inl"

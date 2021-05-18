@@ -87,7 +87,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a71c0a284ceece600cbced0365bca01b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba si la tabla está llena.  <a href="classHashTable.html#a71c0a284ceece600cbced0365bca01b7">More...</a><br /></td></tr>
 <tr class="separator:a71c0a284ceece600cbced0365bca01b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad87dedf8214f9ee7e8ccedc732ae46df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structProduct.html">Product</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHashTable.html#ad87dedf8214f9ee7e8ccedc732ae46df">Search</a> (const Key &amp;key)</td></tr>
-<tr class="memdesc:ad87dedf8214f9ee7e8ccedc732ae46df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un producto por clave. Lanza una excepción si dicho producto no existe.  <a href="classHashTable.html#ad87dedf8214f9ee7e8ccedc732ae46df">More...</a><br /></td></tr>
+<tr class="memdesc:ad87dedf8214f9ee7e8ccedc732ae46df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lanza una excepción si dicho producto no existe.  <a href="classHashTable.html#ad87dedf8214f9ee7e8ccedc732ae46df">More...</a><br /></td></tr>
 <tr class="separator:ad87dedf8214f9ee7e8ccedc732ae46df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd7591b7060f7fdee293424b4cfa075d"><td class="memItemLeft" align="right" valign="top"><a id="acd7591b7060f7fdee293424b4cfa075d"></a>
 const <a class="el" href="structProduct.html">Product</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHashTable.html#acd7591b7060f7fdee293424b4cfa075d">Search</a> (const Key &amp;key) const</td></tr>
@@ -96,9 +96,15 @@ const <a class="el" href="structProduct.html">Product</a> &amp;&#160;</td><td cl
 <tr class="memitem:a59163e7ba92bc862922e17235bd436ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHashTable.html#a59163e7ba92bc862922e17235bd436ce">Insert</a> (const <a class="el" href="structProduct.html">Product</a> &amp;new_product)</td></tr>
 <tr class="memdesc:a59163e7ba92bc862922e17235bd436ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insertar un producto en la tabla hash, siempre que no esté llena.  <a href="classHashTable.html#a59163e7ba92bc862922e17235bd436ce">More...</a><br /></td></tr>
 <tr class="separator:a59163e7ba92bc862922e17235bd436ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab355aadf941831a8ba87bce0c5007767"><td class="memItemLeft" align="right" valign="top"><a id="ab355aadf941831a8ba87bce0c5007767"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Delete</b> (<a class="el" href="structProduct.html">Product</a> &amp;product)</td></tr>
+<tr class="separator:ab355aadf941831a8ba87bce0c5007767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26558a54be3246e5aeb3a29a3399e902"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHashTable.html#a26558a54be3246e5aeb3a29a3399e902">Records</a> (std::queue&lt; <a class="el" href="structProduct.html">Product</a> &gt; &amp;products) const</td></tr>
 <tr class="memdesc:a26558a54be3246e5aeb3a29a3399e902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve todos los productos de la tabla.  <a href="classHashTable.html#a26558a54be3246e5aeb3a29a3399e902">More...</a><br /></td></tr>
 <tr class="separator:a26558a54be3246e5aeb3a29a3399e902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4463abc7faea4f771dcfe89b43525314"><td class="memItemLeft" align="right" valign="top"><a id="a4463abc7faea4f771dcfe89b43525314"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>Search1</b> (const Key &amp;key)</td></tr>
+<tr class="separator:a4463abc7faea4f771dcfe89b43525314"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class Key&gt;<br />
@@ -254,7 +260,7 @@ template&lt;class Key &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Busca un producto por clave. Lanza una excepción si dicho producto no existe. </p>
+<p>Lanza una excepción si dicho producto no existe. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td>Patrón de búsqueda para el producto. </td></tr>

@@ -69,52 +69,59 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef HASH_H_</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define HASH_H_</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;queue&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="product_8h.html">./product.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;bits/stdc++.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="hash_8h.html#a5c4185eee7238bd2c60f2942b309bd23">   22</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="hash_8h.html#a5c4185eee7238bd2c60f2942b309bd23">kDefaultTableSize</a> = 500;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Key&gt;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classHashTable.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHashTable.html">HashTable</a> {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classHashTable.html#abf098f0fc85a8d1281d0252f6bc4f140">HashTable</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size = <a class="code" href="hash_8h.html#a5c4185eee7238bd2c60f2942b309bd23">kDefaultTableSize</a>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classHashTable.html#ae0228cb361952557c1cbcd4c51da8646">   39</a></span>&#160;  <a class="code" href="classHashTable.html#ae0228cb361952557c1cbcd4c51da8646">~HashTable</a>() {}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classHashTable.html#a71c0a284ceece600cbced0365bca01b7">   45</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classHashTable.html#a71c0a284ceece600cbced0365bca01b7">Full</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> nrecords_ &gt;= size_; }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="structProduct.html">Product</a>&amp; <a class="code" href="classHashTable.html#ad87dedf8214f9ee7e8ccedc732ae46df">Search</a>(<span class="keyword">const</span> Key&amp; key);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">const</span> <a class="code" href="structProduct.html">Product</a>&amp; <a class="code" href="classHashTable.html#ad87dedf8214f9ee7e8ccedc732ae46df">Search</a>(<span class="keyword">const</span> Key&amp; key) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classHashTable.html#a59163e7ba92bc862922e17235bd436ce">Insert</a>(<span class="keyword">const</span> <a class="code" href="structProduct.html">Product</a>&amp; new_product);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classHashTable.html#a26558a54be3246e5aeb3a29a3399e902">Records</a>(std::queue&lt;Product&gt;&amp; products) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// Función de hash pseudo-aleatoria.</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> HashFunction(<span class="keyword">const</span> Key&amp; key) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="product_8h.html">./product.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="hash_8h.html#a5c4185eee7238bd2c60f2942b309bd23">   24</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="hash_8h.html#a5c4185eee7238bd2c60f2942b309bd23">kDefaultTableSize</a> = 500;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Key&gt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classHashTable.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHashTable.html">HashTable</a> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classHashTable.html#abf098f0fc85a8d1281d0252f6bc4f140">HashTable</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size = <a class="code" href="hash_8h.html#a5c4185eee7238bd2c60f2942b309bd23">kDefaultTableSize</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classHashTable.html#ae0228cb361952557c1cbcd4c51da8646">   41</a></span>&#160;  <a class="code" href="classHashTable.html#ae0228cb361952557c1cbcd4c51da8646">~HashTable</a>() {}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classHashTable.html#a71c0a284ceece600cbced0365bca01b7">   47</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classHashTable.html#a71c0a284ceece600cbced0365bca01b7">Full</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> nrecords_ &gt;= size_; }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="structProduct.html">Product</a>&amp; <a class="code" href="classHashTable.html#ad87dedf8214f9ee7e8ccedc732ae46df">Search</a>(<span class="keyword">const</span> Key&amp; key);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">const</span> <a class="code" href="structProduct.html">Product</a>&amp; <a class="code" href="classHashTable.html#ad87dedf8214f9ee7e8ccedc732ae46df">Search</a>(<span class="keyword">const</span> Key&amp; key) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classHashTable.html#a59163e7ba92bc862922e17235bd436ce">Insert</a>(<span class="keyword">const</span> <a class="code" href="structProduct.html">Product</a>&amp; new_product);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">//</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span> Delete(<a class="code" href="structProduct.html">Product</a>&amp; product);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classHashTable.html#a26558a54be3246e5aeb3a29a3399e902">Records</a>(std::queue&lt;Product&gt;&amp; products) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">// Tamaño de la tabla, en base al número de entradas.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size_;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// Número de productos que contiene la tabla actualmente.</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrecords_;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">// Estructura de datos para implementar la dispersión.</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  std::vector&lt;std::list&lt;Product&gt;&gt; data_;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#include &quot;../src/hash.inl&quot;</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif  // HASH_H_</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">int</span> Search1(<span class="keyword">const</span> Key&amp; key);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">// Función de hash pseudo-aleatoria.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> HashFunction(<span class="keyword">const</span> Key&amp; key) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="comment">// Tamaño de la tabla, en base al número de entradas.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size_;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="comment">// Número de productos que contiene la tabla actualmente.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrecords_;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="comment">// Estructura de datos para implementar la dispersión.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  std::vector&lt;std::list&lt;Product&gt;&gt; data_;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#include &quot;../src/hash.inl&quot;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif  // HASH_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructProduct_html"><div class="ttname"><a href="structProduct.html">Product</a></div><div class="ttdoc">Representa de forma lógica a un producto del negocio y ofrece herramientas para su manipulación con f...</div><div class="ttdef"><b>Definition:</b> product.h:25</div></div>
-<div class="ttc" id="aclassHashTable_html"><div class="ttname"><a href="classHashTable.html">HashTable</a></div><div class="ttdoc">Plantillas de la tabla hash.</div><div class="ttdef"><b>Definition:</b> hash.h:29</div></div>
-<div class="ttc" id="ahash_8h_html_a5c4185eee7238bd2c60f2942b309bd23"><div class="ttname"><a href="hash_8h.html#a5c4185eee7238bd2c60f2942b309bd23">kDefaultTableSize</a></div><div class="ttdeci">const unsigned int kDefaultTableSize</div><div class="ttdoc">Tamaño máximo predefinido para una tabla hash.</div><div class="ttdef"><b>Definition:</b> hash.h:22</div></div>
-<div class="ttc" id="aclassHashTable_html_a71c0a284ceece600cbced0365bca01b7"><div class="ttname"><a href="classHashTable.html#a71c0a284ceece600cbced0365bca01b7">HashTable::Full</a></div><div class="ttdeci">bool Full(void) const</div><div class="ttdoc">Comprueba si la tabla está llena.</div><div class="ttdef"><b>Definition:</b> hash.h:45</div></div>
+<div class="ttc" id="aclassHashTable_html"><div class="ttname"><a href="classHashTable.html">HashTable</a></div><div class="ttdoc">Plantillas de la tabla hash.</div><div class="ttdef"><b>Definition:</b> hash.h:31</div></div>
+<div class="ttc" id="ahash_8h_html_a5c4185eee7238bd2c60f2942b309bd23"><div class="ttname"><a href="hash_8h.html#a5c4185eee7238bd2c60f2942b309bd23">kDefaultTableSize</a></div><div class="ttdeci">const unsigned int kDefaultTableSize</div><div class="ttdoc">Tamaño máximo predefinido para una tabla hash.</div><div class="ttdef"><b>Definition:</b> hash.h:24</div></div>
+<div class="ttc" id="aclassHashTable_html_a71c0a284ceece600cbced0365bca01b7"><div class="ttname"><a href="classHashTable.html#a71c0a284ceece600cbced0365bca01b7">HashTable::Full</a></div><div class="ttdeci">bool Full(void) const</div><div class="ttdoc">Comprueba si la tabla está llena.</div><div class="ttdef"><b>Definition:</b> hash.h:47</div></div>
 <div class="ttc" id="aproduct_8h_html"><div class="ttname"><a href="product_8h.html">product.h</a></div><div class="ttdoc">Base de datos para El Plátano de Oro.</div></div>
-<div class="ttc" id="aclassHashTable_html_ae0228cb361952557c1cbcd4c51da8646"><div class="ttname"><a href="classHashTable.html#ae0228cb361952557c1cbcd4c51da8646">HashTable::~HashTable</a></div><div class="ttdeci">~HashTable()</div><div class="ttdoc">Destrutor por defecto.</div><div class="ttdef"><b>Definition:</b> hash.h:39</div></div>
+<div class="ttc" id="aclassHashTable_html_ae0228cb361952557c1cbcd4c51da8646"><div class="ttname"><a href="classHashTable.html#ae0228cb361952557c1cbcd4c51da8646">HashTable::~HashTable</a></div><div class="ttdeci">~HashTable()</div><div class="ttdoc">Destrutor por defecto.</div><div class="ttdef"><b>Definition:</b> hash.h:41</div></div>
 <div class="ttc" id="aclassHashTable_html_abf098f0fc85a8d1281d0252f6bc4f140"><div class="ttname"><a href="classHashTable.html#abf098f0fc85a8d1281d0252f6bc4f140">HashTable::HashTable</a></div><div class="ttdeci">HashTable(const unsigned int size=kDefaultTableSize)</div><div class="ttdoc">Instancia una tabla hash sin productos.</div></div>
 <div class="ttc" id="aclassHashTable_html_a59163e7ba92bc862922e17235bd436ce"><div class="ttname"><a href="classHashTable.html#a59163e7ba92bc862922e17235bd436ce">HashTable::Insert</a></div><div class="ttdeci">void Insert(const Product &amp;new_product)</div><div class="ttdoc">Insertar un producto en la tabla hash, siempre que no esté llena.</div></div>
 <div class="ttc" id="aclassHashTable_html_a26558a54be3246e5aeb3a29a3399e902"><div class="ttname"><a href="classHashTable.html#a26558a54be3246e5aeb3a29a3399e902">HashTable::Records</a></div><div class="ttdeci">void Records(std::queue&lt; Product &gt; &amp;products) const</div><div class="ttdoc">Devuelve todos los productos de la tabla.</div></div>
-<div class="ttc" id="aclassHashTable_html_ad87dedf8214f9ee7e8ccedc732ae46df"><div class="ttname"><a href="classHashTable.html#ad87dedf8214f9ee7e8ccedc732ae46df">HashTable::Search</a></div><div class="ttdeci">Product &amp; Search(const Key &amp;key)</div><div class="ttdoc">Busca un producto por clave. Lanza una excepción si dicho producto no existe.</div></div>
+<div class="ttc" id="aclassHashTable_html_ad87dedf8214f9ee7e8ccedc732ae46df"><div class="ttname"><a href="classHashTable.html#ad87dedf8214f9ee7e8ccedc732ae46df">HashTable::Search</a></div><div class="ttdeci">Product &amp; Search(const Key &amp;key)</div><div class="ttdoc">Lanza una excepción si dicho producto no existe.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
