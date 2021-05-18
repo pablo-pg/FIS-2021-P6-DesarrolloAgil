@@ -72,6 +72,13 @@ Copia esto para añadir nuevos cambios (IMPORTANTE no quitar los \<br>, en el ar
 **Descripción:** Se empieza la implementación de la tabla de hash. Se avanza considerablemente y se requiere una clase vector propia. Se crea y se adapta la clase base de datos para cumplir con la tabla hash. <br><br>
 
 
+**Autor:** Equipo 2 (Andrés Pérez Castellano y Alejandro Rodríguez Rojas)<br>
+**Fecha:** 15/05/2021 - 20:00<br>
+**Título:** Mejora de clase producto y Git Hooks<br>
+**Descripción:** La clase producto soporta la dispersión cerrada mediante marcas 
+en los registros. Terminada la configuración de Git Hooks, al realizar commit 
+se ejecutan todos las pruebas unitarias, auto-formato y Doxygen. Consultar TEST.md.<br><br>
+
 
 **Autor:** Equipo 3 (Daniele Vitale y Ana Virginia Giambona Díaz) <br>
 **Fecha:** 17/05/2021  - 17:00 <br>
