@@ -69,8 +69,6 @@ class HashTable {
    */
   void Records(std::queue<Product>& products) const;
 
-  int Search1(const Key& key);
-
  private:
   // Función de hash pseudo-aleatoria.
   unsigned int HashFunction(const Key& key) const;
