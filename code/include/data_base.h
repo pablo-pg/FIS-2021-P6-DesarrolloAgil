@@ -47,6 +47,13 @@ class DataBase {
    * @param new_product Nuevo producto a insertar.
    */
   void Insert(const Product& new_product);
+
+  /**
+   * @brief Elimina el producto de la lista
+   *
+   * @param product Producto a eliminar
+   */
+  void Delete(const SearchKey& product);
   /**
    * @brief Busca un producto por clave.
    * @param key Patrón de búsqueda.

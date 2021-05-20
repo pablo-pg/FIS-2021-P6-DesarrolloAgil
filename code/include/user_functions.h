@@ -64,11 +64,11 @@ void Buy(DataBase& data_base);
  *
  * @param data_base Es la base de datos donde se insertará el producto.
  */
-void Insert(DataBase& data_base);
+void Insert(Users& user, DataBase& data_base);
 
 /**
  * @brief Borra un producto de la base de datos.
- * 
+ *
  * @param user Es el usuario dueño del producto a borrar.
  * @param data_base Es la base de datos de la cual se borrará el producto.
  */
@@ -76,21 +76,21 @@ void Delete(const Users& user, DataBase& data_base);
 
 /**
  * @brief Se registra un nuevo usuario.
- * 
+ *
  * @param data_base Es la base de datos relacionada a los usuarios.
  */
 void RegisterUser(DataBase& data_base);
 
 /**
  * @brief Se borra un usuario existente en la lista de usuarios disponibles.
- * 
+ *
  * @param username Es el nombre del usuario a borrar.
  */
-void DeleteUser(const std::string& username);
+void DeleteUser(const std::string& username, DataBase& data_base);
 
 /**
  * @brief Imprime el perfil del usuario.
- * 
+ *
  * @param user Es el usuario del cual se imprimirán los datos.
  */
 void PrintUser(const Users& user);

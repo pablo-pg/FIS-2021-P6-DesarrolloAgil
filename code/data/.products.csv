@@ -1,7 +1,7 @@
 record,id,name,stock,price,expiration,origin
-1,1212,pimiento,50,7,1620340975,Cadiz
-2,3434,tomate,12,3.99,3733653224,Canarias
-3,5656,naranja,29,6.3,24,Valencia
-4,7878,platano,70,7.5,1639599116,Tenerife
-5,2378,aguacate,7,13.5,1637352104,Fuerteventura
-6,1127,fresa,723,4.25,1624306727,LaPalma
+1,3434,tomate,12,3.99,3733653224,Canarias
+2,5656,naranja,29,6.3,24,Valencia
+3,7878,platano,70,7.5,1639599116,Tenerife
+4,2378,aguacate,7,13.5,1637352104,Fuerteventura
+5,1127,fresa,723,4.25,1624306727,LaPalma
+6,7777,pomelo,25,125,1668715663,Ninguno

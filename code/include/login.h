@@ -25,8 +25,7 @@
 
 #include "./data_base.h"
 
-enum Payment { PayPal, BankAccount, Bizum , Bitcoin };
-
+enum Payment { PayPal, BankAccount, Bizum, Bitcoin };
 
 /**
  * @brief Estructura que define los campos que tiene un usuario.
@@ -39,7 +38,7 @@ struct Users {
   bool write = 0;        //< Bit de permiso de escritura.
   bool admin = 0;        //< Bit de permiso de creación/eliminación.
 
-  float rating;
+  int rating;
 
   std::vector<Product> products;
   std::vector<Payment> accepted_payment;
@@ -75,22 +74,19 @@ std::pair<Users, bool> login(DataBase& data_base);
  * @return true en el caso de que el formato esté bien.
  * @return false en el casod e que el formato está mal.
  */
-bool
-niceFormatFile(
-
-);
+bool niceFormatFile();
 
 /**
  * @brief Se encarga de leer a los usuarios del fichero .csv
  *
  * @param data_base Es la abse de datos donde están los productos.
- * 
+ *
  * @return std::vector<Users> . Es un vector con todos los usuarios del fichero.
  */
 std::vector<Users> readUsers(DataBase& data_base);
 
-void RegisterUserCSV(const Users& user);
-void DeleteUserCSV(const Users& username);
+void RegisterUserCSV(const Users& user, DataBase& data_base);
+void ToCSV(std::vector<Users> all_users);
 /**
  * @brief Comprueba si el usuario o contraseña coincide con alguno registrado.
  *
@@ -100,7 +96,6 @@ void DeleteUserCSV(const Users& username);
  * el primer usuario registrado) y bool determina si se encontró o no.
  */
 std::pair<Users, bool> comparePass(const std::string user,
-                                   const std::string pass,
-                                   DataBase& data_base);
+                                   const std::string pass, DataBase& data_base);
 
 #endif  // LOGIN_H_

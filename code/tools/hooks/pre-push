@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Ejecuta una serie de tareas previas a un git push.
+# Use el argumento --no-verify para evitarlo de forma puntual.
+
+echo "Ejecutando pre-push"
+CUR_DIR = $(pwd)
+cd ./code/tools
+
+./auto_format.sh
+./generate_docs.sh 2>/dev/null
+
+cd $CUR_DIR
+git add .
+git commit -m "Actualizar documentacion ($(date +%F@%R))"

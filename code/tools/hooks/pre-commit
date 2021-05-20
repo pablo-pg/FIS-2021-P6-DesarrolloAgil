@@ -11,6 +11,3 @@ if [ $? -ne 0 ]; then
 	echo "Los tests deben pasar correctamente"
 	exit 1
 fi
-
-./auto_format.sh
-./generate_docs.sh 2>/dev/null

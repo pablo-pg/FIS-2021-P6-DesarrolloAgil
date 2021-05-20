@@ -121,8 +121,7 @@ std::vector<Users> readUsers(DataBase& data_base) {
       while (std::getline(ssproducts, word, ';')) {
         try {
           new_user.products.push_back(data_base.Search(word));
-        }
-        catch(std::out_of_range& e) {
+        } catch (std::out_of_range& e) {
           std::cout << "El fichero tiene un producto inexistente." << std::endl;
         }
       }
@@ -163,8 +162,56 @@ std::vector<Users> readUsers(DataBase& data_base) {
   return users;
 }
 
+void RegisterUserCSV(const Users& user, DataBase& data_base) {
+  std::vector<Users> all_users = readUsers(data_base);
+  all_users.push_back(user);
+  ToCSV(all_users);
+}
+
+
+void ToCSV(std::vector<Users> all_users) {
+  std::fstream fs;
+  std::string header = "user,pass,permissions,products,rating,payment";
+  fs.open("./data/.users.csv", std::ios::out);
+  if (!fs.is_open()) {
+    throw std::ios_base::failure("El fichero debe estar abierto.");
+  }
+  char kCsvDelimiter = ',';
+  fs << header;
+  for (const auto& user: all_users) {
+    fs << "\n" << user.username << kCsvDelimiter << user.password
+       << kCsvDelimiter;
+    if (user.read) {fs << "r";}
+    if (user.write) {fs << "w";}
+    if (user.admin) {fs << "c";}
+    fs << kCsvDelimiter;
+    for (const auto& prod : user.products) {
+      fs << prod.name;
+      if (prod.name != user.products.back().name) {
+        fs << ";";
+      }
+    }
+    fs << kCsvDelimiter << user.rating << kCsvDelimiter;
+    for (const auto& payment : user.accepted_payment) {
+      if (payment == PayPal) {
+        fs << "ppl";
+      } else if (payment == Bizum) {
+        fs << "biz";
+      } else if (payment == BankAccount) {
+        fs << "bank";
+      } else if (payment == Bitcoin) {
+        fs << "btc";
+      }
+      if (payment != user.accepted_payment.back()) {
+        fs << ";";
+      }
+    }
+  }
+}
+
 std::pair<Users, bool> comparePass(const std::string username,
-                              const std::string pass, DataBase& data_base) {
+                                   const std::string pass,
+                                   DataBase& data_base) {
   std::vector<Users> all_users;
   all_users.resize(1);
   try {

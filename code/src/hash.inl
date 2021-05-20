@@ -104,6 +104,7 @@ void HashTable<Key>::Delete(const Key &key) {
   for (i = data_[index].begin(); i != data_[index].end(); i++) {
     if ((std::string)(*i) == key) {
       data_[index].erase(i);
+      nrecords_--;
       return;
     }
   }

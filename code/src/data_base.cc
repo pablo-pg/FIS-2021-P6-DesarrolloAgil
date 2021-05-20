@@ -27,6 +27,8 @@ void DataBase::Insert(const Product& new_product) { hash_.Insert(new_product); }
 
 Product& DataBase::Search(const SearchKey& key) { return hash_.Search(key); }
 
+void DataBase::Delete(const SearchKey& product) { hash_.Delete(product); }
+
 const Product& DataBase::Search(const SearchKey& key) const {
   return hash_.Search(key);
 }

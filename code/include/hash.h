@@ -65,7 +65,7 @@ class HashTable {
 
   /**
    * @brief Elimina el producto de la lista
-   * 
+   *
    * @param product Producto a eliminar
    */
   void Delete(const Key& product);

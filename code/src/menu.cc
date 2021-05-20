@@ -43,7 +43,7 @@ void start() {
   } while (exit == 0);
 }
 
-int EntryMode(const Users& user, DataBase& data_base) {
+int EntryMode(Users& user, DataBase& data_base) {
   if (user.read) {
     std::string selection;
     if ((user.admin | user.write) == 0) {  //< Comprador
@@ -114,7 +114,7 @@ int EntryMode(const Users& user, DataBase& data_base) {
 ////////////////////////////////// MENÚS /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-int BuyerMenu(const Users& user, DataBase& data_base) {
+int BuyerMenu(Users& user, DataBase& data_base) {
   char election;
   bool ok = 0;
   bool exit = 0;
@@ -171,7 +171,7 @@ int BuyerMenu(const Users& user, DataBase& data_base) {
   return 0;
 }
 
-int SellerMenu(const Users& user, DataBase& data_base) {
+int SellerMenu(Users& user, DataBase& data_base) {
   char election;
   bool ok = 0;
   bool exit = 0;
@@ -192,7 +192,7 @@ int SellerMenu(const Users& user, DataBase& data_base) {
           << "Introduzca la opción: ";
       std::cin >> election;
       if ((election == '1') || (election == '2') || (election == '3') ||
-          (election == '4') || (election == 'q')) {
+          (election == '4') || (election == '5') || (election == 'q')) {
         ok = 1;
       } else {
         std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
@@ -218,6 +218,7 @@ int SellerMenu(const Users& user, DataBase& data_base) {
       case '4':
         system("clear");
         Delete(user, data_base);
+        break;
       case '5':
         system("clear");
         PrintUser(user);
@@ -234,7 +235,7 @@ int SellerMenu(const Users& user, DataBase& data_base) {
   return 0;
 }
 
-int AdminReadMenu(const Users& user, DataBase& data_base) {
+int AdminReadMenu(Users& user, DataBase& data_base) {
   char election;
   bool ok = 0;
   bool exit = 0;
@@ -274,7 +275,7 @@ int AdminReadMenu(const Users& user, DataBase& data_base) {
       }
       case '3':
         system("clear");
-        Insert(data_base);
+        Insert(user, data_base);
         system("clear");
         break;
       case '4':
@@ -297,7 +298,7 @@ int AdminReadMenu(const Users& user, DataBase& data_base) {
   return 0;
 }
 
-int AdminWriteMenu(const Users& user, DataBase& data_base) {
+int AdminWriteMenu(Users& user, DataBase& data_base) {
   char election;
   bool ok = 0;
   std::string name = user.username;
@@ -347,7 +348,7 @@ int AdminWriteMenu(const Users& user, DataBase& data_base) {
         break;
       case '4':
         system("clear");
-        Insert(data_base);
+        Insert(user, data_base);
         system("clear");
         break;
       case '5':
@@ -363,12 +364,16 @@ int AdminWriteMenu(const Users& user, DataBase& data_base) {
         std::cout << "Introduzca el nombre del usuario a eliminar: ";
         std::string username;
         std::cin >> username;
+        if (username == user.username) {
+          std::cout << "No se puede borrar a sí mismo." << std::endl;
+          break;
+        }
         std::cout << "¿Seguro que quiere borrar al usuario " << username << "?"
                   << " (s/n) ";
         std::string option;
         std::cin >> option;
         if ((option == "s") || (option == "S")) {
-          DeleteUser(username);
+          DeleteUser(username, data_base);
         }
         break;
       }
