@@ -440,6 +440,124 @@ void Insert(DataBase& data_base) {
   data_base.Insert(new_prod);
 }
 
+void Delete(const Users& user, DataBase& data_base) {}
+
+void RegsiterUser(DataBase& data_base) {
+  Users new_user;
+  std::vector<Users> all_users = readUsers(data_base);
+  std::string username, str_pass, str_rating;
+  size_t password;
+  bool r = 1, w, c, ok = 1;
+  float rating;
+  std::vector<Product> products;
+  std::vector<Payment> payment;
+  do {                          //< Nombre
+    std::cout << "Introduzca el nombre de usuario: ";
+    std::cin >> username;
+    for (auto& user : all_users) {
+      if (user.username == username) {
+        ok = 0;
+      }
+    }
+  } while (ok == 0);
+  ok = 0;
+  do {                          //< Contraseña
+    std::cout << "Introduzca la contraseña: ";
+    std::cin >> str_pass;
+    if (!str_pass.empty()) {
+      ok = 1;
+      password = std::hash<std::string>{}(str_pass);
+    }
+  } while (ok == 0);
+  bool ok2 = 0, ok3 = 0;
+  do {                          //< Permisos escritura
+    std::cout << "¿El usuario tendrá permiso de escritura? (s/n) ";
+    std::string write;
+    std::cin >> write;
+    if ((write == "s") || (write == "S") || (write == "n") || (write == "N")) {
+      ok2 = 1;
+      if ((write == "s") || (write == "S")) {
+        w = 1;
+      } else {
+        w = 0;
+      }
+    }
+  } while (ok2 == 0);
+  do {                          //< Permisos admin
+    std::cout << "¿El usuario será administrador? (s/n) ";
+    std::string exec;
+    std::cin >> exec;
+    if ((exec == "s") || (exec == "S") || (exec == "n") || (exec == "N")) {
+      ok3 = 1;
+      if ((exec == "s") || (exec == "S")) {
+        c = 1;
+      } else {
+        c = 0;
+      }
+    }
+  } while (ok3 == 0);
+  ok = 0;
+  do {                      //< Productos del usuario
+    ok2 = 0;
+    std::string opt;
+    do {
+      std::cout << "1. Añadir producto nuevo.\n2. Terminar." << std::endl;
+      std::cin >> opt;
+      if ((opt == "1")  || (opt == "2")) {
+        ok2 = 1;
+      }
+    } while (ok2 == 0);
+      if (opt == "1") {
+        std::cout << "Introduzca el nombre del producto (ya debe existir): ";
+        std::string str_prod;
+        std::cin >> str_prod;
+        try {
+          Product& p = data_base.Search(str_prod);
+          products.push_back(p);
+        } catch (std::runtime_error& e) {
+          std::cout << e.what() << std::endl;
+          ok2 = 0;
+        }
+      } else {
+        ok = 1;
+      }
+  } while (ok == 1);
+  ok = 0;
+  do {                //< Métodos de pago
+    ok2 = 0;
+    std::string opt;
+    do {
+      std::cout << "Seleccione los métodos de pago posibles:\n"
+                << "1. PayPal.\n"
+                << "2. Transferencia bancaria.\n"
+                << "3. Bizum.\n"
+                << "4. Bitcoin.\n"
+                << "Método de pago: ";
+      std::cin >> opt;
+      if ((opt == "1") || (opt == "2") || (opt == "3") || (opt == "4")) {
+        ok2 = 1;
+      }
+    } while (ok2 == 0);
+    if (opt == "1") {
+      payment.push_back(PayPal);
+    } else if (opt == "2") {
+      payment.push_back(BankAccount);
+    } else if (opt == "2") {
+      payment.push_back(BankAccount);
+    }
+  } while (ok == 0);
+  new_user.username = username;
+  new_user.password = password;
+  new_user.read = r;
+  new_user.write = w;
+  new_user.admin =  c;
+  new_user.rating = 0.0;
+  new_user.products = products;
+  new_user.accepted_payment = payment;
+}
+
+void DeleteUser(const std::string& username) {}
+
 void PrintUser(const Users& user) {
   std::cout << "Nombre de usuario: " << user.username << "\n"
             << "Valoración: " << std::setprecision(3) << user.rating << "\n"
@@ -459,6 +577,8 @@ void PrintUser(const Users& user) {
       case Bizum:
         std::cout << "  " << "Bizum" << std::endl;
         break;
+      case Bitcoin:
+        std::cout << "  " << "Bitcoin" << std::endl;
       default:
         std::cout << "Error al imprimir los métodos de pago. Método no aceptado"
                   << std::endl;

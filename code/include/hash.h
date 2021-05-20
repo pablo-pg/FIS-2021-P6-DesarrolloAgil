@@ -61,8 +61,14 @@ class HashTable {
    */
   void Insert(const Product& new_product);
 
-  //
-  void Delete(Product& product);
+  void Resize();
+
+  /**
+   * @brief Elimina el producto de la lista
+   * 
+   * @param product Producto a eliminar
+   */
+  void Delete(const Key& product);
   /**
    * @brief Devuelve todos los productos de la tabla.
    * @param products Estructura FIFO para guardar los registros.

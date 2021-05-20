@@ -48,10 +48,25 @@ unsigned int HashTable<Key>::HashFunction(const Key& key) const {
 }
 
 template <class Key>
+void HashTable<Key>::Resize(){
+  // Aumenta el tamaño en un cierto margen.
+  HashTable<Key> auxData(size_ + kDefaultTableSize);
+  for (const std::list<Product>& row : data_) {
+    for (const Product& p : row) {
+      auxData.Insert(p);
+    }
+  }
+  
+  data_.clear(); 
+  data_ = auxData;
+  size_ = data_.size();
+}
+
+
+template <class Key>
 void HashTable<Key>::Insert(const Product& new_product) {
   if (Full()) {
-    // throw std::runtime_error("La tabla está llena.");
-    data_.resize(size_ + 1);
+    Resize();
   }
 
   try {
@@ -78,14 +93,20 @@ void HashTable<Key>::Records(std::queue<Product>& products) const {
   }
 }
 
-
 template <class Key>
-void HashTable<Key>::Delete(Product& key) {
+void HashTable<Key>::Delete(const Key &key) {
+
   // get the hash index of key
-  int index = HashFunction(key);
-  
+  unsigned int index = HashFunction(key);
+
   // find the key in (inex)th list
-  if (Search(key) == key) {
-    // data_[index].erase(i);
+  std::list<Product>::iterator i;
+  for (i = data_[index].begin(); i != data_[index].end(); i++) {
+    if ((std::string)(*i) == key) {
+      data_[index].erase(i);
+      return;
+    }
   }
+  
+  throw std::runtime_error("El producto no existe.");  
 }

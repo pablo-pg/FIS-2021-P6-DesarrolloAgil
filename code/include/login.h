@@ -25,7 +25,7 @@
 
 #include "./data_base.h"
 
-enum Payment { PayPal, BankAccount, Bizum };
+enum Payment { PayPal, BankAccount, Bizum , Bitcoin };
 
 
 /**
@@ -86,6 +86,8 @@ bool niceFormatFile();
  */
 std::vector<Users> readUsers(DataBase& data_base);
 
+void RegisterUserCSV(const Users& user);
+void DeleteUserCSV(const Users& username);
 /**
  * @brief Comprueba si el usuario o contraseña coincide con alguno registrado.
  *

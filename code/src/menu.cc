@@ -279,7 +279,7 @@ int AdminReadMenu(const Users& user, DataBase& data_base) {
         break;
       case '4':
         system("clear");
-        RegisterUser();
+        RegisterUser(data_base);
         break;
       case '5':
         system("clear");
@@ -356,7 +356,7 @@ int AdminWriteMenu(const Users& user, DataBase& data_base) {
         break;
       case '6':
         system("clear");
-        RegisterUser();
+        RegisterUser(data_base);
         break;
       case '7': {
         system("clear");

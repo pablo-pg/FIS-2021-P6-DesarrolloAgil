@@ -77,8 +77,9 @@ void Delete(const Users& user, DataBase& data_base);
 /**
  * @brief Se registra un nuevo usuario.
  * 
+ * @param data_base Es la base de datos relacionada a los usuarios.
  */
-void RegisterUser();
+void RegisterUser(DataBase& data_base);
 
 /**
  * @brief Se borra un usuario existente en la lista de usuarios disponibles.

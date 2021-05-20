@@ -133,6 +133,7 @@ std::vector<Users> readUsers(DataBase& data_base) {
       mapped_payment["ppl"] = PayPal;
       mapped_payment["bank"] = BankAccount;
       mapped_payment["biz"] = Bizum;
+      mapped_payment["btc"] = Bitcoin;
       std::stringstream sspayment(row[5]);
       while (std::getline(sspayment, word, ';')) {
         switch (mapped_payment[word]) {
@@ -144,6 +145,9 @@ std::vector<Users> readUsers(DataBase& data_base) {
             break;
           case Bizum:
             new_user.accepted_payment.push_back(Bizum);
+            break;
+          case Bitcoin:
+            new_user.accepted_payment.push_back(Bitcoin);
             break;
           default:
             std::cout << "Hay métodos de pagos no conocidos: " << word
