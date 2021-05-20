@@ -7,5 +7,5 @@ CUR_DIR="$(pwd)"
 
 echo "Instalando Git Hooks..."
 # Crea un link simbólico en la carpeta local (normalmente ./git/hooks).
-ln -s ${CUR_DIR}/hooks/pre-commit $GIT_DIR/hooks/pre-commit
+ln -sf ${CUR_DIR}/hooks/pre-commit $GIT_DIR/hooks/pre-commit
 echo "Listo!!!"

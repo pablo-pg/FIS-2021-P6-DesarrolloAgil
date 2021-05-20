@@ -50,10 +50,13 @@ bool TestRead(void) {
 
 
 int main() {
-
-  if (!TestRead()) {
+  if (TestRead()) {
+    std::cout << "TEST READ: ACEPTADO." << std::endl;
+  }
+  else {
+    std::cout << "TEST READ: RECHAZADO." << std::endl;
     return 1;
   }
-
+  
   return 0;
 }
