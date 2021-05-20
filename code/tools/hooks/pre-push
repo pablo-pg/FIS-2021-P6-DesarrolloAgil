@@ -4,7 +4,7 @@
 # Use el argumento --no-verify para evitarlo de forma puntual.
 
 echo "Ejecutando pre-push"
-CUR_DIR = $(pwd)
+CUR_DIR="$(pwd)"
 cd ./code/tools
 
 ./auto_format.sh
