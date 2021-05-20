@@ -11,7 +11,7 @@
 
 #include "../include/login.h"
 
-std::pair<Users, bool> login() {
+std::pair<Users, bool> login(DataBase& data_base) {
   std::string user;
   std::string pass;
   system("clear");
@@ -19,7 +19,7 @@ std::pair<Users, bool> login() {
   std::cin >> user;
   std::cout << "Introduzca su contraseña: ";
   std::cin >> pass;
-  return comparePass(user, pass);
+  return comparePass(user, pass, data_base);
 }
 
 bool niceFormatFile() {
@@ -43,11 +43,12 @@ bool niceFormatFile() {
           comma_count++;
         }
       }
-      if (comma_count == 2) {
+      if (comma_count == 5) {
         num_comma = true;
       }
       std::size_t first_comma = line.find(',');
       std::size_t second_comma = line.find(',', first_comma + 1);
+      std::size_t third_comma = line.find(',', second_comma + 1);
       int pass_size = second_comma - first_comma;
       if ((second_comma == std::string::npos) ||
           (first_comma == std::string::npos)) {
@@ -64,7 +65,7 @@ bool niceFormatFile() {
         password = true;
       }
       bool different_permission = 0;
-      for (std::size_t i{second_comma + 1}; i < line.size(); ++i) {
+      for (std::size_t i{second_comma + 1}; i < third_comma; ++i) {
         if ((line.at(i) != 'r') && (line.at(i) != 'w') && (line.at(i) != 'c')) {
           different_permission = true;
         }
@@ -78,7 +79,7 @@ bool niceFormatFile() {
           password);
 }
 
-std::vector<Users> readUsers() {
+std::vector<Users> readUsers(DataBase& data_base) {
   std::vector<Users> users;
   users.resize(0);
   std::fstream file;
@@ -115,6 +116,41 @@ std::vector<Users> readUsers() {
           new_user.admin = 1;
         }
       }
+      /// Productos
+      std::stringstream ssproducts(row[3]);
+      while (std::getline(ssproducts, word, ';')) {
+        try {
+          new_user.products.push_back(data_base.Search(word));
+        }
+        catch(std::out_of_range& e) {
+          std::cout << "El fichero tiene un producto inexistente." << std::endl;
+        }
+      }
+      /// Valoración
+      new_user.rating = (float)(static_cast<int>(std::stoi(row[4]) * 100 + .5) / 100);
+      /// Métodos de pago
+      std::map<std::string, Payment> mapped_payment;
+      mapped_payment["ppl"] = PayPal;
+      mapped_payment["bank"] = BankAccount;
+      mapped_payment["biz"] = Bizum;
+      std::stringstream sspayment(row[5]);
+      while (std::getline(sspayment, word, ';')) {
+        switch (mapped_payment[word]) {
+          case PayPal:
+            new_user.accepted_payment.push_back(PayPal);
+            break;
+          case BankAccount:
+            new_user.accepted_payment.push_back(BankAccount);
+            break;
+          case Bizum:
+            new_user.accepted_payment.push_back(Bizum);
+            break;
+          default:
+            std::cout << "Hay métodos de pagos no conocidos: " << word
+                      << std::endl;
+            break;
+        }
+      }
       users.push_back(new_user);
     }
   } else {
@@ -124,12 +160,12 @@ std::vector<Users> readUsers() {
 }
 
 std::pair<Users, bool> comparePass(const std::string username,
-                                   const std::string pass) {
+                              const std::string pass, DataBase& data_base) {
   std::vector<Users> all_users;
   all_users.resize(1);
   try {
     if (niceFormatFile()) {
-      std::vector<Users> all_users = readUsers();
+      std::vector<Users> all_users = readUsers(data_base);
       size_t hashed_pass = std::hash<std::string>{}(pass);
       for (auto& user : all_users) {
         if ((user.username == username) && (user.password == hashed_pass)) {
@@ -139,7 +175,7 @@ std::pair<Users, bool> comparePass(const std::string username,
       return std::make_pair(all_users.at(0), false);
     } else {
       std::cout << "El formato del fichero de los usuarios no es correcto\n\n"
-                << "Póngase en contacto con la empresa desarrolladora"
+                << "Póngase en contacto con la empresa desarrolladora."
                 << std::endl;
     }
   } catch (const std::ios_base::failure& fail) {

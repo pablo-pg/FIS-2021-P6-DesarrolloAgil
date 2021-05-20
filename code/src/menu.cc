@@ -14,10 +14,11 @@
 void start() {
   bool exit = 0;
   do {
-    std::pair<Users, bool> logged = login();
+    DataBase data_base;
+    std::pair<Users, bool> logged = login(data_base);
     if (logged.second == true) {
       Users user = logged.first;
-      EntryMode(user);
+      EntryMode(user, data_base);
       exit = 1;
     } else {
       bool ok = 0;
@@ -42,11 +43,11 @@ void start() {
   } while (exit == 0);
 }
 
-int EntryMode(const Users& user) {
+int EntryMode(const Users& user, DataBase& data_base) {
   if (user.read) {
     std::string selection;
     if ((user.admin | user.write) == 0) {  //< Comprador
-      return BuyerMenu(user);
+      return BuyerMenu(user, data_base);
     } else if (user.write && !user.admin) {  //< Vendedor
       bool ok = 0;
       do {
@@ -61,9 +62,9 @@ int EntryMode(const Users& user) {
         }
       } while (ok == 0);
       if (selection == "1") {
-        return SellerMenu(user);
+        return SellerMenu(user, data_base);
       } else if (selection == "2") {
-        return BuyerMenu(user);
+        return BuyerMenu(user, data_base);
       }
     } else if (user.write && user.admin) {  //< Admin con write
       bool ok = 0;
@@ -78,11 +79,11 @@ int EntryMode(const Users& user) {
         }
       } while (ok == 0);
       if (selection == "1") {
-        return BuyerMenu(user);
+        return BuyerMenu(user, data_base);
       } else if (selection == "2") {
-        return SellerMenu(user);
+        return SellerMenu(user, data_base);
       } else if (selection == "3") {
-        return AdminWriteMenu(user);
+        return AdminWriteMenu(user, data_base);
       }
     } else if (!user.write && user.admin) {  //< Admin sin write
       bool ok = 0;
@@ -97,9 +98,9 @@ int EntryMode(const Users& user) {
         }
       } while (ok == 0);
       if (selection == "1") {
-        return SellerMenu(user);
+        return SellerMenu(user, data_base);
       } else if (selection == "2") {
-        return AdminReadMenu(user);
+        return AdminReadMenu(user, data_base);
       }
     }
   } else {
@@ -113,13 +114,12 @@ int EntryMode(const Users& user) {
 ////////////////////////////////// MENÚS /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-int BuyerMenu(const Users& user) {
+int BuyerMenu(const Users& user, DataBase& data_base) {
   char election;
   bool ok = 0;
   bool exit = 0;
   std::string name = user.username;
   name[0] = toupper(name[0]);
-  DataBase data_base;
   system("clear");
   std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
@@ -166,13 +166,12 @@ int BuyerMenu(const Users& user) {
   return 0;
 }
 
-int SellerMenu(const Users& user) {
+int SellerMenu(const Users& user, DataBase& data_base) {
   char election;
   bool ok = 0;
   bool exit = 0;
   std::string name = user.username;
   name[0] = toupper(name[0]);
-  DataBase data_base;
   system("clear");
   std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
@@ -221,13 +220,13 @@ int SellerMenu(const Users& user) {
   return 0;
 }
 
-int AdminReadMenu(const Users& user) {
+int AdminReadMenu(const Users& user, DataBase& data_base) {
   char election;
   bool ok = 0;
   bool exit = 0;
   std::string name = user.username;
   name[0] = toupper(name[0]);
-  DataBase data_base;
+  ;
   system("clear");
   std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
@@ -280,12 +279,11 @@ int AdminReadMenu(const Users& user) {
   return 0;
 }
 
-int AdminWriteMenu(const Users& user) {
+int AdminWriteMenu(const Users& user, DataBase& data_base) {
   char election;
   bool ok = 0;
   std::string name = user.username;
   name[0] = toupper(name[0]);
-  DataBase data_base;
   bool exit = 0;
   system("clear");
   std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";

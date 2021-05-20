@@ -86,6 +86,6 @@ void HashTable<Key>::Delete(Product& key) {
   
   // find the key in (inex)th list
   if (Search(key) == key) {
-    data_[index].erase(i);
+    // data_[index].erase(i);
   }
 }

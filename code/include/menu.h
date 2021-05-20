@@ -25,7 +25,7 @@ void start();
  * @param user es el usuario que inicia sesión.
  * @return int es el código de retorno
  */
-int EntryMode(const Users& user);
+int EntryMode(const Users& user, DataBase& data_base);
 
 /**
  * @brief Menú para usuarios que tienen activos r
@@ -33,7 +33,7 @@ int EntryMode(const Users& user);
  * @param user es el usuario que inicia sesión.
  * @return int es el código de retorno
  */
-int BuyerMenu(const Users& user);
+int BuyerMenu(const Users& user, DataBase& data_base);
 
 /**
  * @brief Menú para usuarios que tienen activos rw
@@ -41,7 +41,7 @@ int BuyerMenu(const Users& user);
  * @param user es el usuario que inicia sesión.
  * @return int es el código de retorno
  */
-int SellerMenu(const Users& user);
+int SellerMenu(const Users& user, DataBase& data_base);
 
 /**
  * @brief Menú para usuarios que tienen activos rc
@@ -49,7 +49,7 @@ int SellerMenu(const Users& user);
  * @param user es el usuario que inicia sesión.
  * @return int es el código de retorno
  */
-int AdminReadMenu(const Users& user);
+int AdminReadMenu(const Users& user, DataBase& data_base);
 
 /**
  * @brief Menú para usuarios que tienen activos rwc
@@ -57,6 +57,6 @@ int AdminReadMenu(const Users& user);
  * @param user es el usuario que inicia sesión.
  * @return int es el código de retorno
  */
-int AdminWriteMenu(const Users& user);
+int AdminWriteMenu(const Users& user, DataBase& data_base);
 
 #endif  // MENU_H_

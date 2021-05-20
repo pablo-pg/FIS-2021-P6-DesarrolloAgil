@@ -17,10 +17,16 @@
 #include <fstream>
 #include <ios>
 #include <iostream>
+#include <map>
 #include <sstream>
 #include <string>
 #include <utility>
 #include <vector>
+
+#include "./data_base.h"
+
+enum Payment { PayPal, BankAccount, Bizum };
+
 
 /**
  * @brief Estructura que define los campos que tiene un usuario.
@@ -33,14 +39,10 @@ struct Users {
   bool write = 0;        //< Bit de permiso de escritura.
   bool admin = 0;        //< Bit de permiso de creación/eliminación.
 
-  // Users& operator=(const Users& rhs) {
-  //   username = rhs.username;
-  //   password = rhs.password;
-  //   read = rhs.read;
-  //   write = rhs.write;
-  //   admin = rhs.admin;
-  //   return *this;
-  // }
+  float rating;
+
+  std::vector<Product> products;
+  std::vector<Payment> accepted_payment;
   bool operator==(const Users& rhs) const {
     if (username == rhs.username) {
       if (password == rhs.password) {
@@ -64,7 +66,7 @@ struct Users {
  * @return std::pair<Users, bool>. User es el usuario (si no se encuentra es
  * el primer usuario registrado) y bool determina si se encontró o no.
  */
-std::pair<Users, bool> login();
+std::pair<Users, bool> login(DataBase& data_base);
 
 /**
  * @brief Comprueba el formato del fichero CSV de usuarios.
@@ -77,9 +79,11 @@ bool niceFormatFile();
 /**
  * @brief Se encarga de leer a los usuarios del fichero .csv
  *
+ * @param data_base Es la abse de datos donde están los productos.
+ * 
  * @return std::vector<Users> . Es un vector con todos los usuarios del fichero.
  */
-std::vector<Users> readUsers();
+std::vector<Users> readUsers(DataBase& data_base);
 
 /**
  * @brief Comprueba si el usuario o contraseña coincide con alguno registrado.
@@ -90,6 +94,7 @@ std::vector<Users> readUsers();
  * el primer usuario registrado) y bool determina si se encontró o no.
  */
 std::pair<Users, bool> comparePass(const std::string user,
-                                   const std::string pass);
+                                   const std::string pass,
+                                   DataBase& data_base);
 
 #endif  // LOGIN_H_
