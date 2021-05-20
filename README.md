@@ -65,4 +65,4 @@ Informe del proyecto: [Informe](https://drive.google.com/file/d/15LlaNJQqJQ2t6KR
 Historias de usuario: [Hoja de cálculo](https://drive.google.com/file/d/1vppcvpkeVs_fGl6_LTKjAks1Kk0ejM55/view?usp=sharing). <br>
 Gestión ficheros: [Gestión](https://www.geeksforgeeks.org/csv-file-management-using-c/). <br>
 Eliminación en tablas de hash: [Eliminación](http://quegrande.org/apuntes/EI/2/Alg/teoria/08-09/tema_6_-_tablas_de_dispersion.pdf).<br>
-Git Hooks: [Git hooks](https://www.hostinger.es/tutoriales/como-usar-git-hooks). <br>
+Git Hooks: [Git hooks](https://blog.devgenius.io/automate-unit-tests-before-each-commit-by-git-hook-f331f0499786). <br>
