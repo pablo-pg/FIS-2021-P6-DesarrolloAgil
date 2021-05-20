@@ -91,7 +91,7 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">bool</span> write = 0;        <span class="comment">//&lt; Bit de permiso de escritura.</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">bool</span> admin = 0;        <span class="comment">//&lt; Bit de permiso de creación/eliminación.</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">float</span> rating;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">int</span> rating;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  std::vector&lt;Product&gt; products;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  std::vector&lt;Payment&gt; accepted_payment;</div>
@@ -114,18 +114,16 @@ $(function() {
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;std::pair&lt;Users, bool&gt; <a class="code" href="login_8h.html#a9c6e3158bf1a9f54e2f5feb4895a6390">login</a>(<a class="code" href="classDataBase.html">DataBase</a>&amp; data_base);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="login_8h.html#ab2506c01b9f12c77ab0682380452819c">niceFormatFile</a>(</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="login_8h.html#ab2506c01b9f12c77ab0682380452819c">niceFormatFile</a>();</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;std::vector&lt;Users&gt; <a class="code" href="login_8h.html#ae81f1fb876c7f7a47f9d37249085ff13">readUsers</a>(<a class="code" href="classDataBase.html">DataBase</a>&amp; data_base);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">void</span> RegisterUserCSV(<span class="keyword">const</span> <a class="code" href="structUsers.html">Users</a>&amp; user);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">void</span> DeleteUserCSV(<span class="keyword">const</span> <a class="code" href="structUsers.html">Users</a>&amp; username);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;std::pair&lt;Users, bool&gt; <a class="code" href="login_8h.html#a24d9a88f8ab258f3cfa49a2eb8925355">comparePass</a>(<span class="keyword">const</span> std::string user,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                   <span class="keyword">const</span> std::string pass, <a class="code" href="classDataBase.html">DataBase</a>&amp; data_base);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif  // LOGIN_H_</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;std::vector&lt;Users&gt; <a class="code" href="login_8h.html#ae81f1fb876c7f7a47f9d37249085ff13">readUsers</a>(<a class="code" href="classDataBase.html">DataBase</a>&amp; data_base);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">void</span> RegisterUserCSV(<span class="keyword">const</span> <a class="code" href="structUsers.html">Users</a>&amp; user, <a class="code" href="classDataBase.html">DataBase</a>&amp; data_base);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">void</span> ToCSV(std::vector&lt;Users&gt; all_users);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;std::pair&lt;Users, bool&gt; <a class="code" href="login_8h.html#a24d9a88f8ab258f3cfa49a2eb8925355">comparePass</a>(<span class="keyword">const</span> std::string user,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                   <span class="keyword">const</span> std::string pass, <a class="code" href="classDataBase.html">DataBase</a>&amp; data_base);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif  // LOGIN_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructUsers_html"><div class="ttname"><a href="structUsers.html">Users</a></div><div class="ttdoc">Estructura que define los campos que tiene un usuario.</div><div class="ttdef"><b>Definition:</b> login.h:34</div></div>
 <div class="ttc" id="alogin_8h_html_a24d9a88f8ab258f3cfa49a2eb8925355"><div class="ttname"><a href="login_8h.html#a24d9a88f8ab258f3cfa49a2eb8925355">comparePass</a></div><div class="ttdeci">std::pair&lt; Users, bool &gt; comparePass(const std::string user, const std::string pass, DataBase &amp;data_base)</div><div class="ttdoc">Comprueba si el usuario o contraseña coincide con alguno registrado.</div></div>

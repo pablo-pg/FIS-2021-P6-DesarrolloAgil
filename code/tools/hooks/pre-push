@@ -13,4 +13,3 @@ cd ./code/tools
 cd $CUR_DIR
 git add .
 git commit -m "Actualizar documentacion ($(date +%F@%R))"
-git push

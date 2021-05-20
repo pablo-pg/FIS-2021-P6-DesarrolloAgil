@@ -168,7 +168,6 @@ void RegisterUserCSV(const Users& user, DataBase& data_base) {
   ToCSV(all_users);
 }
 
-
 void ToCSV(std::vector<Users> all_users) {
   std::fstream fs;
   std::string header = "user,pass,permissions,products,rating,payment";
@@ -178,12 +177,18 @@ void ToCSV(std::vector<Users> all_users) {
   }
   char kCsvDelimiter = ',';
   fs << header;
-  for (const auto& user: all_users) {
-    fs << "\n" << user.username << kCsvDelimiter << user.password
-       << kCsvDelimiter;
-    if (user.read) {fs << "r";}
-    if (user.write) {fs << "w";}
-    if (user.admin) {fs << "c";}
+  for (const auto& user : all_users) {
+    fs << "\n"
+       << user.username << kCsvDelimiter << user.password << kCsvDelimiter;
+    if (user.read) {
+      fs << "r";
+    }
+    if (user.write) {
+      fs << "w";
+    }
+    if (user.admin) {
+      fs << "c";
+    }
     fs << kCsvDelimiter;
     for (const auto& prod : user.products) {
       fs << prod.name;

@@ -455,12 +455,12 @@ void Delete(const Users& user, DataBase& data_base) {
     std::string name;
     std::cin >> name;
     bool found = 0;
-    for (size_t i {0}; i < user.products.size(); ++i) {
+    for (size_t i{0}; i < user.products.size(); ++i) {
       if (user.products.at(i).name == name) {
         found = 1;
         try {
           data_base.Delete(name);
-        } catch(std::exception& e) {
+        } catch (std::exception& e) {
           std::cout << e.what();
         }
         ok = 1;
@@ -594,12 +594,12 @@ void RegisterUser(DataBase& data_base) {
 void DeleteUser(const std::string& username, DataBase& data_base) {
   std::vector<Users> all_users = readUsers(data_base);
   bool found = 0;
-  for (std::size_t i {0}; i < all_users.size(); ++i) {
+  for (std::size_t i{0}; i < all_users.size(); ++i) {
     Users& user = all_users.at(i);
     std::vector<Users>::iterator it = all_users.begin() + i;
     if (user.username == username) {
       found = 1;
-      for (std::size_t i {0}; i < user.products.size(); ++i) {
+      for (std::size_t i{0}; i < user.products.size(); ++i) {
         data_base.Delete(user.products.at(i).name);
       }
       all_users.erase(it);
@@ -615,7 +615,7 @@ void DeleteUser(const std::string& username, DataBase& data_base) {
 void PrintUser(const Users& user) {
   std::cout << "Nombre de usuario: " << user.username << "\n"
             << "Valoración: ";
-  for (int i {}; i < user.rating; ++i) {
+  for (int i{}; i < user.rating; ++i) {
     std::cout << "\U00002b50";
   }
   std::cout << std::endl;

@@ -86,26 +86,29 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="classDataBase.html#a9d4629e705ccaa4897e9650222a2a648">~DataBase</a>();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classDataBase.html#a838a15c7bd7e6488c283f9582e45e382">Insert</a>(<span class="keyword">const</span> <a class="code" href="structProduct.html">Product</a>&amp; new_product);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="structProduct.html">Product</a>&amp; <a class="code" href="classDataBase.html#a360462b579112ee6dc987eade5f63759">Search</a>(<span class="keyword">const</span> <a class="code" href="classDataBase.html#a37814cde6095ac3a0f8a0b1530b19729">SearchKey</a>&amp; key);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">const</span> <a class="code" href="structProduct.html">Product</a>&amp; <a class="code" href="classDataBase.html#a360462b579112ee6dc987eade5f63759">Search</a>(<span class="keyword">const</span> <a class="code" href="classDataBase.html#a37814cde6095ac3a0f8a0b1530b19729">SearchKey</a>&amp; key) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classDataBase.html#a140379979c4468f7a0606a617aec54f4">Records</a>(std::queue&lt;Product&gt;&amp; products) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// Carga los productos desde el fichero de datos.</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> Read(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// Guarda los productos en el fichero de datos.</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> Write(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">// Estructura de datos interna para almacenar productos.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="classHashTable.html">HashTable&lt;SearchKey&gt;</a> hash_;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// Fichero de datos a modo de almacén no volátil.</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  std::fstream data_file_;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif  // DATA_BASE_H_</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classDataBase.html#a84f36c881536fe9e84e2792a0e775344">Delete</a>(<span class="keyword">const</span> <a class="code" href="classDataBase.html#a37814cde6095ac3a0f8a0b1530b19729">SearchKey</a>&amp; product);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="structProduct.html">Product</a>&amp; <a class="code" href="classDataBase.html#a360462b579112ee6dc987eade5f63759">Search</a>(<span class="keyword">const</span> <a class="code" href="classDataBase.html#a37814cde6095ac3a0f8a0b1530b19729">SearchKey</a>&amp; key);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">const</span> <a class="code" href="structProduct.html">Product</a>&amp; <a class="code" href="classDataBase.html#a360462b579112ee6dc987eade5f63759">Search</a>(<span class="keyword">const</span> <a class="code" href="classDataBase.html#a37814cde6095ac3a0f8a0b1530b19729">SearchKey</a>&amp; key) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classDataBase.html#a140379979c4468f7a0606a617aec54f4">Records</a>(std::queue&lt;Product&gt;&amp; products) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// Carga los productos desde el fichero de datos.</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span> Read(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">// Guarda los productos en el fichero de datos.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span> Write(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="comment">// Estructura de datos interna para almacenar productos.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="classHashTable.html">HashTable&lt;SearchKey&gt;</a> hash_;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="comment">// Fichero de datos a modo de almacén no volátil.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  std::fstream data_file_;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif  // DATA_BASE_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructProduct_html"><div class="ttname"><a href="structProduct.html">Product</a></div><div class="ttdoc">Representa de forma lógica a un producto del negocio y ofrece herramientas para su manipulación con f...</div><div class="ttdef"><b>Definition:</b> product.h:25</div></div>
 <div class="ttc" id="aclassHashTable_html"><div class="ttname"><a href="classHashTable.html">HashTable&lt; SearchKey &gt;</a></div></div>
+<div class="ttc" id="aclassDataBase_html_a84f36c881536fe9e84e2792a0e775344"><div class="ttname"><a href="classDataBase.html#a84f36c881536fe9e84e2792a0e775344">DataBase::Delete</a></div><div class="ttdeci">void Delete(const SearchKey &amp;product)</div><div class="ttdoc">Elimina el producto de la lista.</div></div>
 <div class="ttc" id="adata__base_8h_html_aba9808592719e4a684ab0be30ffb0ba1"><div class="ttname"><a href="data__base_8h.html#aba9808592719e4a684ab0be30ffb0ba1">kPath2Products</a></div><div class="ttdeci">const std::string kPath2Products</div><div class="ttdoc">Ruta predeterminada del fichero de datos que contiene los productos.</div><div class="ttdef"><b>Definition:</b> data_base.h:23</div></div>
 <div class="ttc" id="aclassDataBase_html_a9d4629e705ccaa4897e9650222a2a648"><div class="ttname"><a href="classDataBase.html#a9d4629e705ccaa4897e9650222a2a648">DataBase::~DataBase</a></div><div class="ttdeci">~DataBase()</div><div class="ttdoc">Destruye la base de datos y guarda la información de los productos en un medio no volátil.</div></div>
 <div class="ttc" id="aclassDataBase_html_a838a15c7bd7e6488c283f9582e45e382"><div class="ttname"><a href="classDataBase.html#a838a15c7bd7e6488c283f9582e45e382">DataBase::Insert</a></div><div class="ttdeci">void Insert(const Product &amp;new_product)</div><div class="ttdoc">Insertar un producto en la base de datos.</div></div>
