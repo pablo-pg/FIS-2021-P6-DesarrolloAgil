@@ -186,7 +186,8 @@ int SellerMenu(const Users& user, DataBase& data_base) {
           << "  Pulse 1 para ver los datos de un producto.\n"
           << "  Pulse 2 para ver todos los productos.\n  "
           << "Pulse 3 para modificar los datos de un producto ya existente."
-          << "\n  Pulse 4 para ver su perfil.\n"
+          << "\n  Pulse 4 para borrar un producto.\n"
+          << "  Pulse 5 para ver su perfil.\n"
           << "  Pulse q para salir.\n\n"
           << "Introduzca la opción: ";
       std::cin >> election;
@@ -215,6 +216,9 @@ int SellerMenu(const Users& user, DataBase& data_base) {
         system("clear");
         break;
       case '4':
+        system("clear");
+        Delete(user, data_base);
+      case '5':
         system("clear");
         PrintUser(user);
         break;
@@ -275,7 +279,7 @@ int AdminReadMenu(const Users& user, DataBase& data_base) {
         break;
       case '4':
         system("clear");
-        std::cout << "Implementado en la siguiente entrega." << std::endl;
+        RegisterUser();
         break;
       case '5':
         system("clear");
@@ -311,13 +315,14 @@ int AdminWriteMenu(const Users& user, DataBase& data_base) {
           << "\n  Pulse 4 para añadir un nuevo producto a la base de datos."
           << "\n  Pulse 5 para eliminar un producto.\n"
           << "  Pulse 6 para registrar un nuevo usuario.\n"
-          << "  Pulse 7 para ver su perfil.\n"
+          << "  Pulse 7 para eliminar un usuario registrado.\n"
+          << "  Pulse 8 para ver su perfil.\n"
           << "  Pulse q para salir.\n\n"
           << "Introduzca la opción: ";
       std::cin >> election;
       if ((election == '1') || (election == '2') || (election == '3') ||
           (election == '4') || (election == '5') || (election == '6') ||
-          (election == '7') || (election == 'q')) {
+          (election == '7') || (election == '7') || (election == 'q')) {
         ok = 1;
       } else {
         std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
@@ -347,13 +352,27 @@ int AdminWriteMenu(const Users& user, DataBase& data_base) {
         break;
       case '5':
         system("clear");
-        std::cout << "Implementado en la siguiente entrega.\n" << std::endl;
+        Delete(user, data_base);
         break;
       case '6':
         system("clear");
-        std::cout << "Implementado en la siguiente entrega.\n" << std::endl;
+        RegisterUser();
         break;
-      case '7':
+      case '7': {
+        system("clear");
+        std::cout << "Introduzca el nombre del usuario a eliminar: ";
+        std::string username;
+        std::cin >> username;
+        std::cout << "¿Seguro que quiere borrar al usuario " << username << "?"
+                  << " (s/n) ";
+        std::string option;
+        std::cin >> option;
+        if ((option == "s") || (option == "S")) {
+          DeleteUser(username);
+        }
+        break;
+      }
+      case '8':
         system("clear");
         PrintUser(user);
         break;

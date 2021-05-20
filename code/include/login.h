@@ -43,7 +43,7 @@ struct Users {
 
   std::vector<Product> products;
   std::vector<Payment> accepted_payment;
-  
+
   bool operator==(const Users& rhs) const {
     if (username == rhs.username) {
       if (password == rhs.password) {
