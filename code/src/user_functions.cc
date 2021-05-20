@@ -559,6 +559,7 @@ void RegsiterUser(DataBase& data_base) {
   new_user.rating = 0.0;
   new_user.products = products;
   new_user.accepted_payment = payment;
+  RegisterUserCSV(new_user);
 }
 
 void DeleteUser(const std::string& username) {}
