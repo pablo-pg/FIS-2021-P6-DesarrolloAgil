@@ -85,3 +85,8 @@ actualizada al respecto, consultar TEST.md y TOOLS.md para más información<br>
 **Fecha:** 17/05/2021  - 17:00 <br>
 **Título:** Terminado redimensión de la tabla y la eliminación de productos.  <br>
 **Descripción:** Inicio y finalización del back-end para la redimensión de la tabla de hash y la eliminación de productos. <br> <br> 
+
+**Autor:** Equipo 1 (Pablo Pérez González y Dana Belén Choque Zárate) <br>
+**Fecha:** 20/05/2001 - 16:45 <br>
+**Título:** Implementación de perfiles de usuario.<br>
+**Descripción:** Inicio y finalizacióin de la implementación de los perfiles de todos los usuarios, así como adaptar users.csv y los métodos de lectura del fichero. <br> <br>
