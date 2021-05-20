@@ -35,6 +35,7 @@ class HashTable {
    * @param size Tamaño máximo para la tabla.
    */
   explicit HashTable(const unsigned int size = kDefaultTableSize);
+
   /**
    * @brief Destrutor por defecto
    */
@@ -45,21 +46,25 @@ class HashTable {
    * @return Valor booleano, verdadero si se han insertado demasiados productos.
    */
   bool Full(void) const { return nrecords_ >= size_; }
+
   /**
    * @brief Lanza una excepción si dicho producto no existe.
    * @param key Patrón de búsqueda para el producto.
    * @return Referencia de lectura/escritura al producto buscado.
    */
   Product& Search(const Key& key);
+
   /**
    * @brief Búsqueda pero constante.
    */
   const Product& Search(const Key& key) const;
+
   /**
    * @brief Insertar un producto en la tabla hash, siempre que no esté llena.
    * @param new_product Nuevo producto a insertar.
    */
   void Insert(const Product& new_product);
+
   /**
    * @brief Redimensiona la tabla, incrementando
    *        su tamaño con aquel por defecto.
@@ -71,6 +76,7 @@ class HashTable {
    * @param product Producto a eliminar
    */
   void Delete(const Key& product);
+
   /**
    * @brief Devuelve todos los productos de la tabla.
    * @param products Estructura FIFO para guardar los registros.
@@ -78,14 +84,14 @@ class HashTable {
   void Records(std::queue<Product>& products) const;
 
  private:
-  // Función de hash pseudo-aleatoria.
+  /// Función de hash pseudo-aleatoria.
   unsigned int HashFunction(const Key& key) const;
 
-  // Tamaño de la tabla, en base al número de entradas.
+  /// Tamaño de la tabla, en base al número de entradas.
   unsigned int size_;
-  // Número de productos que contiene la tabla actualmente.
+  /// Número de productos que contiene la tabla actualmente.
   unsigned int nrecords_;
-  // Estructura de datos para implementar la dispersión.
+  /// Estructura de datos para implementar la dispersión.
   std::vector<std::list<Product>> data_;
 };
 

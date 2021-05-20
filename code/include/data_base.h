@@ -54,16 +54,19 @@ class DataBase {
    * @param product Producto a eliminar
    */
   void Delete(const SearchKey& product);
+
   /**
    * @brief Busca un producto por clave.
    * @param key Patrón de búsqueda.
    * @return Referencia de lectura/escritura al producto buscado.
    */
   Product& Search(const SearchKey& key);
+
   /**
    * @brief Búsqueda pero constante.
    */
   const Product& Search(const SearchKey& key) const;
+
   /**
    * @brief Devuelve todos los registros de productos en la base de datos.
    * @param products Estructura FIFO para guardar los productos.
@@ -71,14 +74,14 @@ class DataBase {
   void Records(std::queue<Product>& products) const;
 
  private:
-  // Carga los productos desde el fichero de datos.
+  /// Carga los productos desde el fichero de datos.
   void Read(void);
-  // Guarda los productos en el fichero de datos.
+  /// Guarda los productos en el fichero de datos.
   void Write(void);
 
-  // Estructura de datos interna para almacenar productos.
+  /// Estructura de datos interna para almacenar productos.
   HashTable<SearchKey> hash_;
-  // Fichero de datos a modo de almacén no volátil.
+  /// Fichero de datos a modo de almacén no volátil.
   std::fstream data_file_;
 };
 

@@ -85,7 +85,21 @@ bool niceFormatFile();
  */
 std::vector<Users> readUsers(DataBase& data_base);
 
+/**
+ * @brief Añade un nuevo usuario al fichero que contiene los usuarios.
+ *
+ * @param user Es el usuario que se añade.
+ * @param data_base Es la base de datos relacionada a los productos de los
+ *  usuarios.
+ */
 void RegisterUserCSV(const Users& user, DataBase& data_base);
+
+/**
+ * @brief Convierte a todos los usuarios en un formato CSV, así como actualiza
+ *  el fichero.
+ *
+ * @param all_users Son todos los usuarios que
+ */
 void ToCSV(std::vector<Users> all_users);
 /**
  * @brief Comprueba si el usuario o contraseña coincide con alguno registrado.

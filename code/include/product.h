@@ -34,10 +34,11 @@ struct Product {
   /// Fecha de caducidad (formato UNIX).
   std::time_t expiration = time(NULL);
   /// Origen del producto.
-  std::string origin = "";
+  std::string origin = "Ninguno";
 
   /// Delimitador para una entrada de fichero .csv sobre productos.
   static const char kCsvDelimiter;
+
   /**
    * @brief Posición de un campo para una entrada
    *        de fichero .csv sobre productos.
@@ -58,11 +59,13 @@ struct Product {
   operator std::string() const { return name; }
   /// Intentifica a un producto nulo, cuyo identificador es 0.
   operator bool() const { return id != 0; }
+
   /**
    * @brief Imprime el producto en formato .csv.
    * @param fs Fichero de salida.
    */
   void ToCsv(std::fstream& fs) const;
+
   /**
    * @brief Lee el producto en formato .csv.
    * @param fs Fichero de entrada.

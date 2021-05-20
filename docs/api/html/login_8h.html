@@ -121,11 +121,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ae81f1fb876c7f7a47f9d37249085ff13"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structUsers.html">Users</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="login_8h.html#ae81f1fb876c7f7a47f9d37249085ff13">readUsers</a> (<a class="el" href="classDataBase.html">DataBase</a> &amp;data_base)</td></tr>
 <tr class="memdesc:ae81f1fb876c7f7a47f9d37249085ff13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Se encarga de leer a los usuarios del fichero .csv.  <a href="login_8h.html#ae81f1fb876c7f7a47f9d37249085ff13">More...</a><br /></td></tr>
 <tr class="separator:ae81f1fb876c7f7a47f9d37249085ff13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b7e21baac289a7722790dd0a660d633"><td class="memItemLeft" align="right" valign="top"><a id="a3b7e21baac289a7722790dd0a660d633"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RegisterUserCSV</b> (const <a class="el" href="structUsers.html">Users</a> &amp;user, <a class="el" href="classDataBase.html">DataBase</a> &amp;data_base)</td></tr>
+<tr class="memitem:a3b7e21baac289a7722790dd0a660d633"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="login_8h.html#a3b7e21baac289a7722790dd0a660d633">RegisterUserCSV</a> (const <a class="el" href="structUsers.html">Users</a> &amp;user, <a class="el" href="classDataBase.html">DataBase</a> &amp;data_base)</td></tr>
+<tr class="memdesc:a3b7e21baac289a7722790dd0a660d633"><td class="mdescLeft">&#160;</td><td class="mdescRight">Añade un nuevo usuario al fichero que contiene los usuarios.  <a href="login_8h.html#a3b7e21baac289a7722790dd0a660d633">More...</a><br /></td></tr>
 <tr class="separator:a3b7e21baac289a7722790dd0a660d633"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3a4be4191e97fc1f2d42d93b4314f25"><td class="memItemLeft" align="right" valign="top"><a id="af3a4be4191e97fc1f2d42d93b4314f25"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ToCSV</b> (std::vector&lt; <a class="el" href="structUsers.html">Users</a> &gt; all_users)</td></tr>
+<tr class="memitem:af3a4be4191e97fc1f2d42d93b4314f25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="login_8h.html#af3a4be4191e97fc1f2d42d93b4314f25">ToCSV</a> (std::vector&lt; <a class="el" href="structUsers.html">Users</a> &gt; all_users)</td></tr>
+<tr class="memdesc:af3a4be4191e97fc1f2d42d93b4314f25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convierte a todos los usuarios en un formato CSV, así como actualiza el fichero.  <a href="login_8h.html#af3a4be4191e97fc1f2d42d93b4314f25">More...</a><br /></td></tr>
 <tr class="separator:af3a4be4191e97fc1f2d42d93b4314f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24d9a88f8ab258f3cfa49a2eb8925355"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="structUsers.html">Users</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="login_8h.html#a24d9a88f8ab258f3cfa49a2eb8925355">comparePass</a> (const std::string user, const std::string pass, <a class="el" href="classDataBase.html">DataBase</a> &amp;data_base)</td></tr>
 <tr class="memdesc:a24d9a88f8ab258f3cfa49a2eb8925355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba si el usuario o contraseña coincide con alguno registrado.  <a href="login_8h.html#a24d9a88f8ab258f3cfa49a2eb8925355">More...</a><br /></td></tr>
@@ -249,6 +249,69 @@ false en el casod e que el formato está mal. </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;Users&gt; . Es un vector con todos los usuarios del fichero. </dd></dl>
+
+</div>
+</div>
+<a id="a3b7e21baac289a7722790dd0a660d633"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b7e21baac289a7722790dd0a660d633">&#9670;&nbsp;</a></span>RegisterUserCSV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RegisterUserCSV </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structUsers.html">Users</a> &amp;&#160;</td>
+          <td class="paramname"><em>user</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classDataBase.html">DataBase</a> &amp;&#160;</td>
+          <td class="paramname"><em>data_base</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Añade un nuevo usuario al fichero que contiene los usuarios. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>Es el usuario que se añade. </td></tr>
+    <tr><td class="paramname">data_base</td><td>Es la base de datos relacionada a los productos de los usuarios. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af3a4be4191e97fc1f2d42d93b4314f25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3a4be4191e97fc1f2d42d93b4314f25">&#9670;&nbsp;</a></span>ToCSV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ToCSV </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structUsers.html">Users</a> &gt;&#160;</td>
+          <td class="paramname"><em>all_users</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convierte a todos los usuarios en un formato CSV, así como actualiza el fichero. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">all_users</td><td>Son todos los usuarios que </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
