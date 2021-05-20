@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['adminreadmenu_0',['AdminReadMenu',['../menu_8h.html#acb7650219ada5b6364f8820a9d9b77a2',1,'menu.h']]],
-  ['adminwritemenu_1',['AdminWriteMenu',['../menu_8h.html#ad630c87599e7a12a534a287ff7c21939',1,'menu.h']]]
+  ['adminreadmenu_0',['AdminReadMenu',['../menu_8h.html#a08bc8a6f975589de3a8782059e40aae0',1,'menu.h']]],
+  ['adminwritemenu_1',['AdminWriteMenu',['../menu_8h.html#a6a68d6843e4753744c75d96da715b9d2',1,'menu.h']]]
 ];

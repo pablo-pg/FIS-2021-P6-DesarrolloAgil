@@ -5,7 +5,11 @@ digraph "data_base.h"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="data_base.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Base de datos para El Plátano de Oro."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="user_functions.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$user__functions_8h.html",tooltip="Base de datos para El Plátano de Oro."];
+  Node2 [label="login.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$login_8h.html",tooltip="Cabecera de código para el login de usuarios."];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="menu.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$menu_8h.html",tooltip="Interfaz de la aplicación."];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="user_functions.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$user__functions_8h.html",tooltip="Base de datos para El Plátano de Oro."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

@@ -74,58 +74,66 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;ios&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structUsers.html">   29</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structUsers.html">Users</a> {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  std::string username;  <span class="comment">//&lt; Nombre de usuario.</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">size_t</span> password;       <span class="comment">//&lt; Contraseña cifrada.</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">bool</span> read = 1;         <span class="comment">//&lt; Bit de permiso de lectura.</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">bool</span> write = 0;        <span class="comment">//&lt; Bit de permiso de escritura.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">bool</span> admin = 0;        <span class="comment">//&lt; Bit de permiso de creación/eliminación.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="comment">// Users&amp; operator=(const Users&amp; rhs) {</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="comment">//   username = rhs.username;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">//   password = rhs.password;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">//   read = rhs.read;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">//   write = rhs.write;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">//   admin = rhs.admin;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">//   return *this;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// }</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="structUsers.html">Users</a>&amp; rhs)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (username == rhs.username) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordflow">if</span> (password == rhs.password) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> (read == rhs.read) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;          <span class="keywordflow">if</span> (write == rhs.write) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span> (admin == rhs.admin) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;              <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;          }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;std::pair&lt;Users, bool&gt; <a class="code" href="login_8h.html#a418ee29cd1276f50a44ecc6efbe305d3">login</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="login_8h.html#ab2506c01b9f12c77ab0682380452819c">niceFormatFile</a>();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;std::vector&lt;Users&gt; <a class="code" href="login_8h.html#ad7a928fd204118e1ec970a5c10b6a80c">readUsers</a>();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;std::pair&lt;Users, bool&gt; <a class="code" href="login_8h.html#aff9fdcb1e50eaf6d74626cf514d313e6">comparePass</a>(<span class="keyword">const</span> std::string user,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                   <span class="keyword">const</span> std::string pass);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif  // LOGIN_H_</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="data__base_8h.html">./data_base.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">enum</span> Payment { PayPal, BankAccount, Bizum, Bitcoin };</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structUsers.html">   34</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structUsers.html">Users</a> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  std::string username;  <span class="comment">//&lt; Nombre de usuario.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">size_t</span> password;       <span class="comment">//&lt; Contraseña cifrada.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">bool</span> read = 1;         <span class="comment">//&lt; Bit de permiso de lectura.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">bool</span> write = 0;        <span class="comment">//&lt; Bit de permiso de escritura.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">bool</span> admin = 0;        <span class="comment">//&lt; Bit de permiso de creación/eliminación.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">float</span> rating;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  std::vector&lt;Product&gt; products;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  std::vector&lt;Payment&gt; accepted_payment;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="structUsers.html">Users</a>&amp; rhs)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> (username == rhs.username) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordflow">if</span> (password == rhs.password) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> (read == rhs.read) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;          <span class="keywordflow">if</span> (write == rhs.write) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> (admin == rhs.admin) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;              <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;          }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;std::pair&lt;Users, bool&gt; <a class="code" href="login_8h.html#a9c6e3158bf1a9f54e2f5feb4895a6390">login</a>(<a class="code" href="classDataBase.html">DataBase</a>&amp; data_base);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="login_8h.html#ab2506c01b9f12c77ab0682380452819c">niceFormatFile</a>(</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;std::vector&lt;Users&gt; <a class="code" href="login_8h.html#ae81f1fb876c7f7a47f9d37249085ff13">readUsers</a>(<a class="code" href="classDataBase.html">DataBase</a>&amp; data_base);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">void</span> RegisterUserCSV(<span class="keyword">const</span> <a class="code" href="structUsers.html">Users</a>&amp; user);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">void</span> DeleteUserCSV(<span class="keyword">const</span> <a class="code" href="structUsers.html">Users</a>&amp; username);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;std::pair&lt;Users, bool&gt; <a class="code" href="login_8h.html#a24d9a88f8ab258f3cfa49a2eb8925355">comparePass</a>(<span class="keyword">const</span> std::string user,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                   <span class="keyword">const</span> std::string pass, <a class="code" href="classDataBase.html">DataBase</a>&amp; data_base);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif  // LOGIN_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructUsers_html"><div class="ttname"><a href="structUsers.html">Users</a></div><div class="ttdoc">Estructura que define los campos que tiene un usuario.</div><div class="ttdef"><b>Definition:</b> login.h:29</div></div>
-<div class="ttc" id="alogin_8h_html_aff9fdcb1e50eaf6d74626cf514d313e6"><div class="ttname"><a href="login_8h.html#aff9fdcb1e50eaf6d74626cf514d313e6">comparePass</a></div><div class="ttdeci">std::pair&lt; Users, bool &gt; comparePass(const std::string user, const std::string pass)</div><div class="ttdoc">Comprueba si el usuario o contraseña coincide con alguno registrado.</div></div>
-<div class="ttc" id="alogin_8h_html_ad7a928fd204118e1ec970a5c10b6a80c"><div class="ttname"><a href="login_8h.html#ad7a928fd204118e1ec970a5c10b6a80c">readUsers</a></div><div class="ttdeci">std::vector&lt; Users &gt; readUsers()</div><div class="ttdoc">Se encarga de leer a los usuarios del fichero .csv.</div></div>
+<div class="ttc" id="astructUsers_html"><div class="ttname"><a href="structUsers.html">Users</a></div><div class="ttdoc">Estructura que define los campos que tiene un usuario.</div><div class="ttdef"><b>Definition:</b> login.h:34</div></div>
+<div class="ttc" id="alogin_8h_html_a24d9a88f8ab258f3cfa49a2eb8925355"><div class="ttname"><a href="login_8h.html#a24d9a88f8ab258f3cfa49a2eb8925355">comparePass</a></div><div class="ttdeci">std::pair&lt; Users, bool &gt; comparePass(const std::string user, const std::string pass, DataBase &amp;data_base)</div><div class="ttdoc">Comprueba si el usuario o contraseña coincide con alguno registrado.</div></div>
+<div class="ttc" id="aclassDataBase_html"><div class="ttname"><a href="classDataBase.html">DataBase</a></div><div class="ttdoc">Almacena los productos en un soporte volátil y eficiente. Además, gestiona el acceso a ellos.</div><div class="ttdef"><b>Definition:</b> data_base.h:29</div></div>
+<div class="ttc" id="alogin_8h_html_a9c6e3158bf1a9f54e2f5feb4895a6390"><div class="ttname"><a href="login_8h.html#a9c6e3158bf1a9f54e2f5feb4895a6390">login</a></div><div class="ttdeci">std::pair&lt; Users, bool &gt; login(DataBase &amp;data_base)</div><div class="ttdoc">Método encargado de introducir credenciales y gestiona la aprobación o no del usuario.</div></div>
 <div class="ttc" id="alogin_8h_html_ab2506c01b9f12c77ab0682380452819c"><div class="ttname"><a href="login_8h.html#ab2506c01b9f12c77ab0682380452819c">niceFormatFile</a></div><div class="ttdeci">bool niceFormatFile()</div><div class="ttdoc">Comprueba el formato del fichero CSV de usuarios.</div></div>
-<div class="ttc" id="alogin_8h_html_a418ee29cd1276f50a44ecc6efbe305d3"><div class="ttname"><a href="login_8h.html#a418ee29cd1276f50a44ecc6efbe305d3">login</a></div><div class="ttdeci">std::pair&lt; Users, bool &gt; login()</div><div class="ttdoc">Método encargado de introducir credenciales y gestiona la aprobación o no del usuario.</div></div>
+<div class="ttc" id="alogin_8h_html_ae81f1fb876c7f7a47f9d37249085ff13"><div class="ttname"><a href="login_8h.html#ae81f1fb876c7f7a47f9d37249085ff13">readUsers</a></div><div class="ttdeci">std::vector&lt; Users &gt; readUsers(DataBase &amp;data_base)</div><div class="ttdoc">Se encarga de leer a los usuarios del fichero .csv.</div></div>
+<div class="ttc" id="adata__base_8h_html"><div class="ttname"><a href="data__base_8h.html">data_base.h</a></div><div class="ttdoc">Base de datos para El Plátano de Oro.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -47,4 +47,19 @@ digraph "user_functions.h"
   Node13 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node18 [label="../src/hash.inl",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node11 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="./login.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$login_8h.html",tooltip="Cabecera de código para el login de usuarios."];
+  Node19 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="ios",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node19 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="map",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node19 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="utility",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node19 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

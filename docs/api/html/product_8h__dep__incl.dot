@@ -9,8 +9,12 @@ digraph "product.h"
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="data_base.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$data__base_8h.html",tooltip="Base de datos para El Plátano de Oro."];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="user_functions.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$user__functions_8h.html",tooltip="Base de datos para El Plátano de Oro."];
+  Node4 [label="login.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$login_8h.html",tooltip="Cabecera de código para el login de usuarios."];
   Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="menu.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$menu_8h.html",tooltip="Interfaz de la aplicación."];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="user_functions.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$user__functions_8h.html",tooltip="Base de datos para El Plátano de Oro."];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

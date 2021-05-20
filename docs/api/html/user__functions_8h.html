@@ -82,6 +82,7 @@ $(function() {
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
 <code>#include &quot;<a class="el" href="data__base_8h_source.html">./data_base.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="login_8h_source.html">./login.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for user_functions.h:</div>
 <div class="dyncontent">
@@ -118,6 +119,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a0e6248405b90915df5ad59ab11d22f44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user__functions_8h.html#a0e6248405b90915df5ad59ab11d22f44">Insert</a> (<a class="el" href="classDataBase.html">DataBase</a> &amp;data_base)</td></tr>
 <tr class="memdesc:a0e6248405b90915df5ad59ab11d22f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insertar un nuevo producto a la base de datos.  <a href="user__functions_8h.html#a0e6248405b90915df5ad59ab11d22f44">More...</a><br /></td></tr>
 <tr class="separator:a0e6248405b90915df5ad59ab11d22f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48c9ca85bf929058f39aca15a7c1aadc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user__functions_8h.html#a48c9ca85bf929058f39aca15a7c1aadc">Delete</a> (const <a class="el" href="structUsers.html">Users</a> &amp;user, <a class="el" href="classDataBase.html">DataBase</a> &amp;data_base)</td></tr>
+<tr class="memdesc:a48c9ca85bf929058f39aca15a7c1aadc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Borra un producto de la base de datos.  <a href="user__functions_8h.html#a48c9ca85bf929058f39aca15a7c1aadc">More...</a><br /></td></tr>
+<tr class="separator:a48c9ca85bf929058f39aca15a7c1aadc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af24e2ef2885f4d944783b9fcf84175c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user__functions_8h.html#af24e2ef2885f4d944783b9fcf84175c4">RegisterUser</a> (<a class="el" href="classDataBase.html">DataBase</a> &amp;data_base)</td></tr>
+<tr class="memdesc:af24e2ef2885f4d944783b9fcf84175c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Se registra un nuevo usuario.  <a href="user__functions_8h.html#af24e2ef2885f4d944783b9fcf84175c4">More...</a><br /></td></tr>
+<tr class="separator:af24e2ef2885f4d944783b9fcf84175c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1d0a544ae1985bdb0478164c199830c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user__functions_8h.html#ad1d0a544ae1985bdb0478164c199830c">DeleteUser</a> (const std::string &amp;username)</td></tr>
+<tr class="memdesc:ad1d0a544ae1985bdb0478164c199830c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Se borra un usuario existente en la lista de usuarios disponibles.  <a href="user__functions_8h.html#ad1d0a544ae1985bdb0478164c199830c">More...</a><br /></td></tr>
+<tr class="separator:ad1d0a544ae1985bdb0478164c199830c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b2baf462906404cf8d6602ed3ee17aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user__functions_8h.html#a3b2baf462906404cf8d6602ed3ee17aa">PrintUser</a> (const <a class="el" href="structUsers.html">Users</a> &amp;user)</td></tr>
+<tr class="memdesc:a3b2baf462906404cf8d6602ed3ee17aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime el perfil del usuario.  <a href="user__functions_8h.html#a3b2baf462906404cf8d6602ed3ee17aa">More...</a><br /></td></tr>
+<tr class="separator:a3b2baf462906404cf8d6602ed3ee17aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a494694e6d4be1b29bfd21928021a71dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user__functions_8h.html#a494694e6d4be1b29bfd21928021a71dc">Print</a> (std::queue&lt; <a class="el" href="structProduct.html">Product</a> &gt; data)</td></tr>
 <tr class="memdesc:a494694e6d4be1b29bfd21928021a71dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime una tabla con los productos de una cola.  <a href="user__functions_8h.html#a494694e6d4be1b29bfd21928021a71dc">More...</a><br /></td></tr>
 <tr class="separator:a494694e6d4be1b29bfd21928021a71dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,6 +171,69 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>column_size<
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data_base</td><td>Es la base de datos donde está el producto. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a48c9ca85bf929058f39aca15a7c1aadc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48c9ca85bf929058f39aca15a7c1aadc">&#9670;&nbsp;</a></span>Delete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Delete </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structUsers.html">Users</a> &amp;&#160;</td>
+          <td class="paramname"><em>user</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classDataBase.html">DataBase</a> &amp;&#160;</td>
+          <td class="paramname"><em>data_base</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Borra un producto de la base de datos. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>Es el usuario dueño del producto a borrar. </td></tr>
+    <tr><td class="paramname">data_base</td><td>Es la base de datos de la cual se borrará el producto. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad1d0a544ae1985bdb0478164c199830c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1d0a544ae1985bdb0478164c199830c">&#9670;&nbsp;</a></span>DeleteUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DeleteUser </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>username</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Se borra un usuario existente en la lista de usuarios disponibles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Es el nombre del usuario a borrar. </td></tr>
   </table>
   </dd>
 </dl>
@@ -279,6 +355,32 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>column_size<
 
 </div>
 </div>
+<a id="a3b2baf462906404cf8d6602ed3ee17aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b2baf462906404cf8d6602ed3ee17aa">&#9670;&nbsp;</a></span>PrintUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PrintUser </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structUsers.html">Users</a> &amp;&#160;</td>
+          <td class="paramname"><em>user</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime el perfil del usuario. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>Es el usuario del cual se imprimirán los datos. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a51b23f19b97260a82f28d064c2c5b307"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51b23f19b97260a82f28d064c2c5b307">&#9670;&nbsp;</a></span>ProductToTable()</h2>
 
@@ -303,6 +405,32 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>column_size<
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::queue&lt;table_t&gt; Es una tabla con un formato que es compatible con la función lambda de dentro de <a class="el" href="user__functions_8h.html#a494694e6d4be1b29bfd21928021a71dc">Print()</a> </dd></dl>
+
+</div>
+</div>
+<a id="af24e2ef2885f4d944783b9fcf84175c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af24e2ef2885f4d944783b9fcf84175c4">&#9670;&nbsp;</a></span>RegisterUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RegisterUser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDataBase.html">DataBase</a> &amp;&#160;</td>
+          <td class="paramname"><em>data_base</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Se registra un nuevo usuario. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data_base</td><td>Es la base de datos relacionada a los usuarios. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
