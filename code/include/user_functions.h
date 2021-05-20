@@ -24,6 +24,7 @@
 #include <thread>
 
 #include "./data_base.h"
+#include "./login.h"
 
 constexpr int column_size = 6;
 
@@ -64,9 +65,10 @@ void Buy(DataBase& data_base);
  * @param data_base Es la base de datos donde se insertará el producto.
  */
 void Insert(DataBase& data_base);
-// void Search();            //< test;
-// void Edit();              //< test;
-// void Insert();            //< test;
+
+
+
+void PrintUser(const Users& user);
 
 /**
  * @brief Imprime una tabla con los productos de una cola.

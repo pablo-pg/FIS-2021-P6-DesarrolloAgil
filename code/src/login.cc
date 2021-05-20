@@ -127,7 +127,7 @@ std::vector<Users> readUsers(DataBase& data_base) {
         }
       }
       /// Valoración
-      new_user.rating = (float)(static_cast<int>(std::stoi(row[4]) * 100 + .5) / 100);
+      new_user.rating = std::stof(row[4]);
       /// Métodos de pago
       std::map<std::string, Payment> mapped_payment;
       mapped_payment["ppl"] = PayPal;

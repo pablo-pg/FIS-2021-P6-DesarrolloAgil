@@ -440,6 +440,34 @@ void Insert(DataBase& data_base) {
   data_base.Insert(new_prod);
 }
 
+void PrintUser(const Users& user) {
+  std::cout << "Nombre de usuario: " << user.username << "\n"
+            << "Valoración: " << std::setprecision(3) << user.rating << "\n"
+            << "Productos en venta:" << std::endl;
+  for (const auto& prod : user.products) {
+    std::cout << "  " << prod.name << std::endl;
+  }
+  std::cout << "Métodos de pago:" << std::endl;
+  for (const auto& pay : user.accepted_payment) {
+    switch (pay) {
+      case PayPal:
+        std::cout << "  " << "PayPal" << std::endl;
+        break;
+      case BankAccount:
+        std::cout << "  " << "Transferencia bancaria" << std::endl;
+        break;
+      case Bizum:
+        std::cout << "  " << "Bizum" << std::endl;
+        break;
+      default:
+        std::cout << "Error al imprimir los métodos de pago. Método no aceptado"
+                  << std::endl;
+        break;
+    }
+  }
+  std::cout << std::endl << std::endl;
+}
+
 void Print(std::queue<Product> p_data) {
   std::queue<table_t> data = ProductToTable(p_data);
   table_t headers{{"ID", "NAME", "STOCK", "PRICE", "DATE", "PLACE"}};

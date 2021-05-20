@@ -128,11 +128,12 @@ int BuyerMenu(const Users& user, DataBase& data_base) {
                 << "  Pulse 1 para ver los datos de un producto.\n"
                 << "  Pulse 2 para ver todos los productos.\n"
                 << "  Pulse 3 para comprar un producto.\n"
+                << "  Pulse 4 para ver su perfil.\n"
                 << "  Pulse q para salir.\n\n"
                 << "Introduzca la opción: ";
       std::cin >> election;
       if ((election == '1') || (election == '2') || (election == '3') ||
-          (election == 'q')) {
+          (election == '4') || (election == 'q')) {
         ok = 1;
       } else {
         std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
@@ -153,6 +154,10 @@ int BuyerMenu(const Users& user, DataBase& data_base) {
       case '3':
         system("clear");
         Buy(data_base);
+        break;
+      case '4':
+        system("clear");
+        PrintUser(user);
         break;
       case 'q':
         std::cout << "¡Hasta pronto " << name << "!" << std::endl;
@@ -181,11 +186,12 @@ int SellerMenu(const Users& user, DataBase& data_base) {
           << "  Pulse 1 para ver los datos de un producto.\n"
           << "  Pulse 2 para ver todos los productos.\n  "
           << "Pulse 3 para modificar los datos de un producto ya existente."
-          << "\n  Pulse q para salir.\n\n"
+          << "\n  Pulse 4 para ver su perfil.\n"
+          << "  Pulse q para salir.\n\n"
           << "Introduzca la opción: ";
       std::cin >> election;
       if ((election == '1') || (election == '2') || (election == '3') ||
-          (election == 'q')) {
+          (election == '4') || (election == 'q')) {
         ok = 1;
       } else {
         std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
@@ -208,6 +214,10 @@ int SellerMenu(const Users& user, DataBase& data_base) {
         Edit(data_base);
         system("clear");
         break;
+      case '4':
+        system("clear");
+        PrintUser(user);
+        break;
       case 'q':
         std::cout << "¡Hasta pronto " << name << "!" << std::endl;
         exit = 1;
@@ -226,7 +236,6 @@ int AdminReadMenu(const Users& user, DataBase& data_base) {
   bool exit = 0;
   std::string name = user.username;
   name[0] = toupper(name[0]);
-  ;
   system("clear");
   std::cout << name << ", Bienvenido a El Plátano de Oro. \U0001F34C\n\n";
   do {
@@ -236,11 +245,12 @@ int AdminReadMenu(const Users& user, DataBase& data_base) {
                 << "  Pulse 2 para ver todos los productos.\n  "
                 << "Pulse 3 para añadir un nuevo producto a la base de datos.\n"
                 << "  Pulse 4 para registrar un nuevo usuario.\n"
+                << "  Pulse 5 para ver su perfil.\n"
                 << "  Pulse q para salir.\n\n"
                 << "Introduzca la opción: ";
       std::cin >> election;
       if ((election == '1') || (election == '2') || (election == '3') ||
-          (election == '4') || (election == 'q')) {
+          (election == '4') || (election == '5') || (election == 'q')) {
         ok = 1;
       } else {
         std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
@@ -266,6 +276,10 @@ int AdminReadMenu(const Users& user, DataBase& data_base) {
       case '4':
         system("clear");
         std::cout << "Implementado en la siguiente entrega." << std::endl;
+        break;
+      case '5':
+        system("clear");
+        PrintUser(user);
         break;
       case 'q':
         std::cout << "¡Hasta pronto " << name << "!" << std::endl;
@@ -297,12 +311,13 @@ int AdminWriteMenu(const Users& user, DataBase& data_base) {
           << "\n  Pulse 4 para añadir un nuevo producto a la base de datos."
           << "\n  Pulse 5 para eliminar un producto.\n"
           << "  Pulse 6 para registrar un nuevo usuario.\n"
+          << "  Pulse 7 para ver su perfil.\n"
           << "  Pulse q para salir.\n\n"
           << "Introduzca la opción: ";
       std::cin >> election;
       if ((election == '1') || (election == '2') || (election == '3') ||
           (election == '4') || (election == '5') || (election == '6') ||
-          (election == 'q')) {
+          (election == '7') || (election == 'q')) {
         ok = 1;
       } else {
         std::cout << "Opción incorrecta. Pruebe de nuevo\n" << std::endl;
@@ -337,6 +352,10 @@ int AdminWriteMenu(const Users& user, DataBase& data_base) {
       case '6':
         system("clear");
         std::cout << "Implementado en la siguiente entrega.\n" << std::endl;
+        break;
+      case '7':
+        system("clear");
+        PrintUser(user);
         break;
       case 'q':
         std::cout << "¡Hasta pronto " << name << "!" << std::endl;
