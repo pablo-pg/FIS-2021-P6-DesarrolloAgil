@@ -543,7 +543,12 @@ void RegsiterUser(DataBase& data_base) {
     } else if (opt == "2") {
       payment.push_back(BankAccount);
     } else if (opt == "2") {
-      payment.push_back(BankAccount);
+      payment.push_back(Bizum);
+    } else if (opt == "2") {
+      payment.push_back(Bitcoin);
+    }
+    if (!payment.empty()) {
+      ok = 1;
     }
   } while (ok == 0);
   new_user.username = username;

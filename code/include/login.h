@@ -75,7 +75,10 @@ std::pair<Users, bool> login(DataBase& data_base);
  * @return true en el caso de que el formato esté bien.
  * @return false en el casod e que el formato está mal.
  */
-bool niceFormatFile();
+bool
+niceFormatFile(
+
+);
 
 /**
  * @brief Se encarga de leer a los usuarios del fichero .csv

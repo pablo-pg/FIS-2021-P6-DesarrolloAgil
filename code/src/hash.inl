@@ -57,8 +57,8 @@ void HashTable<Key>::Resize(){
     }
   }
   
-  data_.clear(); 
-  data_ = auxData;
+  data_.clear();
+  data_ = auxData.data_;
   size_ = data_.size();
 }
 
