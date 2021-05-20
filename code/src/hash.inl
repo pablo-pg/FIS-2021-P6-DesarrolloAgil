@@ -19,7 +19,7 @@ HashTable<Key>::HashTable(const unsigned int size)
 template <class Key>
 Product& HashTable<Key>::Search(const Key& key) {
   for (Product& p : data_.at(HashFunction(key))) {
-    if ((std::string)p == key) {
+    if ((Key)p == key) {
       return p;
     }
   }
@@ -30,7 +30,7 @@ Product& HashTable<Key>::Search(const Key& key) {
 template <class Key>
 const Product& HashTable<Key>::Search(const Key& key) const {
   for (const Product& p : data_.at(HashFunction(key))) {
-    if ((std::string)p == key) {
+    if ((Key)p == key) {
       return p;
     }
   }
@@ -102,7 +102,7 @@ void HashTable<Key>::Delete(const Key &key) {
   // find the key in (inex)th list
   std::list<Product>::iterator i;
   for (i = data_[index].begin(); i != data_[index].end(); i++) {
-    if ((std::string)(*i) == key) {
+    if ((Key)(*i) == key) {
       data_[index].erase(i);
       nrecords_--;
       return;

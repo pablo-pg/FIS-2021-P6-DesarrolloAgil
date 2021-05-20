@@ -60,12 +60,14 @@ class HashTable {
    * @param new_product Nuevo producto a insertar.
    */
   void Insert(const Product& new_product);
-
-  void Resize();
+  /**
+   * @brief Redimensiona la tabla, incrementando
+   *        su tamaño con aquel por defecto.
+   */
+  void Resize(void);
 
   /**
    * @brief Elimina el producto de la lista
-   *
    * @param product Producto a eliminar
    */
   void Delete(const Key& product);
