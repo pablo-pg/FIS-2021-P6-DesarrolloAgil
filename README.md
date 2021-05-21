@@ -64,7 +64,7 @@ A continuación se listan los participantes del proyecto:
 
 ### Extra
 Informe del primer prototipo: [Informe](https://drive.google.com/file/d/15LlaNJQqJQ2t6KRNXmTwj_VW6syiE3BN/view?usp=sharing). <br>
-Informe del segundo prototipo: [Informe](https://drive.google.com/file/d/11lodNYdEr2RGtdLqJHv-EDe3cRCcmH-l/view?usp=sharing). <br>
+Informe del segundo prototipo: [Informe](https://drive.google.com/file/d/1VpiR9q-0_tNNUuI_7fQotnSc3P_vUSeT/view?usp=sharing). <br>
 Historias de usuario: [Hoja de cálculo](https://drive.google.com/file/d/1vppcvpkeVs_fGl6_LTKjAks1Kk0ejM55/view?usp=sharing). <br>
 Nuevas Historias de usuario: [Hoja de cálculo](https://drive.google.com/file/d/165o_pnrCIlYaqdocTs87GJlKgOfKL0sb/view?usp=sharing). <br>
 Este repositorio: [FIS-2021-P6-DesarrolloAgil](https://github.com/pablo-pg/FIS-2021-P6-DesarrolloAgil.git). <br>
