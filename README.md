@@ -63,9 +63,9 @@ A continuación se listan los participantes del proyecto:
 
 
 ### Extra
-Informe del proyecto: [Informe](https://drive.google.com/file/d/15LlaNJQqJQ2t6KRNXmTwj_VW6syiE3BN/view?usp=sharing). <br>
+Informe del primer prototipo: [Informe](https://drive.google.com/file/d/15LlaNJQqJQ2t6KRNXmTwj_VW6syiE3BN/view?usp=sharing). <br>
+Informe del segundo prototipo: [Informe](https://docs.google.com/document/d/1ybck8LkLtaFy4w2OGNEZT7ya2TJcM0duQeLRiy8F8hk/edit?usp=sharing). <br>
 Historias de usuario: [Hoja de cálculo](https://drive.google.com/file/d/1vppcvpkeVs_fGl6_LTKjAks1Kk0ejM55/view?usp=sharing). <br>
 Nuevas Historias de usuario: [Hoja de cálculo](https://drive.google.com/file/d/165o_pnrCIlYaqdocTs87GJlKgOfKL0sb/view?usp=sharing). <br>
-Gestión ficheros: [Gestión](https://www.geeksforgeeks.org/csv-file-management-using-c/). <br>
-Eliminación en tablas de hash: [Eliminación](http://quegrande.org/apuntes/EI/2/Alg/teoria/08-09/tema_6_-_tablas_de_dispersion.pdf).<br>
-Git Hooks: [Git hooks](https://blog.devgenius.io/automate-unit-tests-before-each-commit-by-git-hook-f331f0499786). <br>
+Este repositorio: [FIS-2021-P6-DesarrolloAgil](https://github.com/pablo-pg/FIS-2021-P6-DesarrolloAgil.git). <br>
+
